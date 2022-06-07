@@ -50,10 +50,10 @@ const About = () => {
               <button
                 key={index}
                 onClick={() => setSelected(item.selector)}
-                className={` uppercase text-sm cursor-pointer p-1 duration-300 rounded ${
+                className={`hover:text-black hover:font-medium uppercase text-sm cursor-pointer p-1 duration-300 rounded  ${
                   item.selector === selected
-                    ? "font-bold bg-black text-white"
-                    : "font-normal"
+                    ? "font-bold bg-black text-white hover:text-white hover:font-bold"
+                    : "font-normal text-gray-600 dark:text-white"
                 } `}
               >
                 {item.name}
