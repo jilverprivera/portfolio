@@ -3,6 +3,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { BsArrowUpRight } from "react-icons/bs";
 import Awards from "./Awards";
 import Education from "./Education";
+import Experience from "./Experience";
+import Skills from "./Skills";
 
 const types = [
   { name: "Awards", selector: "awards" },
@@ -42,13 +44,13 @@ const About = () => {
             </span>
           </div>
         </div>
-        <div className="col-span-3 flex flex-col items-center justify-start pt-10">
+        <div className="col-span-3 flex flex-col items-center justify-start pt-10 z-0">
           <div className="w-full grid grid-cols-4 pt-16">
             {types.map((item, index) => (
               <button
                 key={index}
                 onClick={() => setSelected(item.selector)}
-                className={` uppercase text-sm cursor-pointer p-1 duration-300 ${
+                className={` uppercase text-sm cursor-pointer p-1 duration-300 rounded ${
                   item.selector === selected
                     ? "font-bold bg-black text-white"
                     : "font-normal"
@@ -61,6 +63,8 @@ const About = () => {
           <AnimatePresence exitBeforeEnter>
             {selected === "awards" && <Awards />}
             {selected === "education" && <Education />}
+            {selected === "experience" && <Experience />}
+            {selected === "skills" && <Skills />}
           </AnimatePresence>
         </div>
       </div>
