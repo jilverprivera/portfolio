@@ -13,7 +13,7 @@ const routes = [
 const Header = () => {
   const { pathname } = useRouter();
   return (
-    <div className="w-full fixed backdrop-blur-sm">
+    <div className="w-full fixed backdrop-blur-sm z-50">
       <div className="w-full flex items-center justify-between max-w-7xl mx-auto">
         {pathname === "/" ? (
           <NavLink
@@ -43,33 +43,25 @@ const Header = () => {
         )}
 
         <div>
-          {pathname === "/" ? (
-            <>
-              {routes.map((item, i) => (
-                <NavLink
-                  key={i}
-                  to={item.path}
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={1000}
-                  className="font-normal"
-                  activeClass="font-bold"
-                >
-                  <span className=" uppercase mx-2 text-sm cursor-pointer">
-                    {item.name}
-                  </span>
-                </NavLink>
-              ))}
+          {routes.map((item, i) => (
+            <NavLink
+              key={i}
+              to={item.path}
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={1000}
+              className="font-normal"
+              activeClass="font-bold"
+            >
               <span className=" uppercase mx-2 text-sm cursor-pointer">
-                Connect
+                {item.name}
               </span>
-            </>
-          ) : (
-            <Link href="/">
-              <a>Back to home</a>
-            </Link>
-          )}
+            </NavLink>
+          ))}
+          <span className=" uppercase mx-2 text-sm cursor-pointer">
+            Connect
+          </span>
         </div>
       </div>
     </div>
