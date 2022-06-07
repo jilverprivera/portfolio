@@ -1,15 +1,21 @@
-import Document, { DocumentContext,Head, Html, Main, NextScript } from 'next/document'
+import Document, {
+  DocumentContext,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from "next/document";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx)
+    const initialProps = await Document.getInitialProps(ctx);
 
-    return initialProps
+    return initialProps;
   }
 
   render() {
-      return(
-        <Html>
+    return (
+      <Html>
         <Head>
           <link rel="icon" href="/favicon.ico" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,7 +25,7 @@ class MyDocument extends Document {
             crossOrigin="true"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Cairo+Web:wght@300;400;500;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Cairo&display=optional"
             rel="stylesheet"
           />
         </Head>
@@ -28,8 +34,8 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-      )
+    );
   }
 }
 
-export default MyDocument
+export default MyDocument;
