@@ -1,12 +1,15 @@
 import Link from "next/link";
-import React, { useState } from "react";
-import { Blog, Post } from "../../interfaces/posts";
-import Layout from "../../layout";
+import { useState } from "react";
+import { motion } from "framer-motion";
+
 import { getAllFilesMetadata } from "../../lib/mdx";
+
+import { Blog, Post } from "../../interfaces/posts";
+
+import Layout from "../../layout";
 
 const Blog = ({ posts }: Blog) => {
   const [searchedArticles, setSearchedArticles] = useState("");
-
   const filteredPosts = posts.filter((post: Post) =>
     post.title.toLowerCase().includes(searchedArticles.toLowerCase())
   );
@@ -55,8 +58,15 @@ const Blog = ({ posts }: Blog) => {
             </p>
           )}
 
-          {filteredPosts.map((item: Post) => (
-            <div className="mb-5" key={item.slug}>
+          {filteredPosts.map((item: Post, index: number) => (
+            <motion.div
+              className="mb-5"
+              key={item.slug}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ delay: 0.2 * index }}
+            >
               <Link href={`/blog/${item.slug}`}>
                 <a className="cursor-pointer">
                   <h2 className="text-sm font-normal">{item.date}</h2>
@@ -74,7 +84,7 @@ const Blog = ({ posts }: Blog) => {
                 </a>
               </Link>
               <p className="text-base font-medium">{item.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
