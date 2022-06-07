@@ -11,7 +11,6 @@ module.exports = {
       colors: {
         primary: "#7248F6",
         secondary: "#FCDA69",
-        gray: "#9EA3AC",
       },
       fontFamily: {
         sans: ["Cairo", ...fontFamily.sans],
