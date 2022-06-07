@@ -1,0 +1,30 @@
+[
+    {
+      "academy": "Universidad de Investigación y Desarrollo",
+      "title": "Electronic Engineer.",
+      "location": "Bucaramanga, CO.",
+      "date": "Feb 2017 - Current.",
+      "url": "#"
+    },
+    {
+      "academy": "UDEMY",
+      "title": "React & Jest Certification.",
+      "location": "Online.",
+      "date": "2021.",
+      "url": "#"
+    },
+    {
+      "academy": "UDEMY",
+      "title": "React, MERN & Redux Certification.",
+      "location": "Online.",
+      "date": "2021.",
+      "url": "#"
+    },
+    {
+      "academy": "UDEMY",
+      "title": "React Native Certification.",
+      "location": "Online",
+      "date": "2022.",
+      "url": "#"
+    }
+  ]
