@@ -13,7 +13,7 @@ const types = [
   { name: "Skills", selector: "skills" },
 ];
 
-const About = () => {
+const Presentation = () => {
   const [selected, setSelected] = useState("skills");
   return (
     <div className="max-w-7xl mx-auto min-h-screen grid grid-cols-6">
@@ -72,4 +72,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Presentation;

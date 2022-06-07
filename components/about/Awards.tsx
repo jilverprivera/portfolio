@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import AWARDS from "../../data/awards.json";
 import { variants } from "../../helpers/variants";
