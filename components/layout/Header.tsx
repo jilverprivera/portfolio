@@ -88,14 +88,12 @@ const Header = () => {
               className="font-normal"
               activeClass="font-bold"
             >
-              <span className=" uppercase mx-2 text-sm cursor-pointer">
+              <span className="uppercase mx-2 text-sm cursor-pointer">
                 {item.name}
               </span>
             </NavLink>
           ))}
-          <span className=" uppercase mx-2 text-sm cursor-pointer">
-            Connect
-          </span>
+          <span className="uppercase mx-2 text-sm cursor-pointer">Connect</span>
           {renderTheme()}
         </div>
       </div>
