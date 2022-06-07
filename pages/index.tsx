@@ -1,21 +1,13 @@
 import type { NextPage } from "next";
-import { useTheme } from "next-themes";
 
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import About from "../components/about";
-import Banner from "../components/banner";
-import Blog from "../components/blog";
 import Layout from "../layout";
+import Banner from "../components/banner";
+import Presentation from "../components/about";
+import Blog from "../components/blog";
+import { getAllFilesMetadata } from "../lib/mdx";
 
 const Home: NextPage = (props: any) => {
-  const { children, ...customMeta } = props;
-
-  const [mounted, setMounted] = useState(false);
-  const { resolvedTheme, setTheme } = useTheme();
-  const router = useRouter();
-
-  useEffect(() => setMounted(true), []);
+  const { children } = props;
 
   return (
     <Layout
@@ -30,20 +22,32 @@ const Home: NextPage = (props: any) => {
       <div id="banner">
         <Banner />
       </div>
-      <div id="about">
-        <About />
-      </div>
+
       <div
         className=" max-w-7xl mx-auto min-h-screen flex items-center justify-between"
         id="portfolio"
       >
         Portfolio
       </div>
+
       <div id="blog">
-        <Blog />
+        <Blog post />
       </div>
     </Layout>
   );
 };
 
 export default Home;
+
+export async function getStaticProps() {
+  const allPosts = await getAllFilesMetadata("posts");
+
+  const posts = allPosts
+    .sort((a: any, b: any) => a.date.localeCompare(b.date))
+    .reverse()
+    .slice(0, 4);
+
+  return {
+    props: { posts },
+  };
+}
