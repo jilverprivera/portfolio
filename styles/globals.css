@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.polygon {
+  position: relative;
+  width: 100px;
+  height: 110px;
+  margin: 0px 15px;
+  clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1f1f1f;
+}
+.polygon-wrapper {
+  position: relative;
+  width: 95px;
+  height: 105px;
+  clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #ffffff;
+}
