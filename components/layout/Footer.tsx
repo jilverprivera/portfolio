@@ -21,11 +21,11 @@ const Footer = () => {
         </div>
       </div>
       <div className="w-full flex flex-col justify-center items-center mb-3">
-        <span className="text-slate-400 text-sm mb-2">
+        <span className="text-slate-700 text-sm mb-2">
           Jilver Pacheco Rivera • @jilverprivera • All rights reserved © 2020 -{" "}
           {new Date().getFullYear()}
         </span>
-        <span className="text-slate-400 text-sm">
+        <span className="text-slate-700 text-sm">
           From Colombia ❤ to the world
         </span>
       </div>
