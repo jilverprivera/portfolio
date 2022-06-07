@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import About from "../components/about";
 import Banner from "../components/banner";
+import Blog from "../components/blog";
 import Layout from "../layout";
 
 const Home: NextPage = (props: any) => {
@@ -38,11 +39,8 @@ const Home: NextPage = (props: any) => {
       >
         Portfolio
       </div>
-      <div
-        className="w-full min-h-screen flex items-center justify-between max-w-7xl mx-auto"
-        id="blog"
-      >
-        Blog
+      <div id="blog">
+        <Blog />
       </div>
     </Layout>
   );
