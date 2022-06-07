@@ -18,13 +18,15 @@ const Skills = () => {
           {item.items.map((item, index) => (
             <motion.div
               key={index}
-              className="flex items-center polygon"
+              className="flex items-center polygon bg-black"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ delay: 0.2 * index }}
             >
-              <span className="polygon-wrapper text-sm">{item}</span>
+              <span className="polygon-wrapper text-sm bg-white text-black">
+                {item}
+              </span>
             </motion.div>
           ))}
         </motion.div>

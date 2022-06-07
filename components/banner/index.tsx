@@ -4,7 +4,9 @@ const Banner = () => {
   return (
     <div className="w-full min-h-screen flex flex-col items-start justify-center max-w-7xl mx-auto">
       <h1 className="text-xl mb-3">I&apos;m Jilver Pacheco</h1>
-      <h2 className="text-7xl font-bold mb-3">Software Developer</h2>
+      <h2 className="text-7xl font-bold mb-3 theme-primary">
+        Software Developer
+      </h2>
       <div className="w-2/6">
         <p className="text-base font-normal">
           Welcome to my little space on the WWW, where I show my projects and
