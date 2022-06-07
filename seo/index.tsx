@@ -8,11 +8,18 @@ const SEO = ({ title, date, description }: metadata) => {
   return (
     <Head>
       <title>{title}</title>
+      <meta lang="en" />
       <meta property="og:title" content={title} />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Jilver  Pacheco Rivera" />
-      <meta property="og:url" content={`https://leerob.io${router.asPath}`} />
-      <link rel="canonical" href={`https://leerob.io${router.asPath}`} />
+      <meta
+        property="og:url"
+        content={`https://jilverpachecio.vercel.app${router.asPath}`}
+      />
+      <link
+        rel="canonical"
+        href={`https://jilverpachecio.vercel.app${router.asPath}`}
+      />
       <meta property="og:description" content={description} />
       <meta name="description" content={description} />
       <meta name="twitter:card" content="summary_large_image" />
