@@ -21,8 +21,11 @@ const Blog = ({ posts }: Blog) => {
         date: null,
       }}
     >
-      <div className="w-full min-h-screen ">
-        <div className=" relative w-3/5 mb-4 mx-auto ">
+      <div className="w-3/6 min-h-screen mx-auto ">
+        <div className="pt-16">
+          <h1 className="font-bold text-6xl mt-10">Blog</h1>
+        </div>
+        <div className=" relative w-full mb-10 mx-auto ">
           <input
             aria-label="Search articles"
             type="text"
@@ -47,24 +50,30 @@ const Blog = ({ posts }: Blog) => {
         </div>
         <div className="flex flex-col items-center-justify-center">
           {!filteredPosts.length && (
-            <p className="mb-4 text-gray-600 dark:text-gray-400">
+            <p className="mb-4 text-lg text-center text-gray-600 dark:text-gray-400">
               No posts found.
             </p>
           )}
 
           {filteredPosts.map((item: Post) => (
-            <div className="mt-16" key={item.slug}>
+            <div className="mb-5" key={item.slug}>
               <Link href={`/blog/${item.slug}`}>
-                <div>
-                  <h2>{item.title}</h2>
+                <a className="cursor-pointer">
+                  <h2 className="text-sm font-normal">{item.date}</h2>
+                  <h2 className="text-xl font-semibold">{item.title}</h2>
                   <div>
                     {item.tags.map((tag, i: number) => (
-                      <span key={i}> {tag}</span>
+                      <span
+                        key={i}
+                        className="mr-3 uppercase text-sm font-normal text-violet-800 dark:text-yellow-500"
+                      >
+                        {tag}
+                      </span>
                     ))}
                   </div>
-                </div>
+                </a>
               </Link>
-              <p>{item.description}</p>
+              <p className="text-base font-medium">{item.description}</p>
             </div>
           ))}
         </div>
