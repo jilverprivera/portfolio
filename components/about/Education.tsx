@@ -23,7 +23,7 @@ const Education = () => {
             transition={{ delay: 0.2 * index }}
           >
             <div className="flex flex-col align-start justify-center">
-              <h3 className="text-base font-semibold">{item.title}</h3>
+              <h3 className="text-lg font-semibold">{item.title}</h3>
               <span className="text-sm font-normal">
                 {item.academy} | {item.location}
               </span>
