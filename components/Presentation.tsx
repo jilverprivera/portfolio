@@ -16,7 +16,7 @@ const types = [
 const Presentation = () => {
   const [selected, setSelected] = useState("skills");
   return (
-    <div className="max-w-7xl mx-auto min-h-screen grid grid-cols-6">
+    <div className="max-w-7xl mx-auto principal grid grid-cols-6">
       <div className="flex items-center justify-start">
         <p className="-rotate-90 uppercase font-bold tracking-widest">
           about me
@@ -44,8 +44,8 @@ const Presentation = () => {
             </span>
           </div>
         </div>
-        <div className="col-span-3 flex flex-col items-center justify-start pt-10 z-0">
-          <div className="w-full grid grid-cols-4 pt-16">
+        <div className="col-span-3 flex flex-col items-start justify-start  z-0">
+          <div className="w-full grid grid-cols-4 ">
             {types.map((item, index) => (
               <button
                 key={index}

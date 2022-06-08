@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-import EDUCATION from "../../data/education.json";
-import { variants } from "../../helpers/variants";
+import EDUCATION from "../data/education.json";
+import { variants } from "../helpers/variants";
 
 const Education = () => {
   return (
-    <div className="w-full pt-16 ml-3">
+    <div className="w-full mt-12 ml-3">
       <motion.div
         variants={variants}
         initial="hidden"
@@ -27,14 +27,16 @@ const Education = () => {
               <span className="text-sm font-normal">
                 {item.academy} | {item.location}
               </span>
-              {/* <span className="text-sm font-normal">{item.location}</span> */}
               <span className="text-sm font-normal">{item.date}</span>
             </div>
-            <Link href={item.url}>
-              <a className="h-full p-2.5 bg-black text-white text-sm rounded">
-                View Certificate
-              </a>
-            </Link>
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-full p-2.5 bg-violet-800 dark:bg-yellow-500 dark:text-black dark:font-semibold text-white text-sm rounded"
+            >
+              View Certificate
+            </a>
           </motion.div>
         ))}
       </motion.div>

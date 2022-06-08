@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
-import EXPERIENCE from "../../data/experience.json";
-import { variants } from "../../helpers/variants";
+import EXPERIENCE from "../data/experience.json";
+import { variants } from "../helpers/variants";
 
 const Experience = () => {
   return (
-    <div className="w-full pt-16 ml-3">
+    <div className="w-full mt-12 ml-3">
       <motion.div
         variants={variants}
         initial="hidden"
@@ -24,7 +24,12 @@ const Experience = () => {
             <div className="flex flex-col align-start justify-center">
               <h3 className="text-lg font-semibold">
                 {item.role} |&nbsp;
-                <a href={item.url} target="_blank" rel="noreferrer">
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-violet-800 dark:text-yellow-500"
+                >
                   @{item.company}
                 </a>
               </h3>

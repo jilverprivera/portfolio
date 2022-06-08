@@ -48,8 +48,8 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full fixed backdrop-blur-sm z-50">
-      <div className="w-full flex items-center justify-between max-w-7xl mx-auto">
+    <div className="w-full backdrop-blur-sm z-50">
+      <div className="h-24 max-w-6xl mx-auto flex items-center justify-between">
         <Link href="/">
           <Image
             className="cursor-pointer"
@@ -64,7 +64,7 @@ const Header = () => {
           {routes.map((item, i) => (
             <Link key={i} href={item.path}>
               <span
-                className={`uppercase mx-1 text-sm cursor-pointer hover:bg-gray-200 px-2 py-1 rounded-md ${
+                className={`uppercase mx-3 text-sm cursor-pointer  ${
                   pathname === item.path
                     ? "font-bold  dark:text-yellow-500"
                     : "font-medium"
@@ -74,7 +74,6 @@ const Header = () => {
               </span>
             </Link>
           ))}
-          {/* <span className="uppercase mx-2 text-sm cursor-pointer">Connect</span> */}
           {renderTheme()}
         </div>
       </div>

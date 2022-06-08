@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
-import SKILLS from "../../data/skills.json";
-import { variants } from "../../helpers/variants";
+import SKILLS from "../data/skills.json";
+import { variants } from "../helpers/variants";
 
 const Skills = () => {
   return (
-    <div className="w-full pt-16 ml-3">
+    <div className="w-full mt-12 ml-3">
       {SKILLS.map((item, index) => (
         <motion.div
           key={index}
