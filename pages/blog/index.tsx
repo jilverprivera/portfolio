@@ -25,10 +25,10 @@ const Blog = ({ posts }: Blog) => {
       }}
     >
       <div className="w-3/6 min-h-screen mx-auto ">
-        <div className="pt-16">
-          <h1 className="font-bold text-6xl mt-10">Blog</h1>
+        <div className="mt-2">
+          <h1 className="font-bold text-6xl">Blog</h1>
         </div>
-        <div className=" relative w-full mb-10 mx-auto ">
+        <div className=" relative w-full mb-8 mx-auto ">
           <input
             aria-label="Search articles"
             type="text"
@@ -54,7 +54,7 @@ const Blog = ({ posts }: Blog) => {
         <div className="flex flex-col items-center-justify-center">
           {!filteredPosts.length && (
             <p className="mb-4 text-lg text-center text-gray-600 dark:text-gray-400">
-              No posts found.
+              No articles found, sorry.
             </p>
           )}
 

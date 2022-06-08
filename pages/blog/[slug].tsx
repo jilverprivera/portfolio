@@ -14,7 +14,9 @@ const Post = ({ source, frontmatter }: any) => {
         date: frontmatter.date,
       }}
     >
-      <div>hola</div>
+      <div className="w-full principal flex items-center justify-center">
+        <h1 className="text-5xl font-bold">Currently working on it</h1>
+      </div>
     </Layout>
   );
 };
