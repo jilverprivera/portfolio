@@ -2,7 +2,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Projects } from "../interfaces/projects";
 
-const LatestProjects = ({ projects }: Projects) => {
+const LatestProjects = ({ projects }: any) => {
   return (
     <div
       id="latest-projects"

@@ -4,16 +4,18 @@ import Layout from "../layout";
 import Banner from "../components/Banner";
 import { getAllFilesMetadata } from "../lib/mdx";
 import LatestPost from "../components/LatestPost";
-import { Blog } from "../interfaces/posts";
+import { Blog, Post } from "../interfaces/posts";
 import { Projects } from "../interfaces/projects";
 import LatestProjects from "../components/LatestProjects";
+import Link from "next/link";
 
 interface Props {
-  posts: Blog;
-  projects: Projects;
+  posts: Blog[];
+  projects: Projects[];
 }
 
 const Home: NextPage<Props> = ({ posts, projects }) => {
+  console.log(posts);
   return (
     <Layout
       type={"website"}

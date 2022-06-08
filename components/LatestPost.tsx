@@ -2,7 +2,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Blog, Post } from "../interfaces/posts";
 
-const LatestPost = ({ posts }: Blog) => {
+const LatestPost = ({ posts }: any) => {
   return (
     <div
       id="latest-posts"
@@ -26,7 +26,6 @@ const LatestPost = ({ posts }: Blog) => {
           </Link>
         </div>
       </div>
-
       {posts.map((item: Post, index: number) => (
         <motion.div
           className="mb-5"
