@@ -1,5 +1,5 @@
 import React from "react";
-import Presentation from "../components/about";
+import Presentation from "../components/Presentation";
 import Layout from "../layout";
 
 const About = () => {

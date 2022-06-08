@@ -1,14 +1,19 @@
 import type { NextPage } from "next";
 
 import Layout from "../layout";
-import Banner from "../components/banner";
-import Presentation from "../components/about";
-import Blog from "../components/blog";
+import Banner from "../components/Banner";
 import { getAllFilesMetadata } from "../lib/mdx";
+import LatestPost from "../components/LatestPost";
+import { Blog } from "../interfaces/posts";
+import { Projects } from "../interfaces/projects";
+import LatestProjects from "../components/LatestProjects";
 
-const Home: NextPage = (props: any) => {
-  const { children } = props;
+interface Props {
+  posts: Blog;
+  projects: Projects;
+}
 
+const Home: NextPage = ({ posts, projects }: Props) => {
   return (
     <Layout
       type={"website"}
@@ -19,20 +24,10 @@ const Home: NextPage = (props: any) => {
         date: null,
       }}
     >
-      <div id="banner">
-        <Banner />
-      </div>
+      <Banner />
 
-      <div
-        className=" max-w-7xl mx-auto min-h-screen flex items-center justify-between"
-        id="portfolio"
-      >
-        Portfolio
-      </div>
-
-      <div id="blog">
-        <Blog post />
-      </div>
+      <LatestProjects projects={projects} />
+      <LatestPost posts={posts} />
     </Layout>
   );
 };
@@ -40,14 +35,20 @@ const Home: NextPage = (props: any) => {
 export default Home;
 
 export async function getStaticProps() {
-  const allPosts = await getAllFilesMetadata("posts");
+  const posts = await getAllFilesMetadata("posts");
+  const projects = await getAllFilesMetadata("projects");
 
-  const posts = allPosts
+  const sortedProjects = projects
+    .sort((a: any, b: any) => a.date.localeCompare(b.date))
+    .reverse()
+    .slice(0, 6);
+
+  const sortedPosts = posts
     .sort((a: any, b: any) => a.date.localeCompare(b.date))
     .reverse()
     .slice(0, 4);
 
   return {
-    props: { posts },
+    props: { posts: sortedPosts, projects: sortedProjects },
   };
 }
