@@ -13,7 +13,7 @@ interface Props {
   projects: Projects;
 }
 
-const Home: NextPage = ({ posts, projects }: Props) => {
+const Home: NextPage<Props> = ({ posts, projects }) => {
   return (
     <Layout
       type={"website"}
