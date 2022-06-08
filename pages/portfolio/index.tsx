@@ -6,8 +6,10 @@ import { getAllFilesMetadata } from "../../lib/mdx";
 import { Project, Projects } from "../../interfaces/projects";
 
 import Layout from "../../layout";
+import { useState } from "react";
 
 const Portfolio = ({ projects }: Projects) => {
+  const [currentHover, setCurrentHover] = useState<number | null>(null);
   return (
     <Layout
       type={"website"}
@@ -18,9 +20,14 @@ const Portfolio = ({ projects }: Projects) => {
         date: null,
       }}
     >
-      <div className="w-full grid grid-cols-3 min-h-screen">
+      <div className="w-full principal grid grid-cols-3">
         {projects.map((project: Project, index: number) => (
-          <div key={project.slug} className="mt-16">
+          <div
+            key={project.slug}
+            className="mt-8 relative overflow-hidden"
+            onMouseEnter={() => setCurrentHover(index)}
+            onMouseLeave={() => setCurrentHover(null)}
+          >
             <Image
               src={project.cover_image}
               alt={project.title}
@@ -29,16 +36,20 @@ const Portfolio = ({ projects }: Projects) => {
               layout="responsive"
               objectFit="cover"
             />
-            4<p>0{index + 1}</p>
-            <h2>{project.title}</h2>
-            <div>
-              {project.categories.map((item, i) => (
-                <span key={i}>{item}</span>
-              ))}
-            </div>
-            <Link href={`/portfolio/${project.slug}`}>
-              <span>View project</span>
-            </Link>
+            {currentHover === index && (
+              <div className="absolute top-0 left-0 right-0  p-4 bg-project-info">
+                <p className="text-9xl font-bold text-zinc-900">0{index + 1}</p>
+                <h2>{project.title}</h2>
+                <div>
+                  {project.categories.map((item, i) => (
+                    <span key={i}>{item}</span>
+                  ))}
+                </div>
+                <Link href={`/portfolio/${project.slug}`}>
+                  <span>View project</span>
+                </Link>
+              </div>
+            )}
           </div>
         ))}
       </div>
