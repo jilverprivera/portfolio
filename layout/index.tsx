@@ -1,10 +1,12 @@
-import { useRouter } from "next/router";
+import { AnimatePresence, motion } from "framer-motion";
 
 import SEO from "../seo";
 
-import { layoutProps } from "../interfaces/layout";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
+
+import { layoutProps } from "../interfaces/layout";
+import { variants } from "../helpers/variants";
 
 const Layout = (props: layoutProps) => {
   const { metadata, type } = props;
@@ -14,9 +16,17 @@ const Layout = (props: layoutProps) => {
     <>
       <SEO title={title} description={description} slug={slug} date={date} />
       <Header />
-      <div className={`mx-auto ${type !== "post" ? "w-full" : "w-3/5"}`}>
-        {props.children}
-      </div>
+      <AnimatePresence exitBeforeEnter>
+        <motion.div
+          className={`mx-auto ${type !== "post" ? "w-full" : "w-3/5"}`}
+          variants={variants}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+        >
+          {props.children}
+        </motion.div>
+      </AnimatePresence>
       <Footer />
     </>
   );
