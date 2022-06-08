@@ -13,7 +13,7 @@ export const getFileBySlug = async (type: string, slug: string) => {
     path.join(root, "data", type, `${slug}.mdx`),
     "utf8"
   );
-  const { data, content } = await matter(mdxSource);
+  const { data, content } = matter(mdxSource);
   const source = await serialize(content, {});
   return { source, frontmatter: { slug, ...data } };
 };
