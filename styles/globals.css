@@ -22,3 +22,12 @@
   justify-content: center;
   text-align: center;
 }
+
+.principal {
+  min-height: calc(100vh - 6rem);
+}
+
+.bg-project-info {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 360px;
+}
