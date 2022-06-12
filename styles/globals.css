@@ -31,3 +31,22 @@
   background-color: rgba(0, 0, 0, 0.5);
   height: 355px;
 }
+
+.latest-post {
+  min-height: calc(50vh + 100px);
+}
+.post-card {
+  min-width: 420px;
+}
+
+.project-card {
+  border-bottom: 1px solid #b9b9b9;
+}
+
+.project-card:last-child {
+  border-bottom: none;
+}
+
+.project-description {
+  width: 600px;
+}
