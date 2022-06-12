@@ -6,11 +6,13 @@ import { Link as NavLink } from "react-scroll";
 import { networks } from "../helpers/networks";
 const Banner = () => {
   return (
-    <div className="principal relative max-w-6xl flex flex-col items-start justify-center mx-auto">
-      <div className="w-full flex items-center justify-between mx-auto">
-        <div className="flex flex-col items-start justify-start">
-          <h1 className="text-5xl font-bold mb-5">I&apos;m Jilver Pacheco</h1>
-          <h2 className="flex text-6xl font-bold mb-5 text-violet-800 dark:text-yellow-500 ">
+    <div className="principal relative lg:max-w-6xl flex flex-col items-start justify-center mx-auto">
+      <div className="w-full flex sm:flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-between mx-auto">
+        <div className="flex flex-col lg:items-start md:items-center justify-start md:justify-center">
+          <h1 className="font-bold mb-5 sm:text-3xl md:text-4xl lg:text-5xl sm:text-center md:text-center lg:text-left md:mt-8">
+            I&apos;m Jilver Pacheco
+          </h1>
+          <h2 className="flex sm:text-4xl md:text-5xl lg:text-6xl sm:text-center md:text-center lg:text-left font-bold mb-5 text-violet-800 dark:text-yellow-500">
             <Typewriter
               options={{
                 strings: [
@@ -24,9 +26,9 @@ const Banner = () => {
             />
           </h2>
           <div className="w-5/6">
-            <p className="text-base font-medium text-gray-500 dark:text-white">
-              Welcome to my little space on the WWW, where I show my projects
-              and talk about what I like.
+            <p className="text-base font-medium text-gray-500 dark:text-white sm:text-center md:text-center lg:text-left">
+              Welcome to my little space on the <strong>WWW</strong>, here I
+              show my projects and talk about things I like.
             </p>
           </div>
         </div>
@@ -44,7 +46,7 @@ const Banner = () => {
           <a
             key={index}
             href={item.url}
-            className="flex items-center justify-start mr-6 "
+            className="flex mr-6 items-center justify-start"
           >
             <span
               className="h-12 w-12 flex items-center justify-center mr-2 rounded-lg text-2xl"
