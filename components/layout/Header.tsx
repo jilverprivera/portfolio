@@ -5,6 +5,7 @@ import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { Logo } from "./Logo";
 
 const routes = [
   { path: "/about", name: "About Me" },
@@ -51,13 +52,14 @@ const Header = () => {
     <div className="w-full backdrop-blur-sm z-50">
       <div className="h-24 max-w-6xl mx-auto flex items-center justify-between">
         <Link href="/">
-          <Image
-            className="cursor-pointer"
-            src={`/icon.svg`}
-            alt="Jilver Pacheco"
-            width={60}
-            height={60}
-          />
+          <a>
+            <Logo
+              width="55"
+              height="55"
+              bgColor={theme === "light" ? "#1F1F1F" : "#F8F8F8"}
+              initials={theme === "light" ? "#FFFFFF" : "#1F1F1F"}
+            />
+          </a>
         </Link>
 
         <div className="flex items-center justify-center">
@@ -65,7 +67,7 @@ const Header = () => {
             <Link key={i} href={item.path}>
               <span
                 className={`uppercase mx-3 text-sm cursor-pointer  ${
-                  pathname === item.path
+                  pathname.includes(item.path)
                     ? "font-bold  dark:text-yellow-500"
                     : "font-medium"
                 }`}
