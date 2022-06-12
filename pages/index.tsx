@@ -1,21 +1,21 @@
+import Link from "next/link";
 import type { NextPage } from "next";
+
+import { Post } from "../interfaces/posts";
+import { Project } from "../interfaces/projects";
 
 import Layout from "../layout";
 import Banner from "../components/Banner";
 import { getAllFilesMetadata } from "../lib/mdx";
 import LatestPost from "../components/LatestPost";
-import { Blog, Post } from "../interfaces/posts";
-import { Projects } from "../interfaces/projects";
 import LatestProjects from "../components/LatestProjects";
-import Link from "next/link";
 
 interface Props {
-  posts: Blog[];
-  projects: Projects[];
+  posts: Post[];
+  projects: Project[];
 }
 
 const Home: NextPage<Props> = ({ posts, projects }) => {
-  console.log(posts);
   return (
     <Layout
       type={"website"}
@@ -28,8 +28,8 @@ const Home: NextPage<Props> = ({ posts, projects }) => {
     >
       <Banner />
 
-      <LatestProjects projects={projects} />
       <LatestPost posts={posts} />
+      <LatestProjects projects={projects} />
     </Layout>
   );
 };
@@ -41,13 +41,15 @@ export async function getStaticProps() {
   const projects = await getAllFilesMetadata("projects");
 
   const sortedProjects = projects
-    .sort((a: any, b: any) => a.date.localeCompare(b.date))
-    .reverse()
+    .sort((a: any, b: any) => {
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    })
     .slice(0, 6);
 
   const sortedPosts = posts
-    .sort((a: any, b: any) => a.date.localeCompare(b.date))
-    .reverse()
+    .sort((a: any, b: any) => {
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    })
     .slice(0, 4);
 
   return {
