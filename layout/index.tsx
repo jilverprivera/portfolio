@@ -18,7 +18,11 @@ const Layout = (props: layoutProps) => {
       <Header />
       <AnimatePresence exitBeforeEnter>
         <motion.div
-          className={`mx-auto ${type !== "post" ? "w-full" : "w-3/5"}`}
+          className={`mx-auto ${
+            type === "post"
+              ? "w-3/5 flex flex-col items-center justify-start"
+              : "w-full"
+          }`}
           variants={variants}
           initial="hidden"
           animate="show"
