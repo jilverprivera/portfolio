@@ -54,7 +54,7 @@ const Blog = ({ posts }: Blog) => {
         <div className="flex flex-col items-center-justify-center">
           {!filteredPosts.length && (
             <p className="mb-4 text-lg text-center text-gray-600 dark:text-gray-400">
-              No articles found, sorry.
+              No articles found, sorry 😔.
             </p>
           )}
 

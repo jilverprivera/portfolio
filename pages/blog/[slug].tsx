@@ -2,8 +2,15 @@ import React from "react";
 import { Props } from "../../interfaces/staticProps";
 import Layout from "../../layout";
 import { getFileBySlug, getFiles } from "../../lib/mdx";
+import { MDXRemote } from "next-mdx-remote";
+import { MDXComponents } from "../../components/mdx/Components";
+import { Post } from "../../interfaces/posts";
+interface PostProps {
+  source: any;
+  frontmatter: Post;
+}
 
-const Post = ({ source, frontmatter }: any) => {
+const SinglePost = ({ source, frontmatter }: PostProps) => {
   return (
     <Layout
       type="post"
@@ -14,24 +21,20 @@ const Post = ({ source, frontmatter }: any) => {
         date: frontmatter.date,
       }}
     >
-      <div className="border-2 border-black principal flex flex-col items-center justify-center">
-        <span>{frontmatter.date}</span>
-        <h1 className="text-5xl font-bold">{frontmatter.title}</h1>
-        <div>
-          {frontmatter.tags.map((item: string, i: number) => (
-            <span key={i} className="text-slate-500 uppercase text-sm mx-2">
-              {item}
-            </span>
-          ))}
-        </div>
-
-        <h1 className="text-5xl font-bold">Currently working on it</h1>
+      <div className=" w-full pb-6 flex flex-col items-center justify-center mb-10 border-b-2 border-gray-200 dark:border-stone-700">
+        <span className="text-md text-center text-gray-500 dark:text-stone-400 font-semibold mb-3">
+          {frontmatter.date}
+        </span>
+        <h1 className="text-4xl text-center font-bold">{frontmatter.title}</h1>
+      </div>
+      <div className="flex flex-col items-center justify-center px-6">
+        <MDXRemote {...source} components={MDXComponents} />
       </div>
     </Layout>
   );
 };
 
-export default Post;
+export default SinglePost;
 
 export async function getStaticPaths() {
   const posts = await getFiles("posts");
