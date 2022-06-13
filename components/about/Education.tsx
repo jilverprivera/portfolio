@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-import EDUCATION from "../data/education.json";
-import { variants } from "../helpers/variants";
+import EDUCATION from "../../data/education.json";
+import { variants } from "../../helpers/variants";
 
 const Education = () => {
   return (
-    <div className="w-full mt-12 ml-3">
+    <div className="self-container mt-12 ml-3">
       <motion.div
         variants={variants}
         initial="hidden"

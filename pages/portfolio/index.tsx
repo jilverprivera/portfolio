@@ -26,7 +26,7 @@ const Portfolio = ({ projects }: Projects) => {
         {projects.map((project: Project, index: number) => (
           <div
             key={project.slug}
-            className="mt-8 relative overflow-hidden"
+            className="relative overflow-hidden"
             onMouseEnter={() => setCurrentHover(index)}
             onMouseLeave={() => setCurrentHover(null)}
           >
@@ -83,9 +83,9 @@ export default Portfolio;
 export async function getStaticProps() {
   const projects = await getAllFilesMetadata("projects");
 
-  const organizedProjects = projects
-    .sort((a: Project, b: Project) => a.date.localeCompare(b.date))
-    .reverse();
+  const organizedProjects = projects.sort((a: any, b: any) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
 
   return {
     props: { projects: organizedProjects },

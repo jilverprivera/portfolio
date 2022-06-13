@@ -28,7 +28,7 @@ const Home: NextPage<Props> = ({ posts, projects }) => {
     >
       <Banner />
 
-      <LatestPost posts={posts} />
+      {/* <LatestPost posts={posts} /> */}
       <LatestProjects projects={projects} />
     </Layout>
   );

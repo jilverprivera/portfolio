@@ -4,15 +4,16 @@ import Typewriter from "typewriter-effect";
 import { Link as NavLink } from "react-scroll";
 
 import { networks } from "../helpers/networks";
+
 const Banner = () => {
   return (
-    <div className="principal relative lg:max-w-6xl flex flex-col items-start justify-center mx-auto">
-      <div className="w-full flex sm:flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-between mx-auto">
+    <div className="principal relative lg:max-w-6xl flex flex-col xs:items-center md:items-center lg:items-start justify-center mx-auto">
+      <div className="w-full flex xs:flex-col-reverse sm:flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-between mx-auto">
         <div className="flex flex-col lg:items-start md:items-center justify-start md:justify-center">
-          <h1 className="font-bold mb-5 sm:text-3xl md:text-4xl lg:text-5xl sm:text-center md:text-center lg:text-left md:mt-8">
+          <h1 className="text-black dark:text-white xs:font-semibold md:font-bold lg:font-bold  xs:text-2xl sm:text-3xl md:text-4xl lg:text-4xl sm:text-center xs:text-center md:text-center lg:text-left xs:mt-8 md:mt-8 mb-5">
             I&apos;m Jilver Pacheco
           </h1>
-          <h2 className="flex sm:text-4xl md:text-5xl lg:text-6xl sm:text-center md:text-center lg:text-left font-bold mb-5 text-violet-800 dark:text-yellow-500">
+          <h2 className="xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xs:text-center sm:text-center md:text-center lg:text-left font-bold mb-5 text-gray-500 dark:text-stone-200">
             <Typewriter
               options={{
                 strings: [
@@ -25,14 +26,14 @@ const Banner = () => {
               }}
             />
           </h2>
-          <div className="w-5/6">
-            <p className="text-base font-medium text-gray-500 dark:text-white sm:text-center md:text-center lg:text-left">
+          <div className="w-5/6 xs:mx-auto sm:mx-auto lg:mx-0">
+            <p className="text-base font-medium text-black dark:text-stone-400 xs:text-center sm:text-center xs:leading-7 md:text-center lg:text-left">
               Welcome to my little space on the <strong>WWW</strong>, here I
               show my projects and talk about things I like.
             </p>
           </div>
         </div>
-        <div className="overflow-hidden rounded-full mr-3">
+        <div className="overflow-hidden rounded-full xs:w-6/12 sm:w-4/12 md:w-3/12 lg:w-3/12 border-2 flex items-center justify-center">
           <Image
             src={`/image.webp`}
             alt="Jilver Pacheco"
@@ -41,7 +42,7 @@ const Banner = () => {
           />
         </div>
       </div>
-      <div className="flex mt-3 mb-16">
+      <div className="xs:hidden sm:hidden md:flex lg:flex mt-3 mb-16">
         {networks.map((item, index) => (
           <a
             key={index}
@@ -55,7 +56,9 @@ const Banner = () => {
               {item.icon}
             </span>
             <div>
-              <p className="text-gray-400 text-sm">{item.name}</p>
+              <p className="text-gray-500 dark:text-stone-400 text-sm">
+                {item.name}
+              </p>
               <p className="text-black dark:text-white text-base">
                 {item.user}
               </p>
@@ -64,7 +67,11 @@ const Banner = () => {
         ))}
       </div>
 
-      <div className="absolute bottom-5 left-2/4 flex flex-col items-center justify-center">
+      <button className="xs:flex sm:flex md:hidden lg:hidden border-2 flex items-center justify-center w-36 text-violet-800 dark:text-yellow-500 my-16 rounded-lg py-1.5 px-2 text-lg border-violet-800 dark:border-yellow-500">
+        Get my resume
+      </button>
+
+      <div className="absolute bottom-5 left-2/4 -translate-x-2/4 xs:hidden sm:hidden md:hidden lg:flex flex-col items-center justify-center">
         <span className="mb-2 text-sm">Scroll Down</span>
         <NavLink
           to="latest-projects"

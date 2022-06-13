@@ -36,7 +36,7 @@
   min-height: calc(50vh + 100px);
 }
 .post-card {
-  min-width: 420px;
+  min-width: 360px;
 }
 
 .project-card {
@@ -49,4 +49,8 @@
 
 .project-description {
   width: 600px;
+}
+
+.self-container {
+  min-width: 600px;
 }

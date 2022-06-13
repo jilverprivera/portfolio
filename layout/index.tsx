@@ -18,7 +18,7 @@ const Layout = (props: layoutProps) => {
       <Header />
       <AnimatePresence exitBeforeEnter>
         <motion.div
-          className={`mx-auto ${
+          className={`mx-auto container ${
             type === "post"
               ? "w-3/5 flex flex-col items-center justify-start"
               : "w-full"

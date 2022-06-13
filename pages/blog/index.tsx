@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import { getAllFilesMetadata } from "../../lib/mdx";
 
@@ -58,34 +58,39 @@ const Blog = ({ posts }: Blog) => {
             </p>
           )}
 
-          {filteredPosts.map((item: Post, index: number) => (
-            <motion.div
-              className="mb-5"
-              key={item.slug}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              transition={{ delay: 0.2 * index }}
-            >
-              <Link href={`/blog/${item.slug}`}>
-                <a className="cursor-pointer">
-                  <h2 className="text-sm font-normal">{item.date}</h2>
-                  <h2 className="text-xl font-semibold">{item.title}</h2>
-                  <div>
-                    {item.tags.map((tag, i: number) => (
-                      <span
-                        key={i}
-                        className="mr-3 uppercase text-sm font-normal text-violet-800 dark:text-yellow-500"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </a>
-              </Link>
-              <p className="text-base font-medium">{item.description}</p>
-            </motion.div>
-          ))}
+          <AnimatePresence exitBeforeEnter>
+            {filteredPosts.map((item: Post, index: number) => (
+              <motion.div
+                className="mb-5"
+                key={item.slug}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  transition: { delay: 0.2 * index },
+                }}
+                exit={{ opacity: 0, y: 10 }}
+              >
+                <Link href={`/blog/${item.slug}`}>
+                  <a className="cursor-pointer">
+                    <h2 className="text-sm font-normal">{item.date}</h2>
+                    <h2 className="text-xl font-semibold">{item.title}</h2>
+                    <div>
+                      {item.tags.map((tag, i: number) => (
+                        <span
+                          key={i}
+                          className="mr-3 uppercase text-sm font-normal text-violet-800 dark:text-yellow-500"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </a>
+                </Link>
+                <p className="text-base font-medium">{item.description}</p>
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
       </div>
     </Layout>
@@ -97,9 +102,9 @@ export default Blog;
 export async function getStaticProps() {
   const allPosts = await getAllFilesMetadata("posts");
 
-  const posts = allPosts
-    .sort((a: any, b: any) => a.date.localeCompare(b.date))
-    .reverse();
+  const posts = allPosts.sort((a: any, b: any) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
 
   return {
     props: { posts },
