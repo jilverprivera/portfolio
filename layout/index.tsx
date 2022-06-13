@@ -7,30 +7,26 @@ import Footer from "../components/layout/Footer";
 
 import { layoutProps } from "../interfaces/layout";
 import { variants } from "../helpers/variants";
+import { useEffect } from "react";
 
-const Layout = (props: layoutProps) => {
-  const { metadata, type } = props;
+const Layout = ({ children, metadata, type }: layoutProps) => {
   const { title, description, slug, date } = metadata;
 
   return (
     <>
       <SEO title={title} description={description} slug={slug} date={date} />
       <Header />
-      <AnimatePresence exitBeforeEnter>
-        <motion.div
-          className={`mx-auto container ${
-            type === "post"
-              ? "w-3/5 flex flex-col items-center justify-start"
-              : "w-full"
-          }`}
-          variants={variants}
-          initial="hidden"
-          animate="show"
-          exit="exit"
-        >
-          {props.children}
-        </motion.div>
-      </AnimatePresence>
+      <div
+        className={`mx-auto container 
+        ${
+          type === "post"
+            ? "max-w-5xl flex flex-col items-center justify-center"
+            : "w-full "
+        }
+         `}
+      >
+        {children}
+      </div>
       <Footer />
     </>
   );

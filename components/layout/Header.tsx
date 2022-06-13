@@ -30,7 +30,7 @@ const Header = () => {
       return (
         <button
           onClick={() => setTheme("light")}
-          className="xs:w-9 xs:h-9 w-10 h-10 ml-2 rounded-lg border-2 flex items-center justify-center"
+          className="xs:w-9 xs:h-9 w-10 h-10 ml-2 rounded-lg bg-zinc-900  hover:border-zinc-700 hover:border-2  flex items-center justify-center"
         >
           <BsFillSunFill />
         </button>
@@ -39,7 +39,7 @@ const Header = () => {
       return (
         <button
           onClick={() => setTheme("dark")}
-          className="xs:w-9 xs:h-9 w-10 h-10 ml-2 rounded-lg border-2 flex items-center justify-center"
+          className="xs:w-9 xs:h-9 w-10 h-10 ml-2 flex items-center justify-center rounded-lg bg-zinc-100 hover:border-2 hover:border-zinc-300"
         >
           <BsFillMoonFill />
         </button>
@@ -48,7 +48,7 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full backdrop-blur-sm z-50">
+    <div className="w-full sticky backdrop-blur-sm z-50">
       <div className="xs:w-11/12 sm:w-11/12 md:w-11/12 lg:max-w-6xl mx-auto h-24 flex items-center justify-between">
         {isMounted && (
           <Link href="/">
@@ -67,11 +67,9 @@ const Header = () => {
             {routes.map((item, i) => (
               <Link key={i} href={item.path}>
                 <span
-                  className={`uppercase mx-2 text-sm cursor-pointer text-black  dark:text-stone-500
-                  
-                  ${
+                  className={`uppercase mx-2 text-sm cursor-pointer text-zinc-600 hover:text-zinc-800 dark:text-stone-400 dark:hover:text-stone-300  ${
                     pathname.includes(item.path)
-                      ? "font-bold dark:text-stone-300"
+                      ? "dark:text-stone-100 font-bold"
                       : "font-medium"
                   }`}
                 >
