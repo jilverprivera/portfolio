@@ -27,7 +27,7 @@ const SinglePost = ({ source, frontmatter }: PostProps) => {
         </span>
         <h1 className="text-4xl text-center font-bold">{frontmatter.title}</h1>
       </div>
-      <div className="flex flex-col items-center justify-center px-6">
+      <div className="max-w-5xl flex flex-col items-center justify-center">
         <MDXRemote {...source} components={MDXComponents} />
       </div>
     </Layout>

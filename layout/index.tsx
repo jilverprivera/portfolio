@@ -17,7 +17,7 @@ const Layout = ({ children, metadata, type }: layoutProps) => {
       <SEO title={title} description={description} slug={slug} date={date} />
       <Header />
       <div
-        className={`mx-auto container 
+        className={`mx-auto 
         ${
           type === "post"
             ? "max-w-5xl flex flex-col items-center justify-center"
