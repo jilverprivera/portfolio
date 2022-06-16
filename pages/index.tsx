@@ -9,7 +9,6 @@ import Banner from "../components/Banner";
 import { getAllFilesMetadata } from "../lib/mdx";
 import LatestPost from "../components/LatestPost";
 import LatestProjects from "../components/LatestProjects";
-import About from "../components/About";
 
 interface Props {
   posts: Post[];
