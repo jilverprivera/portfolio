@@ -1,18 +1,18 @@
-import SectionTitle from "./layout/SectionTitle";
-import ProjectCard from "./ProjectCard";
-
-import { Projects, Project } from "../interfaces/projects";
+import { Project, Projects } from "../interfaces/projects";
+import { motion } from "framer-motion";
+import SectionTitle from "../layout/components/SectionTitle";
+import LatestProjectsCard from "./LatestProjectsCard";
 
 const LatestProjects = ({ projects }: Projects) => {
   return (
-    <div className="relative max-w-6xl min-h-screen flex flex-col items-start justify-start mx-auto">
+    <motion.section>
       <SectionTitle title="Latest Projects" type="projects" path="/portfolio" />
-      <div className="w-full">
-        {projects.map((project: Project) => (
-          <ProjectCard key={project.slug} {...project} />
+      <section className="lg:min-h-screen lg:max-w-screen-xl mx-auto grid lg:grid-cols-5 gap-4">
+        {projects.map((item: Project) => (
+          <LatestProjectsCard key={item.slug} {...item} />
         ))}
-      </div>
-    </div>
+      </section>
+    </motion.section>
   );
 };
 

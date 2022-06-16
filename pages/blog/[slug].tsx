@@ -21,13 +21,14 @@ const SinglePost = ({ source, frontmatter }: PostProps) => {
         date: frontmatter.date,
       }}
     >
-      <div className=" w-full pb-6 flex flex-col items-center justify-center mb-10 border-b-2 border-gray-200 dark:border-stone-700">
-        <span className="text-md text-center text-gray-500 dark:text-stone-400 font-semibold mb-3">
+      <div className=" w-full pb-6 flex flex-col items-center justify-center">
+        <span className="text-sm tracking-wide text-center text-gray-500 dark:text-stone-400 font-semibold">
           {frontmatter.date}
         </span>
-        <h1 className="text-4xl text-center font-bold">{frontmatter.title}</h1>
+        <h1 className="text-3xl text-center font-bold">{frontmatter.title}</h1>
+        <hr className="w-24 mt-8 border-t-2 mx-auto" />
       </div>
-      <div className="max-w-5xl flex flex-col items-center justify-center">
+      <div className="mt-8 prose sm:prose-sm lg:prose-lg mx-auto">
         <MDXRemote {...source} components={MDXComponents} />
       </div>
     </Layout>

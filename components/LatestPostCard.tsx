@@ -3,7 +3,7 @@ import { BsArrowRight } from "react-icons/bs";
 
 import { Post } from "../interfaces/posts";
 
-const PostCard = ({ date, tags, slug, description, title }: Post) => {
+const LatestPostCard = ({ date, tags, slug, description, title }: Post) => {
   return (
     <div className="cursor-grab xs:min-h-fit sm:min-h-fit post-card mr-10  lg:post-card h-96 rounded-xl  p-6 bg-white dark:bg-zinc-800">
       <span className="text-sm  text-gray-400">{date}</span>
@@ -29,4 +29,4 @@ const PostCard = ({ date, tags, slug, description, title }: Post) => {
   );
 };
 
-export default PostCard;
+export default LatestPostCard;

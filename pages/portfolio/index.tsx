@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { BsArrowRight } from "react-icons/bs";
+// import { BsArrowRight } from "react-icons/bs";
 
 import { getAllFilesMetadata } from "../../lib/mdx";
 
@@ -22,11 +22,11 @@ const Portfolio = ({ projects }: Projects) => {
         date: null,
       }}
     >
-      <div className="w-full principal grid grid-cols-3">
+      <div className="w-full grid lg:grid-cols-3 place-items-center">
         {projects.map((project: Project, index: number) => (
           <Link href={`/portfolio/${project.slug}`} key={project.slug}>
             <a
-              className="relative overflow-hidden"
+              className="relative"
               onMouseEnter={() => setCurrentHover(index)}
               onMouseLeave={() => setCurrentHover(null)}
             >
@@ -35,7 +35,7 @@ const Portfolio = ({ projects }: Projects) => {
                 alt={project.title}
                 width={512}
                 height={360}
-                layout="responsive"
+                // layout="responsive"
                 objectFit="cover"
               />
               <AnimatePresence exitBeforeEnter>

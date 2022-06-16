@@ -1,56 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
 
-.polygon {
-  position: relative;
-  width: 100px;
-  height: 110px;
-  margin: 0px 15px;
-  clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.polygon-wrapper {
-  position: relative;
-  width: 95px;
-  height: 105px;
-  clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.principal {
-  min-height: calc(100vh - 6rem);
-}
-
-.bg-project-info {
-  background-color: rgba(0, 0, 0, 0.5);
-  height: 355px;
-}
-
-.latest-post {
-  min-height: calc(50vh + 100px);
-}
-.post-card {
-  min-width: 420px;
-}
-
-.project-card {
-  border-bottom: 1px solid #b9b9b9;
-}
-
-.project-card:last-child {
-  border-bottom: none;
-}
-
-.project-description {
-  width: 600px;
-}
-
-.self-container {
-  min-width: 600px;
+@layer utilities {
+  .square {
+    aspect-ratio: 1/1;
+  }
+  .pj-info {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
 }

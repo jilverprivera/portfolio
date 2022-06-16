@@ -10,8 +10,7 @@ const SectionTitle = ({ title, type, path }: Props) => {
   return (
     <div
       className="
-      max-w-screen-xl
-    mx-auto flex items-center justify-between mt-6 mb-12
+      max-w-7xl border-2    mx-auto flex items-center justify-between mt-10 mb-5
     xs:w-11/12 xs:flex-col
     sm:w-11/12 sm:flex-col
     md:w-11/12 md:flex-row
@@ -28,7 +27,7 @@ const SectionTitle = ({ title, type, path }: Props) => {
       </h2>
       <div className="flex flex-col items-center justify-center">
         <span className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-          View all {type}
+          View all
         </span>
         <Link href={path}>
           <a className="text-base text-zinc-600 hover:text-zinc-800 cursor-pointer dark:text-zinc-400 dark:hover:text-zinc-300 duration-200">

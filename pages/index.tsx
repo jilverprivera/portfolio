@@ -9,6 +9,7 @@ import Banner from "../components/Banner";
 import { getAllFilesMetadata } from "../lib/mdx";
 import LatestPost from "../components/LatestPost";
 import LatestProjects from "../components/LatestProjects";
+import About from "../components/About";
 
 interface Props {
   posts: Post[];
@@ -27,8 +28,8 @@ const Home: NextPage<Props> = ({ posts, projects }) => {
       }}
     >
       <Banner />
-
-      {/* <LatestPost posts={posts} /> */}
+      {/* <About /> */}
+      <LatestPost posts={posts} />
       <LatestProjects projects={projects} />
     </Layout>
   );
@@ -44,7 +45,7 @@ export async function getStaticProps() {
     .sort((a: any, b: any) => {
       return new Date(b.date).getTime() - new Date(a.date).getTime();
     })
-    .slice(0, 6);
+    .slice(0, 4);
 
   const sortedPosts = posts
     .sort((a: any, b: any) => {

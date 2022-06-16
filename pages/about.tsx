@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
-import { Awards, Education, Experience, Skills } from "../components/about";
+// import { Awards, Education, Experience, Skills } from "../components/about";
 import Layout from "../layout";
 
 const types = [
@@ -64,10 +64,10 @@ const About = () => {
             ))}
           </div>
           <AnimatePresence exitBeforeEnter>
-            {selected === "awards" && <Awards />}
+            {/* {selected === "awards" && <Awards />}
             {selected === "education" && <Education />}
             {selected === "experience" && <Experience />}
-            {selected === "skills" && <Skills />}
+            {selected === "skills" && <Skills />} */}
           </AnimatePresence>
         </div>
       </div>

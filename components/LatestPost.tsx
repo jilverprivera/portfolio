@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-import PostCard from "./PostCard";
-import SectionTitle from "./layout/SectionTitle";
+import LatestPostCard from "./LatestPostCard";
+import SectionTitle from "../layout/components/SectionTitle";
 
 import { Blog, Post } from "../interfaces/posts";
 
@@ -29,7 +29,7 @@ const LatestPost = ({ posts }: Blog) => {
           className="w-full xs:px-2 lg:px-0 mx-auto flex flew-row items-center justify-start"
         >
           {posts.map((post: Post) => (
-            <PostCard key={post.slug} {...post} />
+            <LatestPostCard key={post.slug} {...post} />
           ))}
         </motion.div>
       </div>

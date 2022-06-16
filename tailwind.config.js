@@ -19,9 +19,9 @@ module.exports = {
         secondary: "#FCDA69",
       },
       fontFamily: {
-        sans: ["Cairo", ...fontFamily.sans],
+        sans: ["IBM Plex Sans", ...fontFamily.sans],
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

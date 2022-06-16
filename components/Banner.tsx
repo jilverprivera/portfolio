@@ -1,17 +1,15 @@
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
-import { Link as NavLink } from "react-scroll";
 
 import { networks } from "../helpers/networks";
 
 const Banner = () => {
   return (
-    <div className="principal relative lg:max-w-6xl flex flex-col xs:items-center md:items-center lg:items-start justify-center mx-auto">
+    <div className="principal relative lg:max-w-screen-xl flex flex-col xs:items-center md:items-center lg:items-start justify-center mx-auto">
       <div className="w-full flex xs:flex-col-reverse sm:flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-between mx-auto">
         <div className="flex flex-col lg:items-start md:items-center justify-start md:justify-center">
           <h1 className="text-black dark:text-white xs:font-semibold md:font-bold lg:font-bold  xs:text-2xl sm:text-3xl md:text-4xl lg:text-4xl sm:text-center xs:text-center md:text-center lg:text-left xs:mt-8 md:mt-8 mb-5">
-            I&apos;m Jilver Pacheco
+            Jilver Pacheco
           </h1>
           <h2 className="xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xs:text-center sm:text-center md:text-center lg:text-left font-bold mb-5 text-gray-500 dark:text-stone-200">
             <Typewriter
@@ -33,12 +31,12 @@ const Banner = () => {
             </p>
           </div>
         </div>
-        <div className="overflow-hidden rounded-full xs:w-6/12 sm:w-4/12 md:w-3/12 lg:w-3/12 border-2 flex items-center justify-center">
+        <div className="square rounded-full">
           <Image
             src={`/image.webp`}
             alt="Jilver Pacheco"
-            width={282}
-            height={362}
+            width={384}
+            height={512}
           />
         </div>
       </div>
@@ -66,12 +64,10 @@ const Banner = () => {
           </a>
         ))}
       </div>
-
       <button className="xs:flex sm:flex md:hidden lg:hidden border-2 flex items-center justify-center w-36 text-violet-800 dark:text-yellow-500 my-16 rounded-lg py-1.5 px-2 text-lg border-violet-800 dark:border-yellow-500">
         Get my resume
       </button>
-
-      <div className="absolute bottom-5 left-2/4 -translate-x-2/4 xs:hidden sm:hidden md:hidden lg:flex flex-col items-center justify-center">
+      {/* <div className="absolute bottom-5 left-2/4 -translate-x-2/4 xs:hidden sm:hidden md:hidden lg:flex flex-col items-center justify-center">
         <span className="mb-2 text-sm">Scroll Down</span>
         <NavLink
           to="latest-projects"
@@ -95,7 +91,9 @@ const Banner = () => {
             }}
           />
         </NavLink>
-      </div>
+      </div> */}
+      {/* <Image src="/world.svg" alt="world" width={1280} height={497} />{" "} */}
+      {/* <World mapColor="red" countryColor="black" width="1280" height="497" /> */}
     </div>
   );
 };

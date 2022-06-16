@@ -7,9 +7,9 @@ import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 import { Logo } from "./Logo";
 
 const routes = [
-  { path: "/about", name: "About Me" },
-  { path: "/portfolio", name: "Portfolio" },
+  { path: "/about", name: "About" },
   { path: "/blog", name: "Blog" },
+  { path: "/portfolio", name: "Portfolio" },
 ];
 
 const Header = () => {
@@ -48,8 +48,8 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full sticky backdrop-blur-sm z-50">
-      <div className="xs:w-11/12 sm:w-11/12 md:w-11/12 lg:max-w-6xl mx-auto h-24 flex items-center justify-between">
+    <div className="w-full h-24 backdrop-blur-sm z-50">
+      <div className=" h-24 flex items-center justify-between  mx-auto ">
         {isMounted && (
           <Link href="/">
             <a>
@@ -63,7 +63,7 @@ const Header = () => {
           </Link>
         )}
         <div className="flex items-center justify-center">
-          <div className="xxs:hidden xs:hidden md:hidden lg:flex items-center justify-center ">
+          <div className="xxs:hidden xs:hidden md:flex lg:flex items-center justify-center ">
             {routes.map((item, i) => (
               <Link key={i} href={item.path}>
                 <span
