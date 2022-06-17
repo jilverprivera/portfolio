@@ -25,6 +25,8 @@ const Presentation = () => {
           <a
             key={index}
             href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex mr-5 items-center justify-start"
           >
             <span
