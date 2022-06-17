@@ -10,7 +10,7 @@ const SectionTitle = ({ title, type, path }: Props) => {
   return (
     <div
       className="
-      max-w-7xl border-2    mx-auto flex items-center justify-between mt-10 mb-5
+    max-w-screen-xl mx-auto flex items-center justify-between my-10
     xs:w-11/12 xs:flex-col
     sm:w-11/12 sm:flex-col
     md:w-11/12 md:flex-row

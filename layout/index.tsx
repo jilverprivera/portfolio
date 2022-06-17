@@ -12,9 +12,7 @@ const Layout = ({ children, metadata, type }: layoutProps) => {
       <SEO title={title} description={description} slug={slug} date={date} />
       <Header />
       <div
-        className={`mx-auto ${
-          type === "post" ? "max-w-6xl mt-8 dark:prose-zinc" : "w-full"
-        }`}
+        className={`mx-auto ${type === "post" ? "max-w-5xl mt-8" : "w-full"}`}
       >
         {children}
       </div>
