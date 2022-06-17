@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
-import SKILLS from "../../data/skills.json";
-import { variants } from "../../helpers/variants";
+import SKILLS from "../data/skills.json";
+import { variants } from "../helpers/variants";
 
 const Skills = () => {
   return (

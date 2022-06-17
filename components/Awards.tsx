@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
-import AWARDS from "../../data/awards.json";
-import { variants } from "../../helpers/variants";
+import AWARDS from "../data/awards.json";
+import { variants } from "../helpers/variants";
 
 const Awards = () => {
   return (

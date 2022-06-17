@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
-import EXPERIENCE from "../../data/experience.json";
-import { variants } from "../../helpers/variants";
+import EXPERIENCE from "../data/experience.json";
+import { variants } from "../helpers/variants";
 
 const Experience = () => {
   return (

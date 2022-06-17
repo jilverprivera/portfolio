@@ -16,24 +16,28 @@ const LatestPost = ({ posts }: Blog) => {
   }, []);
 
   return (
-    <div
-      id="latest-posts"
-      className="bg-slate-100 dark:bg-zinc-900 overflow-hidden w-full"
+    <motion.div
+      className="bg-slate-100 dark:bg-zinc-900 overflow-hidden w-full pb-16"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
     >
-      <div className="max-w-7xl mx-auto latest-post flex flex-col items-center justify-between mb-16">
-        <SectionTitle title="Latest Posts" type="posts" path="/blog" />
+      <SectionTitle title="Latest Posts" type="posts" path="/blog" />
+
+      <div className="max-w-screen-xl mx-auto">
         <motion.div
           drag="x"
           dragConstraints={{ right: 0, left: -currentWidth }}
           ref={ref}
-          className="w-full xs:px-2 lg:px-0 mx-auto flex flew-row items-center justify-start"
+          className="flex flew-row items-center justify-start"
         >
           {posts.map((post: Post) => (
             <LatestPostCard key={post.slug} {...post} />
           ))}
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

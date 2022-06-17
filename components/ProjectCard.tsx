@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { BsArrowRight } from "react-icons/bs";
 
 import { Project } from "../interfaces/projects";
 
-const LatestProjectsCard = ({
+const ProjectCard = ({
   categories,
   cover_image,
   slug,
@@ -12,9 +13,18 @@ const LatestProjectsCard = ({
   description,
   title,
   technologies,
+  index,
 }: Project) => {
   return (
-    <div className="col-span-5 grid grid-cols-5 gap-x-4 ">
+    <motion.div
+      initial={{ opacity: index ? 0 : 1 }}
+      animate={{
+        opacity: index ? 1 : 1,
+        transition: { delay: index ? index * 0.3 : 0 },
+      }}
+      exit={{ opacity: index ? 0 : 1 }}
+      className="col-span-5 grid grid-cols-6 gap-x-4 my-5"
+    >
       <div className="col-span-2 row-span-2">
         <Link href={`/portfolio/${slug}`}>
           <a>
@@ -29,7 +39,7 @@ const LatestProjectsCard = ({
           </a>
         </Link>
       </div>
-      <div className="col-span-3">
+      <div className="col-span-4">
         <div className="mb-1">
           {categories.map((subitem, i: number) => (
             <span key={i} className="text-sm mr-1.5">
@@ -59,8 +69,8 @@ const LatestProjectsCard = ({
           </a>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-export default LatestProjectsCard;
+export default ProjectCard;

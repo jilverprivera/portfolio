@@ -1,15 +1,20 @@
 import { Project, Projects } from "../interfaces/projects";
 import { motion } from "framer-motion";
 import SectionTitle from "../layout/components/SectionTitle";
-import LatestProjectsCard from "./LatestProjectsCard";
+import ProjectCard from "./ProjectCard";
 
 const LatestProjects = ({ projects }: Projects) => {
   return (
-    <motion.section>
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
       <SectionTitle title="Latest Projects" type="projects" path="/portfolio" />
-      <section className="lg:min-h-screen lg:max-w-screen-xl mx-auto grid lg:grid-cols-5 gap-4">
+      <section className="min-h-screen max-w-screen-xl mx-auto">
         {projects.map((item: Project) => (
-          <LatestProjectsCard key={item.slug} {...item} />
+          <ProjectCard key={item.slug} {...item} />
         ))}
       </section>
     </motion.section>
