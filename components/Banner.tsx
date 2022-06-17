@@ -7,6 +7,7 @@ const Banner = () => {
     <div className=" principal max-w-screen-xl mx-auto flex flex-row items-center justify-between">
       <Presentation />
       <Image
+        quality={100}
         className="square"
         src={`/image.webp`}
         alt="Jilver Pacheco"
