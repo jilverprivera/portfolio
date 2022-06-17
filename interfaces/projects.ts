@@ -10,4 +10,5 @@ export interface Project {
   categories: string[];
   technologies: string[];
   slug: string;
+  index?: number | null;
 }
