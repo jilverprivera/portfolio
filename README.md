@@ -1,36 +1,32 @@
-<h1 align="center">
-    jilverpacheco.vercel.app
-</h1>
+# Personal website
 
-### About 🧾
+[>> Website URL <<](https://jilverpacheco.vercel.app)
 
-Personal website where you'll find information about me and things that I like to do.
-
-### Technologies 🔧
+## Technologies
 
 - Content: [MDX](https://github.com/mdx-js/mdx)
 - Deployment: [Vercel](https://vercel.com)
-- Framework: [Next.js](https://nextjs.org/)
+- Framework: [Next | TypeScript](https://nextjs.org/)
 - Styling: [Tailwind CSS](https://tailwindcss.com/)
 
-### Overview 👀
+## Overview
 
 - `components/*` - Application components.
 - `data/*` - MDX data (post, projects) and json data.
 - `helpers/*` - Variants and networks data.
 - `layout/*` - Layout high order component.
 - `lib/*` - A helpful utilities for MDX components.
-- `pages/*` - All static pages.
+- `pages/*` - All website pages.
 - `pages/blog/*` - Static pre-rendered blog pages using MDX.
 - `pages/portfolio/*` - Static pre-rendered project pages using MDX.
-- `public/*` - icons, resume, images.
+- `public/*` - resume, images.
 - `styles/*` - Global.css with Tailwind config.
 
-### Running on local 💻
+## Running on local
 
-```
-- git clone https://github.com/jilverprivera/portfolio
-- navigate to the folder app | cd jilver-portfolio
+```git
+- git clone: https://github.com/jilverprivera/portfolio
+- navigate to the folder app | cd portfolio
 - npm install
 - npm run dev
 ```
