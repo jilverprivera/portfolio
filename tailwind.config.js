@@ -4,7 +4,7 @@ module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
-    "./layouts/**/*.tsx",
+    "./layout/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: "class",
   theme: {
@@ -14,10 +14,6 @@ module.exports = {
       ...screens,
     },
     extend: {
-      colors: {
-        primary: "#7248F6",
-        secondary: "#FCDA69",
-      },
       fontFamily: {
         sans: ["IBM Plex Sans", ...fontFamily.sans],
       },
