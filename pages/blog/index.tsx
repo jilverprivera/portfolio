@@ -24,20 +24,18 @@ const Blog = ({ posts }: Blog) => {
         date: null,
       }}
     >
-      <div className="w-3/6 min-h-screen mx-auto ">
-        <div className="mt-2">
-          <h1 className="font-bold text-6xl">Blog</h1>
-        </div>
-        <div className=" relative w-full mb-8 mx-auto ">
+      <div className="max-w-screen-xl principal mx-auto">
+        <h1 className="font-bold text-6xl my-12">Blog</h1>
+        <div className="relative w-2/4 mb-8">
           <input
             aria-label="Search articles"
             type="text"
             onChange={(e) => setSearchedArticles(e.target.value)}
             placeholder="Search articles"
-            className="mt-16 relative w-full px-4 py-2 text-gray-900  bg-white border border-gray-200 rounded-md dark:border-neutral-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-800 dark:text-gray-100"
+            className="relative w-full mx-auto px-4 py-2 text-gray-900  bg-white border border-gray-200 rounded-md dark:border-neutral-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-800 dark:text-gray-100"
           />
           <svg
-            className="mt-16 absolute w-5 h-5 text-gray-400 right-3 top-3 dark:text-gray-300"
+            className="absolute w-5 h-5 text-gray-400 right-3 top-2/4 -translate-y-2/4 dark:text-gray-300"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"

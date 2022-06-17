@@ -6,7 +6,7 @@ import { MDXRemote } from "next-mdx-remote";
 import { MDXComponents } from "../../components/mdx/Components";
 import { Post } from "../../interfaces/posts";
 interface PostProps {
-  source: any;
+  source?: any;
   frontmatter: Post;
 }
 
@@ -22,14 +22,18 @@ const SinglePost = ({ source, frontmatter }: PostProps) => {
       }}
     >
       <div className=" w-full pb-6 flex flex-col items-center justify-center">
-        <span className="text-sm tracking-wide text-center text-gray-500 dark:text-stone-400 font-semibold">
+        <span className="text-sm tracking-wide font-semibold mb-2 text-center text-gray-500 dark:text-stone-300 ">
           {frontmatter.date}
         </span>
-        <h1 className="text-3xl text-center font-bold">{frontmatter.title}</h1>
-        <hr className="w-24 mt-8 border-t-2 mx-auto" />
+        <h1 className="text-4xl text-center font-bold">{frontmatter.title}</h1>
+        <hr className="w-32 mt-8 border-t-2 mx-auto" />
       </div>
-      <div className="mt-8 prose sm:prose-sm lg:prose-lg mx-auto">
+      {/* <div className="mt-8 mx-auto lg:prose-lg prose dark:prose-invert ">
         <MDXRemote {...source} components={MDXComponents} />
+      </div> */}
+      <div className="w-full my-16 flex flex-col items-center justify-center">
+        <h1 className="text-5xl font-bold mb-3">Comming Soon 😎</h1>
+        <h2 className="text-lg font-regular">Fixing little details...</h2>
       </div>
     </Layout>
   );
