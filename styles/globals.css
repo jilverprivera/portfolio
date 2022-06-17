@@ -4,10 +4,17 @@
 @tailwind variants;
 
 @layer utilities {
+  .principal {
+    min-height: calc(100vh - 176px);
+  }
   .square {
     aspect-ratio: 1/1;
   }
-  .pj-info {
-    background-color: rgba(0, 0, 0, 0.7);
+  .blog-square {
+    min-width: 384px;
+    max-width: 384px;
   }
+}
+.under {
+  z-index: -1;
 }
