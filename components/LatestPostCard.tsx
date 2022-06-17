@@ -18,8 +18,8 @@ const LatestPostCard = ({ date, tags, slug, description, title }: Post) => {
       <p className="leading-7 text-base mb-8">{description}</p>
 
       <Link href={`/blog/${slug}`}>
-        <a className="flex items-center justify-start">
-          <span className="text-md mr-2">Read more</span>
+        <a className="flex items-center justify-start text-md mr-2">
+          Read more
           <span className="w-10 h-10 rounded-full flex items-center justify-center bg-black text-white">
             <BsArrowRight />
           </span>
