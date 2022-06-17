@@ -1,14 +1,14 @@
-import Link from "next/link";
+import Image from "next/image";
 import type { NextPage } from "next";
 
 import { Post } from "../interfaces/posts";
 import { Project } from "../interfaces/projects";
+import { getAllFilesMetadata } from "../lib/mdx";
 
 import Layout from "../layout";
-import Banner from "../components/Banner";
-import { getAllFilesMetadata } from "../lib/mdx";
 import LatestPost from "../components/LatestPost";
 import LatestProjects from "../components/LatestProjects";
+import Presentation from "../components/Presentation";
 
 interface Props {
   posts: Post[];
@@ -26,8 +26,16 @@ const Home: NextPage<Props> = ({ posts, projects }) => {
         date: null,
       }}
     >
-      <Banner />
-      {/* <About /> */}
+      <div className=" principal max-w-screen-xl mx-auto flex flex-row items-center justify-between">
+        <Presentation />
+        <Image
+          className="square"
+          src={`/image.webp`}
+          alt="Jilver Pacheco"
+          width={284}
+          height={412}
+        />
+      </div>
       <LatestPost posts={posts} />
       <LatestProjects projects={projects} />
     </Layout>
@@ -44,7 +52,7 @@ export async function getStaticProps() {
     .sort((a: any, b: any) => {
       return new Date(b.date).getTime() - new Date(a.date).getTime();
     })
-    .slice(0, 4);
+    .slice(0, 3);
 
   const sortedPosts = posts
     .sort((a: any, b: any) => {
