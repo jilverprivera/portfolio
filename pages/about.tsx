@@ -1,6 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { useTheme } from "next-themes";
 import { useState } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
+import { World } from "../components/svg/world";
 // import { Awards, Education, Experience, Skills } from "../components/about";
 import Layout from "../layout";
 
@@ -13,7 +15,7 @@ const types = [
 
 const About = () => {
   const [selected, setSelected] = useState("skills");
-
+  const { theme } = useTheme();
   return (
     <Layout
       type={"website"}
@@ -24,10 +26,18 @@ const About = () => {
         date: null,
       }}
     >
-      <div className="max-w-6xl mx-auto principal grid grid-cols-6 gap-8">
+      <div className="absolute top-44 left-0 under">
+        <World
+          width="1512"
+          height="582"
+          mapColor={theme === "light" ? "#fafafa" : "#141414"}
+          countryColor={theme === "light" ? "#E7E5E4" : "#303030"}
+        />
+      </div>
+      <div className="z-50 max-w-6xl mx-auto principal grid grid-cols-6 gap-8">
         <div className="col-span-3 flex flex-col items-start justify-center">
           <h1 className="text-5xl font-bold mb-16">Some words...</h1>
-          <h2 className="font-medium text-2xl mb-7">
+          <h2 className="font-medium text-2xl mb-7 text-stone-200">
             Hey!, I&apos;m Jilver Pacheco and I develop things for the Internet.
           </h2>
           <p className="font-normal leading-7">
