@@ -1,14 +1,11 @@
-import Image from "next/image";
-import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
-// import { BsArrowRight } from "react-icons/bs";
-
 import { getAllFilesMetadata } from "../../lib/mdx";
 
 import { Project, Projects } from "../../interfaces/projects";
 
 import Layout from "../../layout";
 import { useState } from "react";
+import ProjectCard from "../../components/ProjectCard";
+import { AnimatePresence } from "framer-motion";
 
 const Portfolio = ({ projects }: Projects) => {
   const [currentHover, setCurrentHover] = useState<number | null>(null);
@@ -22,54 +19,14 @@ const Portfolio = ({ projects }: Projects) => {
         date: null,
       }}
     >
-      <div className="w-full grid lg:grid-cols-3 place-items-center">
-        {projects.map((project: Project, index: number) => (
-          <Link href={`/portfolio/${project.slug}`} key={project.slug}>
-            <a
-              className="relative"
-              onMouseEnter={() => setCurrentHover(index)}
-              onMouseLeave={() => setCurrentHover(null)}
-            >
-              <Image
-                src={project.cover_image}
-                alt={project.title}
-                width={512}
-                height={360}
-                // layout="responsive"
-                objectFit="cover"
-              />
-              <AnimatePresence exitBeforeEnter>
-                {currentHover === index && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.4 }}
-                    className="absolute top-0 left-0 right-0 p-4 flex flex-col items-center justify-center bg-project-info"
-                  >
-                    <div>
-                      {project.categories.map((item, i) => (
-                        <span key={i} className="text-sm text-white mr-2">
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                    <h2 className="text-xl font-bold text-center text-white">
-                      {project.title}
-                    </h2>
-                    <div>
-                      {project.technologies.map((item, i) => (
-                        <span key={i} className="text-sm text-white mr-2">
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </a>
-          </Link>
-        ))}
+      <div className="max-w-screen-xl mx-auto">
+        <h1 className="font-bold text-6xl my-12">Portfolio</h1>
+
+        <AnimatePresence exitBeforeEnter>
+          {projects.map((project: Project, i: number) => (
+            <ProjectCard key={project.slug} {...project} index={i} />
+          ))}
+        </AnimatePresence>
       </div>
     </Layout>
   );

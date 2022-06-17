@@ -1,9 +1,15 @@
 import React from "react";
+import { Project } from "../../interfaces/projects";
 import { Props } from "../../interfaces/staticProps";
 import Layout from "../../layout";
 import { getFileBySlug, getFiles } from "../../lib/mdx";
 
-const Project = ({ source, frontmatter }: any) => {
+interface ProjectProps {
+  source?: any;
+  frontmatter: Project;
+}
+
+const Project = ({ source, frontmatter }: ProjectProps) => {
   return (
     <Layout
       type={"website"}
@@ -14,8 +20,9 @@ const Project = ({ source, frontmatter }: any) => {
         date: frontmatter.date,
       }}
     >
-      <div className="w-full principal flex items-center justify-center">
-        <h1 className="text-5xl font-bold">Currently working on it</h1>
+      <div className="w-full principal flex flex-col items-center justify-center">
+        <h1 className="text-5xl font-bold mb-3">Comming Soon 😎</h1>
+        <h2 className="text-lg font-regular">Fixing little details...</h2>
       </div>
     </Layout>
   );
