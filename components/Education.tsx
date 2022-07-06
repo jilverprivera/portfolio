@@ -1,45 +1,28 @@
-import { motion } from "framer-motion";
-import Link from "next/link";
-
-import EDUCATION from "../data/education.json";
-import { variants } from "../helpers/variants";
+import education from "../data/education.json";
 
 const Education = () => {
   return (
-    <div className="self-container mt-12 ml-3">
-      <motion.div
-        variants={variants}
-        initial="hidden"
-        animate="show"
-        exit="exit"
-      >
-        {EDUCATION.map((item, index) => (
-          <motion.div
-            key={index}
-            className="mb-4 flex items-center justify-between"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ delay: 0.2 * index }}
+    <div className="mt-12">
+      <h2 className="text-2xl pb-12">Education</h2>
+      <div>
+        {education.map((item, i) => (
+          <div
+            key={i}
+            className="relative border-l-2 border-b-2 last:border-b-0 px-5 pt-12 pb-6"
           >
-            <div className="flex flex-col align-start justify-center">
-              <h3 className="text-lg font-semibold">{item.title}</h3>
-              <span className="text-sm font-normal">
-                {item.academy} | {item.location}
+            <div className="absolute top-2 -left-5 flex items-center justify-start w-full h-6">
+              <span className="bg-white text-xs tracking-wider border-2 rounded-full px-2 py-1">
+                {item.date}
               </span>
-              <span className="text-sm font-normal">{item.date}</span>
+              <span className="ml-6 text-xs text-stone-500">
+                {item.academy}
+              </span>
             </div>
-            <a
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="h-full p-2.5 bg-violet-800 dark:bg-yellow-500 dark:text-black dark:font-semibold text-white text-sm rounded"
-            >
-              View Certificate
-            </a>
-          </motion.div>
+            <h3 className=" text-xl font-medium">{item.title}</h3>
+            <h3 className=" text-sm">{item.location}</h3>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };
