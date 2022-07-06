@@ -1,14 +1,24 @@
-[
+[ 
     {
-        "items": ["Robotics"]
+        "name": "Soft skills", 
+        "skills": ["Team Worker", "Emphatic", "Ooen Mindedness", "Collaborative"]
+    }  ,
+    {
+        "name": "Web Development",
+        "skills": ["React.JS", "Next.JS", "ES6+", "Node.JS", "Express.JS", "GIT", "CI/CD"]
     },
     {
-        "items": ["Web Development", "Mobile Development"]
+        "name": "Mobile Development",
+        "skills":["React Native"]
     },
     {
-        "items": [ "GIT", "CI/CD", "Testing"]
+        "name": "Testing",
+        "skills":["Jest", "Cypress", "TDD"]
     },
     {
-        "items": ["Team worker", "Emphatic", "Open Mindedness", "Collaborative"]
+        "name": "Engineering",
+        "skills":["Robotics", "CAD Design", "Control Systems", "Industrial Automation"]
     }
 ]
+
+
