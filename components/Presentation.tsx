@@ -8,11 +8,11 @@ const Presentation = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="w-4/5 text-black dark:text-white font-medium  xs:text-2xl sm:text-3xl md:text-4xl lg:text-4xl sm:text-center xs:text-center md:text-center lg:text-left xs:mt-8 md:mt-8 mb-5"
+        className=" w-4/5 text-black dark:text-white font-medium  xs:text-2xl sm:text-3xl md:text-4xl lg:text-4xl sm:text-center xs:text-center md:text-center lg:text-left xs:mt-8 md:mt-8 mb-5"
       >
         Hi, I&apos;m Jilver Pacheco and I develop things for the Internet.
       </motion.h1>
-      <p className="font-normal leading-7 w-3/5">
+      <p className="font-extralight leading-7 w-3/5">
         I started in this wonderful world in 2020 when I built my first desktop
         app to store the documents of different academic courses of
         <strong> Electronic Engineering</strong>. Now, as a
