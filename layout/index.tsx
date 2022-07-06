@@ -1,7 +1,7 @@
 import SEO from "../seo";
 
 import { layoutProps } from "../interfaces/layout";
-import { domAnimation, LazyMotion, m } from "framer-motion";
+import { domAnimation, LazyMotion, m, motion } from "framer-motion";
 import PAGE_TRANSITION from "../utils/pageTransitionVariants";
 import { useWindow } from "../hooks/useWindow";
 
@@ -24,9 +24,17 @@ const layoutMotionProps = {
     },
   },
 };
+
 const Layout = ({ children, metadata, type }: layoutProps) => {
   const { title, description, slug, date } = metadata;
   const { mousePosition } = useWindow();
+  const cursorVariants = {
+    default: {
+      x: mousePosition.x,
+      y: mousePosition.y,
+      // mixBlendMode: "difference",
+    },
+  };
 
   return (
     <>
@@ -39,6 +47,11 @@ const Layout = ({ children, metadata, type }: layoutProps) => {
           {children}
         </m.main>
       </LazyMotion>
+      <motion.div
+        className="fixed top-0 left-0 -translate-x-2/4 -translate-y-2/4 h-6 w-6 rounded-full bg-zinc-50 dark:bg-zinc-800"
+        variants={cursorVariants}
+        animate="default"
+      />
     </>
   );
 };
