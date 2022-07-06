@@ -29,7 +29,7 @@ const Header = () => {
 
   return (
     <motion.header
-      className={`w-full relative border-2 duration-500 flex items-center z-50 flex-col bg-white border-b-2 border-gray-50`}
+      className={`w-full relative border-2 duration-500 flex items-center flex-col bg-white border-b-2 border-gray-50`}
     >
       <nav
         className={`lg:max-w-screen-xl w-full h-24 flex items-center justify-between mx-auto`}
