@@ -1,6 +1,6 @@
 import { Project, Projects } from "../interfaces/projects";
 import { motion } from "framer-motion";
-import SectionTitle from "../layout/components/SectionTitle";
+import SectionTitle from "./layout/SectionTitle";
 import ProjectCard from "./ProjectCard";
 
 const LatestProjects = ({ projects }: Projects) => {

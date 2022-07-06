@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 import LatestPostCard from "./LatestPostCard";
-import SectionTitle from "../layout/components/SectionTitle";
+import SectionTitle from "./layout/SectionTitle";
 
 import { Blog, Post } from "../interfaces/posts";
 
