@@ -32,13 +32,12 @@ const Layout = ({ children, metadata, type }: layoutProps) => {
   const { mousePosition } = useWindow();
 
   const { cursor } = useContext(AppContext);
-  console.log(cursor);
 
   const cursorVariants = {
     default: {
       x: mousePosition.x - 12,
       y: mousePosition.y - 12,
-      zIndex: -1,
+      // zIndex: -1,
     },
     text: {
       x: mousePosition.x - 24,
