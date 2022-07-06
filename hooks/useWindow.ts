@@ -9,7 +9,11 @@ export const useWindow = () => {
       setIsRendering(true);
 
       const handleMouseMove = (e: any) => {
-        console.log(e);
+        console.log(e.clientX, e.clientY);
+        setMousePosition({
+          x: e.clientX,
+          y: e.clientY,
+        });
       };
 
       const handleScreenResize = () => {
@@ -33,13 +37,3 @@ export const useWindow = () => {
 
   return { isRendering, windowSize, mousePosition };
 };
-
-// const handleScroll = event => {
-//     console.log('window.scrollY', window.scrollY);
-//   };
-
-//   window.addEventListener('scroll', handleScroll);
-
-//   return () => {
-//     window.removeEventListener('scroll', handleScroll);
-//   };
