@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
@@ -9,6 +9,7 @@ import { useWindow } from "../../hooks/useWindow";
 
 import PAGE_TRANSITION from "../../utils/pageTransitionVariants";
 import { Theme } from "./Theme";
+import { AppContext } from "../../context/AppContext";
 
 const routes = [
   { path: "/about", name: "About" },
@@ -20,6 +21,7 @@ const routes = [
 const Header = () => {
   const { pathname } = useRouter();
   const { theme } = useTheme();
+  const { cursorEnter, cursorLeave } = useContext(AppContext);
   const [isMounted, setIsMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -36,7 +38,10 @@ const Header = () => {
       >
         {isMounted && (
           <Link href="/">
-            <a>
+            <a
+              onMouseEnter={() => cursorEnter()}
+              onMouseLeave={() => cursorLeave()}
+            >
               <Logo
                 width="60"
                 height="60"
@@ -49,6 +54,8 @@ const Header = () => {
         <div
           className="h-7 w-9 flex items-center justify-center hover:cursor-pointer"
           onClick={() => setIsOpen(!isOpen)}
+          onMouseEnter={() => cursorEnter()}
+          onMouseLeave={() => cursorLeave()}
         >
           <div
             className={`before:duration-300 after:duration-300 relative w-full h-1 ${
