@@ -7,6 +7,7 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 
 import "../styles/globals.css";
+import { AppProvider } from "../context/AppContext";
 
 const MyApp = ({
   Component,
@@ -16,11 +17,13 @@ const MyApp = ({
   return (
     <ThemeProvider enableSystem={true} attribute="class">
       <SessionProvider session={session}>
-        <Header />
-        <AnimatePresence exitBeforeEnter initial={false}>
-          <Component {...pageProps} key={router.asPath} />
-        </AnimatePresence>
-        <Footer />
+        <AppProvider>
+          <Header />
+          <AnimatePresence exitBeforeEnter initial={false}>
+            <Component {...pageProps} key={router.asPath} />
+          </AnimatePresence>
+          <Footer />
+        </AppProvider>
       </SessionProvider>
     </ThemeProvider>
   );
