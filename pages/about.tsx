@@ -3,7 +3,6 @@ import { useTheme } from "next-themes";
 import { useState } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import { World } from "../components/svg/world";
-// import { Awards, Education, Experience, Skills } from "../components/about";
 import Layout from "../layout";
 
 const types = [
@@ -56,29 +55,6 @@ const About = () => {
               <BsArrowUpRight />
             </span>
           </div>
-        </div>
-        <div className="col-span-3 flex flex-col items-center justify-start mt-10  z-0">
-          <div className="w-full grid grid-cols-4 gap-2 ">
-            {types.map((item, index) => (
-              <button
-                key={index}
-                onClick={() => setSelected(item.selector)}
-                className={`hover:text-black hover:font-medium uppercase text-sm cursor-pointer p-1 duration-300 rounded  ${
-                  item.selector === selected
-                    ? "font-bold"
-                    : "font-normal text-gray-600 dark:text-white"
-                } `}
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
-          <AnimatePresence exitBeforeEnter>
-            {/* {selected === "awards" && <Awards />}
-            {selected === "education" && <Education />}
-            {selected === "experience" && <Experience />}
-            {selected === "skills" && <Skills />} */}
-          </AnimatePresence>
         </div>
       </div>
     </Layout>
