@@ -4,6 +4,8 @@ import { layoutProps } from "../interfaces/layout";
 import { domAnimation, LazyMotion, m, motion } from "framer-motion";
 import PAGE_TRANSITION from "../utils/pageTransitionVariants";
 import { useWindow } from "../hooks/useWindow";
+import { useContext, useState } from "react";
+import { AppContext } from "../context/AppContext";
 
 const layoutMotionProps = {
   initial: { opacity: 0, y: -20 },
@@ -28,11 +30,23 @@ const layoutMotionProps = {
 const Layout = ({ children, metadata, type }: layoutProps) => {
   const { title, description, slug, date } = metadata;
   const { mousePosition } = useWindow();
+
+  const { cursor } = useContext(AppContext);
+  console.log(cursor);
+
   const cursorVariants = {
     default: {
-      x: mousePosition.x,
-      y: mousePosition.y,
-      // mixBlendMode: "difference",
+      x: mousePosition.x - 12,
+      y: mousePosition.y - 12,
+      zIndex: -1,
+    },
+    text: {
+      x: mousePosition.x - 24,
+      y: mousePosition.y - 24,
+      height: 48,
+      width: 48,
+      zIndex: 1,
+      // backgroundColor: "red",
     },
   };
 
@@ -48,9 +62,11 @@ const Layout = ({ children, metadata, type }: layoutProps) => {
         </m.main>
       </LazyMotion>
       <motion.div
-        className="fixed top-0 left-0 -translate-x-2/4 -translate-y-2/4 h-6 w-6 rounded-full bg-zinc-50 dark:bg-zinc-800"
+        className={`pointer-events-none fixed top-0 left-0 -translate-x-2/4 -translate-y-2/4 h-6 w-6 rounded-full bg-zinc-50 dark:bg-zinc-800 ${
+          cursor === "text" ? "mix-blend-difference" : ""
+        }`}
         variants={cursorVariants}
-        animate="default"
+        animate={cursor}
       />
     </>
   );
