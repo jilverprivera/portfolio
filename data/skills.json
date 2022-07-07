@@ -1,11 +1,11 @@
 [ 
     {
         "name": "Soft skills", 
-        "skills": ["Team Worker", "Emphatic", "Ooen Mindedness", "Collaborative"]
+        "skills": ["Team Worker", "Emphatic", "Open Mindedness", "Collaborative"]
     }  ,
     {
         "name": "Web Development",
-        "skills": ["React.JS", "Next.JS", "ES6+", "Node.JS", "Express.JS", "GIT", "CI/CD"]
+        "skills": ["ES6+", "TypeScript", "React.JS", "Next.JS", "Node.JS", "Express.JS", "GIT", "CI/CD"]
     },
     {
         "name": "Mobile Development",
