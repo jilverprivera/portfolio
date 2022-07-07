@@ -8,7 +8,7 @@ const Banner = () => {
       <Presentation />
       <Image
         quality={100}
-        className="square"
+        className="square under"
         src={`/image.webp`}
         alt="Jilver Pacheco"
         width={284}
