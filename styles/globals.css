@@ -18,3 +18,16 @@
 .under {
   z-index: -1;
 }
+
+@layer base {
+  html {
+    @apply font-sans;
+  }
+  @font-face {
+    font-family: "Chillax";
+    src: url("../public/fonts/Chillax-Variable.ttf");
+    /* src: url("../asset/OpenSans/OpenSans-Medium.ttf"); */
+    font-weight: 400;
+    font-style: normal;
+  }
+}

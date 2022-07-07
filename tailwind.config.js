@@ -15,7 +15,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Muli", ...fontFamily.sans],
+        sans: ["Chillax", ...fontFamily.sans],
       },
     },
   },
