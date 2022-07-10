@@ -64,7 +64,7 @@ const Layout = ({ children, metadata, type }: layoutProps) => {
         </m.main>
       </LazyMotion>
       <motion.div
-        className={`pointer-events-none fixed top-0 left-0 rounded-full  ${
+        className={`pointer-events-none fixed lg:top-0 xl:top-0 lg:left-0 xl:left-0 rounded-full  ${
           cursor === "text"
             ? "mix-blend-difference dark:mix-blend-difference bg-zinc-50 dark:bg-zinc-800"
             : "bg-zinc-900 dark:bg-white"
