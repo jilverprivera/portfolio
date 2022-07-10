@@ -1,75 +1,48 @@
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { BsArrowRight } from "react-icons/bs";
 
 import { Project } from "../interfaces/projects";
+import { useContext } from "react";
+import { AppContext } from "../context/AppContext";
 
 const ProjectCard = ({
   categories,
   cover_image,
   slug,
-  date,
   description,
   title,
-  technologies,
-  index,
 }: Project) => {
+  const { cursorEnter, cursorLeave } = useContext(AppContext);
   return (
-    <motion.div
-      initial={{ opacity: index ? 0 : 1 }}
-      animate={{
-        opacity: index ? 1 : 1,
-        transition: { delay: index ? index * 0.3 : 0 },
-      }}
-      exit={{ opacity: index ? 0 : 1 }}
-      className="col-span-5 grid grid-cols-6 gap-x-4 my-5"
-    >
-      <div className="col-span-2 row-span-2">
-        <Link href={`/portfolio/${slug}`}>
-          <a>
-            <Image
-              className="hover:scale-105 duration-200"
-              src={cover_image}
-              alt={title}
-              width={512}
-              height={384}
-              objectFit="cover"
-            />
-          </a>
-        </Link>
-      </div>
-      <div className="col-span-4">
-        <div className="mb-1">
-          {categories.map((subitem, i: number) => (
-            <span key={i} className="text-sm mr-1.5">
-              {subitem}
-            </span>
-          ))}
-        </div>
-        <h2 className="text-3xl font-bold">{title}</h2>
-        <div className="mb-2 mt-1 flex flex-row">
-          <span>{date}</span>
-          <div className="ml-5">
-            {technologies.map((subitem, i) => (
-              <span key={i} className="text-sm mr-2">
-                {subitem}
+    <Link href={`/portfolio/${slug}`}>
+      <a
+        className="border-2 rounded-lg overflow-hidden border-zinc-200  dark:border-zinc-700"
+        onMouseEnter={() => cursorEnter()}
+        onMouseLeave={() => cursorLeave()}
+      >
+        <Image
+          alt={title}
+          src={cover_image}
+          objectFit="cover"
+          width={680}
+          height={480}
+          quality={100}
+        />
+        <div className="p-5">
+          <div>
+            {categories.map((item, i) => (
+              <span className="text-sm" key={i}>
+                {item}
               </span>
             ))}
           </div>
+          <h2 className="mb-3 text-2xl font-ClashGroteskMedium leading-8 tracking-tight">
+            {title}
+          </h2>
+          <p>{description}</p>
         </div>
-        <div className="w-4/5 leading-7 text-base">{description}</div>
-
-        <Link href={`/portfolio/${slug}`}>
-          <a className="flex flex-row items-center justify-start mt-5">
-            <span className="text-base mr-2">View Project</span>
-            <span className="w-10 h-10 rounded-full bg-black dark:bg-white flex flex-row items-center justify-center text-white dark:text-black text-xl">
-              <BsArrowRight />
-            </span>
-          </a>
-        </Link>
-      </div>
-    </motion.div>
+      </a>
+    </Link>
   );
 };
 

@@ -3,10 +3,10 @@ interface Props {
   width: string;
   height: string;
   bgColor: string;
-  initials: string;
+  initials?: string;
 }
 
-export const Logo = ({ width, height, bgColor, initials }: Props) => {
+export const Logo = ({ width, height, bgColor }: Props) => {
   return (
     <svg
       width={width}

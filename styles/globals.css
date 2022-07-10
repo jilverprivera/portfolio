@@ -5,29 +5,53 @@
 
 @layer utilities {
   .principal {
-    min-height: calc(100vh - 176px);
+    min-height: calc(100vh - 112px);
   }
   .square {
     aspect-ratio: 1/1;
   }
-  .blog-square {
-    min-width: 384px;
-    max-width: 384px;
+  .under {
+    z-index: -1;
   }
-}
-.under {
-  z-index: -1;
 }
 
 @layer base {
-  html {
-    @apply font-sans;
+  * {
+    font-family: "ClashGrotesk-Regular";
   }
   @font-face {
-    font-family: "Chillax";
-    src: url("../public/fonts/Chillax-Variable.ttf");
-    /* src: url("../asset/OpenSans/OpenSans-Medium.ttf"); */
+    font-family: "ClashGrotesk-Light";
+    src: url("../public/fonts/ClashGrotesk-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "ClashGrotesk-Regular";
+    src: url("../public/fonts/ClashGrotesk-Regular.ttf") format("truetype");
     font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "ClashGrotesk-Medium";
+    src: url("../public/fonts/ClashGrotesk-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "ClashGrotesk-Semibold";
+    src: url("../public/fonts/ClashGrotesk-Semibold.ttf") format("truetype");
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "ClashGrotesk-Bold";
+    src: url("../public/fonts/ClashGrotesk-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-display: swap;
     font-style: normal;
   }
 }

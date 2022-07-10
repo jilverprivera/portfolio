@@ -8,6 +8,10 @@ const root = process.cwd();
 export const getFiles = async (type: string) =>
   fs.readdirSync(path.join(root, "data", type));
 
+export const formatSlug = (slug: string) => {
+  return slug.replace(/\.(mdx|md)/, "");
+};
+
 export const getFileBySlug = async (type: string, slug: string) => {
   const mdxSource = fs.readFileSync(
     path.join(root, "data", type, `${slug}.mdx`),

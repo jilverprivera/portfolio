@@ -2,18 +2,14 @@
     {
         "name": "Soft skills", 
         "skills": ["Team Worker", "Emphatic", "Open Mindedness", "Collaborative"]
-    }  ,
-    {
-        "name": "Web Development",
-        "skills": ["ES6+", "TypeScript", "React.JS", "Next.JS", "Node.JS", "Express.JS", "GIT", "CI/CD"]
     },
     {
-        "name": "Mobile Development",
-        "skills":["React Native"]
+        "name": "Technical Skills",
+        "skills": ["ES6+", "TypeScript", "React.JS", "React Native", "Next.JS", "Node.JS", "Express.JS", "GIT", "CI/CD" ]
     },
     {
         "name": "Testing",
-        "skills":["Jest", "Cypress", "TDD"]
+        "skills":["Jest", "TDD"]
     },
     {
         "name": "Engineering",

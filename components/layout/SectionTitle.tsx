@@ -1,41 +1,18 @@
-import Link from "next/link";
-
 interface Props {
   title: string;
-  type: string;
-  path: string;
+  url?: string;
 }
-
-const SectionTitle = ({ title, type, path }: Props) => {
+const SectionTitle = ({ title, url }: Props) => {
   return (
     <div
-      className="
-    max-w-screen-xl mx-auto flex items-center justify-between my-10
-    xs:w-11/12 xs:flex-col
-    sm:w-11/12 sm:flex-col
-    md:w-11/12 md:flex-row
-    lg:w-full lg:flex-row"
+      className={` flex mb-10 ${
+        url
+          ? "xs:flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row items-center xs:justify-center sm:justify-center md:justify-between lg:justify-between xl:justify-between"
+          : "items-center jxs:justify-center sm:justify-center md:justify-start lg:justify-start xl:justify-start"
+      }`}
     >
-      <h2
-        className="text-4xl 
-      xs:font-bold 
-      sm:font-bold 
-      md:font-medium 
-      lg:font-semibold"
-      >
-        {title}
-      </h2>
-      <div className="flex flex-col items-center justify-center">
-        <span className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-          View all
-        </span>
-        <Link href={path}>
-          <a className="text-base text-zinc-600 hover:text-zinc-800 cursor-pointer dark:text-zinc-400 dark:hover:text-zinc-300 duration-200">
-            jilverpacheco.vercel.app
-            <span className="text-base font-bold">{path}</span>
-          </a>
-        </Link>
-      </div>
+      <h2 className="font-ClashGroteskMedium text-3xl">{title}</h2>
+      {url && <h3>{url}</h3>}
     </div>
   );
 };

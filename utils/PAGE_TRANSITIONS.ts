@@ -1,5 +1,5 @@
 const PAGE_TRANSITION = {
-  DURATION: 0.6,
+  DURATION: 0.4,
   EASE: [0.83, 0, 0.17, 1],
 };
 
