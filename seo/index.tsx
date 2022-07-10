@@ -8,7 +8,7 @@ const SEO = ({ title, date, description }: metadata) => {
   return (
     <Head>
       <title>{title}</title>
-      <meta lang="en" />
+      <link rel="icon" href="/favicon.ico" />
       <meta property="og:title" content={title} />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Jilver Pacheco Rivera" />

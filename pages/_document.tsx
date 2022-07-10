@@ -1,6 +1,5 @@
 import Document, {
   DocumentContext,
-  Head,
   Html,
   Main,
   NextScript,
@@ -15,11 +14,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
-        <Head>
-          <meta lang="en" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
+      <Html lang="en">
         <body>
           <Main />
           <NextScript />
