@@ -15,7 +15,11 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Chillax", ...fontFamily.sans],
+        ClashGroteskLight: ["ClashGrotesk-Light", ...fontFamily.sans],
+        ClashGroteskRegular: ["ClashGrotesk-Regular", ...fontFamily.sans],
+        ClashGroteskMedium: ["ClashGrotesk-Medium", ...fontFamily.sans],
+        ClashGroteskSemibold: ["ClashGrotesk-Semibold", ...fontFamily.sans],
+        ClashGroteskBold: ["ClashGrotesk-Bold", ...fontFamily.sans],
       },
     },
   },
