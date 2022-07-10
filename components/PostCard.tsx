@@ -22,7 +22,7 @@ const PostCard = ({ date, description, slug, tags, title }: Post) => {
             {tags.map((tag, i: number) => (
               <span
                 key={i}
-                className="mr-3  text-sm font-ClashGroteskMedium uppercase text-violet-700"
+                className="xs:mr-2 sm:mr-2 md:mr-3 lg:mr-3 xlmr-3 last:mr-0 text-sm font-ClashGroteskMedium uppercase text-violet-700"
               >
                 {tag}
               </span>
