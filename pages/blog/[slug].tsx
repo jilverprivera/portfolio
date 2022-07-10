@@ -2,15 +2,13 @@ import React from "react";
 import { Props } from "../../interfaces/staticProps";
 import Layout from "../../layout";
 import { getFileBySlug, getFiles } from "../../lib/mdx";
-import { MDXRemote } from "next-mdx-remote";
-import { MDXComponents } from "../../components/mdx/Components";
 import { Post } from "../../interfaces/posts";
 interface PostProps {
   source?: any;
   frontmatter: Post;
 }
 
-const SinglePost = ({ source, frontmatter }: PostProps) => {
+const Post = ({ source, frontmatter }: PostProps) => {
   return (
     <Layout
       type="post"
@@ -39,7 +37,7 @@ const SinglePost = ({ source, frontmatter }: PostProps) => {
   );
 };
 
-export default SinglePost;
+export default Post;
 
 export async function getStaticPaths() {
   const posts = await getFiles("posts");
