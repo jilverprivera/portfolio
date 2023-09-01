@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer utilities {
+  * {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  *::-webkit-scrollbar {
+    display: none;
+  }
+  body {
+    background-color: #0a0a0a;
+  }
+}
+
+@layer base {
+  :root {
+    --color-primary: #dcff50;
+    --color-secondary: #7b61ff;
+  }
+  .font-outline-2 {
+    -webkit-text-stroke: 2px #232323;
+  }
+  .font-outline-4 {
+    -webkit-text-stroke: 4px #232323;
+  }
+
+  .hovered {
+    font-weight: 600;
+  }
+}
+

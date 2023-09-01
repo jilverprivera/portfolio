@@ -1,0 +1,43 @@
+[
+  {
+    "company": "MarketXM",
+    "role": "Software Engineer",
+    "date": "Apr 2023 - Current",
+    "activities": [
+      "Take part in the collaborative evolution of a B2B platform aimed at optimizing the exchange and valuation of collateral through pre-determined agreements linking banks with investment funds, all powered by cutting-edge Blockchain technology.",
+      "Build an authentication provider to integrate the entire enterprise suite of products, using clean architecture principles and SOLID principles.",
+      "Further improve your back-end project by introducing a streamlined architecture, resulting in a remarkable 25% reduction in the time it takes to introduce new features."
+    ],
+    "technologies": ["React", "Node", "JavaScript", "TypeScript", "AWS", "Prisma ORM"]
+  },
+  {
+    "company": "Gigamonos",
+    "role": "Software developer",
+    "date": "Jan 2023 - Mar 2023",
+    "activities": [
+      "Participate in the development of a B2B platform focused on reducing the carbon footprint within the oil and gas sector. This involves creating a system that can effectively measure, quantify and produce detailed reports on emissions, which will ultimately guide the formulation of a strategic decarbonisation path.",
+      "Orchestrate the deployment of a CI/CD setup for both the back-end and front-end using AWS S3 and EC2, streamlining deployment processes."
+    ],
+    "technologies": ["React", "Python", "Flask", "AWS"]
+  },
+  {
+    "company": "Dagabot",
+    "role": "Electronic Engineer",
+    "date": "Feb 2022 - May 2022",
+    "activities": [
+      "Automate internal processes using a WordPress-based learning management system (LMS), update plugins to ensure smooth payment processing.",
+      "Train teachers and students to foster interest in robotics and logical thinking, and teach the use of specialized software in the creation of robotic routines."
+    ],
+    "technologies": ["WordPress", "Robotics", "C Language"]
+  },
+  {
+    "company": "DyCO Solutions",
+    "role": "Frontend Developer Jr",
+    "date": "Jul 2020 - Sep 2020",
+    "activities": [
+      " Development of a platform for the management of new artists using a virtual manager, incorporating scalable and integrable technologies to allow the addition of new functionalities in the future."
+    ],
+    "technologies": ["React", "Firebase", "Socket.io"]
+  }
+]
+
