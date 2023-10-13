@@ -8,7 +8,7 @@ const MyApp = ({ Component, pageProps: { session, ...pageProps }, router }: AppP
   const { pathname } = router
   return (
     <AppProvider>
-      {pathname === '/' && <Header />}
+      <Header />
       <AnimatePresence mode="wait">
         <Component {...pageProps} key={router.asPath} />
       </AnimatePresence>
