@@ -3,10 +3,12 @@ import { IReadTimeResults } from 'reading-time'
 export interface IFrontMatter {
   slug: string
   title: string
+  subTitle?: string
   description: string
   coverImage?: string
-  isPublished: boolean
-  finished: boolean
+  isPublished?: boolean
+  finished?: boolean
+  current?: boolean
   publishedAt: string
   category: string
   tags: string[]

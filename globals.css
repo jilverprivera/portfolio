@@ -12,7 +12,7 @@
     display: none;
   }
   body {
-    background-color: #0a0a0a;
+    background: #0a0a0a;
   }
 }
 
@@ -21,15 +21,131 @@
     --color-primary: #dcff50;
     --color-secondary: #7b61ff;
   }
-  .font-outline-2 {
-    -webkit-text-stroke: 2px #232323;
-  }
-  .font-outline-4 {
-    -webkit-text-stroke: 4px #232323;
+
+  .custom-body {
+    transform-style: preserve-3d;
   }
 
-  .hovered {
-    font-weight: 600;
+  .mask {
+    mask-image: url('./public/mask.svg');
+    mask-repeat: no-repeat;
+    mask-size: 64px;
+    background: var(--color-primary);
+    position: absolute;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    transform-style: preserve-3d;
+    margin-top: 25px;
+    margin-left: 25px;
+  }
+  .textContainer {
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
+  }
+
+  .textContainer p {
+    transition: all 0.4s;
+    line-height: 8vw;
+  }
+
+  .secondary3d {
+    transform: rotateX(-90deg) translateY(3.5vw);
+    transform-origin: bottom center;
+  }
+
+  .textContainer:hover {
+    transform: rotateX(90deg);
+  }
+
+  .textContainer:hover .secondary3d {
+    opacity: 1;
+  }
+
+  .textContainer:hover .primary3d {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  /* .double-body {
+    display: flex;
+    gap: 2rem; */
+  /* margin-top: 10vh; */
+  /* height: 45vw; */
+
+  .imageContainer {
+    &:nth-of-type(1) {
+      width: 66.66%;
+    }
+    &:nth-of-type(2) {
+      width: 33.33%;
+    }
+  }
+
+  &:nth-child(even) {
+    .imageContainer {
+      &:nth-of-type(1) {
+        width: 33.33%;
+      }
+      &:nth-of-type(2) {
+        width: 66.66%;
+      }
+    }
+  }
+
+  .modalContainer {
+    height: 350px;
+    width: 400px;
+    position: absolute;
+    background-color: white;
+    overflow: hidden;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modalSlider {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  .modal {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal img {
+    height: auto;
+  }
+
+  .cursor,
+  .cursorLabel {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #455ce9;
+    color: white;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 300;
+    pointer-events: none;
+  }
+
+  .cursorLabel {
+    background-color: transparent;
   }
 }
 

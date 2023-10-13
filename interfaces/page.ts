@@ -2,9 +2,13 @@ import { IFrontMatter } from 'interfaces'
 
 export interface IHomeProps {
   projects: IFrontMatter[]
+  newestProject: IFrontMatter
 }
 export interface IBlogPageProps {
   posts: IFrontMatter[]
+}
+export interface IPlaygroundPageProps {
+  playground: IFrontMatter[]
 }
 
 export interface IStaticProps {
