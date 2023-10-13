@@ -5,7 +5,7 @@ import { BsArrowUpRight } from 'react-icons/bs'
 export const Footer = (): JSX.Element => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
   return (
-    <footer className="w-full pt-32 pb-12 bg-neutral-900">
+    <footer className="w-full pt-32 pb-12 bg-neutral-950">
       <div className="max-w-screen-3xl w-11/12 mx-auto grid grid-cols-2 gap-24">
         <p className="text-7xl text-neutral-300">Find me on</p>
         <div className="grid">

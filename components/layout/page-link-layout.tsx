@@ -1,13 +1,14 @@
 import { Link } from 'react-scroll'
 
 type props = {
+  textColor: any
   section: string
   label: string
   duration: number
   offset: number
 }
 
-export const PageLink = ({ section, label, duration = 1000, offset }: props) => {
+export const PageLink = ({ textColor, section, label, duration = 1000, offset }: props) => {
   return (
     <Link
       to={section}
@@ -16,7 +17,8 @@ export const PageLink = ({ section, label, duration = 1000, offset }: props) => 
       offset={offset}
       duration={duration}
       activeClass="hovered"
-      className="text-neutral-400 hover:cursor-pointer hover:text-neutral-200"
+      className="hover:cursor-pointer"
+      style={{ color: textColor }}
     >
       {label}
     </Link>
