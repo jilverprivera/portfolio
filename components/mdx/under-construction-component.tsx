@@ -6,7 +6,7 @@ import { IFrontMatter } from 'interfaces'
 export const UnderConstruction = ({ gitHubUrl, hostUrl, externalUrl }: IFrontMatter) => {
   return (
     <section className="relative w-full overflow-hidden">
-      <div className="max-w-screen-xl xs:w-11/12 sm:w-11/12 md:w-11/12 lg:w-11/12 xl:w-full  mx-auto grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 xs:gap-0 sm:gap-0 md:gap-12 lg:gap-12 xl:gap-12  pt-32 pb-16">
+      <div className="max-w-screen-2xl xs:w-11/12 sm:w-11/12 md:w-11/12 lg:w-11/12 xl:w-full  mx-auto grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 xs:gap-0 sm:gap-0 md:gap-12 lg:gap-12 xl:gap-12  pt-32 pb-16">
         <div className="w-full col-start-1 flex items-start justify-center flex-col">
           <p className="text-5xl font-semibold mb-6 leading-tight text-zinc-900 dark:text-zinc-50">Under construction...</p>
           <p className="text-lg font-normal leading-relaxed mb-3 text-zinc-700 dark:text-zinc-300">
