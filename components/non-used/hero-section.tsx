@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { AnimatedLetters } from 'components/ui'
+import { AnimatedLetters } from 'components/non-used/animated-letters-component'
 import { LETTER_ANIMATION_PROPS } from 'utils/transitions'
 
 export const HeroSection = () => {
