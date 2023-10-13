@@ -4,7 +4,7 @@ import SEO from 'seo'
 import { ILayout } from 'interfaces'
 // import { useRouter } from 'next/router'
 
-export const Layout = ({ children, metadata }: ILayout) => {
+export const LayoutHOC = ({ children, metadata }: ILayout) => {
   const { title, description, slug, date } = metadata
   const targetRef = useRef<HTMLDivElement | null>(null)
 

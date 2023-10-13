@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
-import { Layout } from 'components/layout'
+import { LayoutHOC } from 'components/layout'
 import { MDXNavigation, PAGE_TYPE, MDXComponents } from 'components/mdx'
 import { getAllFilesMetadata, getFileBySlug, getFiles } from 'lib/mdx'
 import { ISlugProps, IFrontMatter, IStaticProps } from 'interfaces'
@@ -45,7 +45,7 @@ const Post: NextPage<ISlugProps> = ({ source, frontmatter, readingTime, prev, ne
   const { publishedAt, title, slug, description, tags } = frontmatter
 
   return (
-    <Layout
+    <LayoutHOC
       metadata={{
         title: `${title} –– Jilver Pacheco`,
         description,
@@ -76,7 +76,7 @@ const Post: NextPage<ISlugProps> = ({ source, frontmatter, readingTime, prev, ne
         <MDXRemote {...source} components={MDXComponents} />
       </section>
       <MDXNavigation next={next} prev={prev} typePage={PAGE_TYPE.POST} />
-    </Layout>
+    </LayoutHOC>
   )
 }
 

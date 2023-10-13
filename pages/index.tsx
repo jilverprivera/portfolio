@@ -1,5 +1,5 @@
 import type { GetStaticProps, NextPage } from 'next'
-import { Layout } from 'components/layout'
+import { LayoutHOC } from 'components/layout'
 import { HeroSection, DescriptionSection, MyWorksSection } from 'components/sections'
 import { getAllFilesMetadata } from 'lib/mdx'
 import { IFrontMatter, IHomeProps } from 'interfaces'
@@ -15,11 +15,11 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home: NextPage<IHomeProps> = ({ projects, newestProject }) => {
   return (
-    <Layout metadata={{ title: 'Jilver Pacheco', description: 'Software developer + electronic engineer' }}>
+    <LayoutHOC metadata={{ title: 'Jilver Pacheco', description: 'Software developer + electronic engineer' }}>
       <HeroSection />
       <DescriptionSection />
       <MyWorksSection projects={projects} newestProject={newestProject} />
-    </Layout>
+    </LayoutHOC>
   )
 }
 
