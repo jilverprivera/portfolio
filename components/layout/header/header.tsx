@@ -67,8 +67,15 @@ export const Header = () => {
 
   return (
     <motion.div className="fixed right-8 top-8 z-50 rounded-3xl bg-white">
-      <motion.div className="max-w-md w-full h-full relative" variants={menu} animate={isActive ? 'open' : 'closed'} initial="closed">
-        <AnimatePresence>{isActive && <Navigation setIsActive={setIsActive} />}</AnimatePresence>
+      <motion.div
+        className="max-w-md w-full h-full relative"
+        variants={menu}
+        animate={isActive ? 'open' : 'closed'}
+        initial="closed"
+      >
+        <AnimatePresence>
+          {isActive && <Navigation setIsActive={setIsActive} />}
+        </AnimatePresence>
       </motion.div>
       <NavButton isActive={isActive} setIsActive={setIsActive} />
     </motion.div>

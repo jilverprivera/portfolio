@@ -9,7 +9,17 @@ interface projectResumeProps {
 }
 
 export const ProjectResume = ({ project, children }: projectResumeProps) => {
-  const { slug, coverImage, title, description, tags, technologies, category, collaborators, position } = project
+  const {
+    slug,
+    coverImage,
+    title,
+    description,
+    tags,
+    technologies,
+    category,
+    collaborators,
+    position
+  } = project
   const { fullScreenFeature } = useContext(AppContext)
 
   const blockScrolling = (e: KeyboardEvent) => {
@@ -33,9 +43,17 @@ export const ProjectResume = ({ project, children }: projectResumeProps) => {
   }, [fullScreenFeature])
 
   return (
-    <div className={`pointer-events-none fixed inset-0 opacity-0 bg-white z-50 visual-${slug} overflow-scroll`}>
+    <div
+      className={`pointer-events-none fixed inset-0 opacity-0 bg-white z-50 visual-${slug} overflow-scroll`}
+    >
       <div className="h-[60vh] overflow-hidden">
-        <Image src={coverImage ?? ''} alt={title} width={1920} height={1080} objectPosition={'center'} />
+        <Image
+          src={coverImage ?? ''}
+          alt={title}
+          width={1920}
+          height={1080}
+          objectPosition={'center'}
+        />
       </div>
       <div className=" w-full  py-16">
         <div className="max-w-screen-2xl w-11/12 mx-auto text-neutral-900 space-y-8">

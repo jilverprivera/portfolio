@@ -12,7 +12,15 @@ export const PROJECTS: IFrontMatterV2[] = [
     published: true,
     publishedAt: 'Oct 25, 2023',
     tags: ['Startup', 'Fintech', 'SaaS', 'Software Architecture'],
-    technologies: ['AWS', 'Prisma', 'Postgres', 'React', 'TypeScript', 'Kafka', 'Express'],
+    technologies: [
+      'AWS',
+      'Prisma',
+      'Postgres',
+      'React',
+      'TypeScript',
+      'Kafka',
+      'Express'
+    ],
     collaborators: ['Cesar Torres', 'Nayru Alexandra Ramirez'],
     position: ['Software Engineer']
   },
@@ -27,7 +35,15 @@ export const PROJECTS: IFrontMatterV2[] = [
     published: true,
     publishedAt: 'Oct 25, 2023',
     tags: ['Startup', 'Fintech', 'SaaS', 'Software Architecture'],
-    technologies: ['AWS', 'Prisma', 'Postgres', 'React', 'TypeScript', 'Kafka', 'Express'],
+    technologies: [
+      'AWS',
+      'Prisma',
+      'Postgres',
+      'React',
+      'TypeScript',
+      'Kafka',
+      'Express'
+    ],
     collaborators: ['Cesar Torres', 'Nayru Alexandra Ramirez'],
     position: ['Software Engineer']
   },
@@ -57,7 +73,13 @@ export const PROJECTS: IFrontMatterV2[] = [
     published: true,
     publishedAt: 'Oct 7, 2023',
     tags: ['Hardware Design', 'Mobile Development', 'IoT Prototyping'],
-    technologies: ['Amazon Alexa', 'Firebase', 'NextJS', 'React Native', 'TypeScript']
+    technologies: [
+      'Amazon Alexa',
+      'Firebase',
+      'NextJS',
+      'React Native',
+      'TypeScript'
+    ]
   }
 ]
 

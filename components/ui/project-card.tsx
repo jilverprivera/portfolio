@@ -29,10 +29,21 @@ export const ProjectCard = ({ slug, coverImage }: IFrontMatterV2) => {
       transition={{ duration: 0.75, ease: 'easeOut' }}
       onClick={() => handleSetFullscreenFeature(slug)}
       className={`absolute top-0 left-0 inset-0 h-full w-full rounded-2xl transition-opacity overflow-hidden cursor-pointer ${
-        inViewFeature === slug ? 'active-card opacity-100' : 'pointer-events-none opacity-0 hidden '
+        inViewFeature === slug
+          ? 'active-card opacity-100'
+          : 'pointer-events-none opacity-0 hidden '
       }`}
     >
-      {coverImage && <Image src={coverImage} alt={slug} width={1920} height={1080} objectFit="contain" className="hover:scale-105 duration-300" />}
+      {coverImage && (
+        <Image
+          src={coverImage}
+          alt={slug}
+          width={1920}
+          height={1080}
+          objectFit="contain"
+          className="hover:scale-105 duration-300"
+        />
+      )}
     </motion.div>
   )
 }

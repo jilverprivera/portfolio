@@ -29,13 +29,15 @@ export const DescriptionSection = () => {
             setIsHovered(false)
           }}
         >
-          I create products that meet my needs, If they work for you, feel free to use, modify them and give me your feedback on my networks.
+          I create products that meet my needs, If they work for you, feel free
+          to use, modify them and give me your feedback on my networks.
         </p>
       </motion.div>
       <div className="mx-auto max-w-screen-2xl w-11/12 h-full flex flex-col items-start justify-center cursor-default space-y-4 text-neutral-900">
         <h3 className="text-2xl">Who I am?</h3>
         <p className="text-8xl  font-medium">
-          I&apos;m a <span className="text-primary">Software Developer</span> with strong focus on producing high quality & impactful digital
+          I&apos;m a <span className="text-primary">Software Developer</span>{' '}
+          with strong focus on producing high quality & impactful digital
           experiences.
         </p>
       </div>

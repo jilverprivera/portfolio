@@ -2,7 +2,7 @@
   "singleQuote": true,
   "semi": false,
   "tabWidth": 2,
-  "printWidth": 150,
+  "printWidth": 80,
   "bracketSpacing": true,
   "editor.detectIndentation": true,
   "editor.formatOnSave": true,

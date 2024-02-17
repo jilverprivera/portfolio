@@ -3,7 +3,11 @@ import { AnimatePresence } from 'framer-motion'
 import { AppProvider } from 'context'
 import 'globals.css'
 
-const MyApp = ({ Component, pageProps: { session, ...pageProps }, router }: AppProps) => {
+const MyApp = ({
+  Component,
+  pageProps: { session, ...pageProps },
+  router
+}: AppProps) => {
   return (
     <AppProvider>
       <AnimatePresence mode="sync">

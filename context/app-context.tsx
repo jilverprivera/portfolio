@@ -5,8 +5,12 @@ export const AppContext = createContext({} as IContext)
 
 export const AppProvider = ({ children }: IContextProvider) => {
   const [inViewFeature, setInViewFeature] = useState<string | null>(null)
-  const [fullScreenFeature, setFullScreenFeature] = useState<string | null>(null)
-  const [lastFullScreenFeature, setLastFullScreenFeature] = useState<string | null>(null)
+  const [fullScreenFeature, setFullScreenFeature] = useState<string | null>(
+    null
+  )
+  const [lastFullScreenFeature, setLastFullScreenFeature] = useState<
+    string | null
+  >(null)
   const [isOpen, setIsOpen] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
 

@@ -7,7 +7,8 @@ export const PortfolioTitle = ({ project }: { project: IFrontMatterV2 }) => {
   const { title, slug } = project
   const ref = useRef<HTMLParagraphElement>(null)
   const isInView = useInView(ref, { margin: '-40% 0px -40% 0px' })
-  const { setInViewFeature, inViewFeature, handleSetFullscreenFeature } = useContext(AppContext)
+  const { setInViewFeature, inViewFeature, handleSetFullscreenFeature } =
+    useContext(AppContext)
 
   useEffect(() => {
     if (isInView) setInViewFeature(slug)
@@ -23,7 +24,9 @@ export const PortfolioTitle = ({ project }: { project: IFrontMatterV2 }) => {
   return (
     <h3
       ref={ref}
-      className={`feature-title text-5xl font-bold my-48 leading-normal ${isInView ? 'text-neutral-900' : 'text-neutral-300'}`}
+      className={`feature-title text-5xl font-bold my-48 leading-normal ${
+        isInView ? 'text-neutral-900' : 'text-neutral-300'
+      }`}
       onClick={() => handleSetScreenFeature()}
     >
       {title}

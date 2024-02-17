@@ -11,7 +11,9 @@ export const NavButton = ({ isActive, setIsActive }: IButtonProps) => {
   const { setIsHovered } = useContext(AppContext)
   return (
     <div
-      className={`absolute top-0 right-0 w-28 h-12 cursor-pointer  overflow-hidden duration-200 ${!isActive ? 'rounded-2xl' : 'rounded-3xl'} `}
+      className={`absolute top-0 right-0 w-28 h-12 cursor-pointer  overflow-hidden duration-200 ${
+        !isActive ? 'rounded-2xl' : 'rounded-3xl'
+      } `}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

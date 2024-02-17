@@ -17,7 +17,11 @@ export const AnimatedLetters = ({ title, variants, color }: props) => {
       animate="animate"
     >
       {titleArr.map((letter, index) => (
-        <motion.span key={index} className="whitespace-nowrap inline-block" variants={LETTER_ANIMATION_PROPS}>
+        <motion.span
+          key={index}
+          className="whitespace-nowrap inline-block"
+          variants={LETTER_ANIMATION_PROPS}
+        >
           {letter}
         </motion.span>
       ))}

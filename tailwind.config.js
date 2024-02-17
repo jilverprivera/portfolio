@@ -1,7 +1,11 @@
 const { fontFamily, screens } = require('tailwindcss/defaultTheme')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './pages/**/*.{ts,tsx}'],
+  content: [
+    './src/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './pages/**/*.{ts,tsx}'
+  ],
   theme: {
     extend: {
       colors: {
@@ -13,6 +17,9 @@ module.exports = {
       }
     }
   },
-  plugins: [require('@tailwindcss/typography'), require('tailwindcss-text-stroke')]
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('tailwindcss-text-stroke')
+  ]
 }
 

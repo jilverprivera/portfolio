@@ -1,3 +1,4 @@
-export * from './useEscapePress';
-export * from './useHidePageOverflow';
-export * from './useMousePosition';
+export * from './useEscapePress'
+export * from './useHidePageOverflow'
+export * from './useMousePosition'
+
