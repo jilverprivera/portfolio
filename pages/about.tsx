@@ -1,11 +1,11 @@
-import { LayoutHOC } from 'components/layout'
-import React from 'react'
+import { Layout } from 'components/layout/layout'
+import { DescriptionSection } from 'components/sections/about'
 
 const About = () => {
   return (
-    <LayoutHOC metadata={{ title: 'Jilver Pacheco', description: 'Software developer + electronic engineer' }}>
-      <p>about</p>
-    </LayoutHOC>
+    <Layout metadata={{ title: 'Jilver Pacheco', description: 'Software developer + electronic engineer' }}>
+      <DescriptionSection />
+    </Layout>
   )
 }
 

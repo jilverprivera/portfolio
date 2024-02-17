@@ -11,9 +11,9 @@
   *::-webkit-scrollbar {
     display: none;
   }
-  body {
+  /* body {
     background: #0a0a0a;
-  }
+  } */
 }
 
 @layer base {
@@ -49,11 +49,11 @@
 
   .textContainer p {
     transition: all 0.4s;
-    line-height: 8vw;
+    line-height: 4vw;
   }
 
   .secondary3d {
-    transform: rotateX(-90deg) translateY(3.5vw);
+    transform: rotateX(-90deg) translateY(2vw);
     transform-origin: bottom center;
   }
 
@@ -147,5 +147,9 @@
   .cursorLabel {
     background-color: transparent;
   }
-}
 
+  .linkContainer {
+    perspective: 192px;
+    perspective-origin: bottom;
+  }
+}

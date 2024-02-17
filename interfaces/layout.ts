@@ -15,11 +15,11 @@ export interface IMetaData {
   path?: string | null
 }
 
-export interface ISlugProps {
-  source: any
-  frontmatter: IFrontMatter
-  readingTime?: IReadTimeResults
-  prev?: IFrontMatter | undefined
-  next?: IFrontMatter | undefined
-}
+// export interface ISlugProps {
+//   source: any
+//   frontmatter: IFrontMatter
+//   readingTime?: IReadTimeResults
+//   prev?: IFrontMatter | undefined
+//   next?: IFrontMatter | undefined
+// }
 

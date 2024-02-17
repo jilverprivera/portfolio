@@ -8,6 +8,8 @@ export interface IContext {
   handleSetFullscreenFeature: (feature: string | null) => void
   isOpen: boolean
   setIsOpen: (arg: boolean) => void
+  isHovered: boolean
+  setIsHovered: (arg: boolean) => void
 }
 
 export interface IContextProvider {

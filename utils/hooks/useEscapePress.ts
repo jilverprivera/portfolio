@@ -5,9 +5,7 @@ export const useEscapePress = (onEscapePress: () => void) => {
     const onKeyUp = (ev: KeyboardEvent) => {
       if (ev.key === 'Escape') onEscapePress()
     }
-
     window.addEventListener('keyup', onKeyUp)
-
     return () => {
       window.removeEventListener('keyup', onKeyUp)
     }

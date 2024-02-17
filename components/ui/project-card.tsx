@@ -1,98 +1,39 @@
-import { useRef } from 'react'
+import { useContext, useEffect } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
-import { IFrontMatter } from 'interfaces'
+import { AppContext } from 'context'
+import { IFrontMatterV2 } from 'interfaces'
+import { motion, useAnimation } from 'framer-motion'
 
-type props = {
-  projects: IFrontMatter[]
-  reversed?: boolean
-  start: number
-  finish?: number
-}
+export const ProjectCard = ({ slug, coverImage }: IFrontMatterV2) => {
+  const { inViewFeature, handleSetFullscreenFeature } = useContext(AppContext)
+  const controls = useAnimation()
 
-export const ProjectCard = ({ projects, reversed, start, finish }: props) => {
-  const firstImage = useRef<any>(null)
-  const secondImage = useRef<any>(null)
-  let requestAnimationFrameId: number | null = null
-  let xPercent = reversed ? 100 : 0
-  let currentXPercent = reversed ? 100 : 0
-  const speed = 0.15
-
-  const manageMouseMove = ({ clientX }: MouseEvent) => {
-    xPercent = (clientX / window.innerWidth) * 100
-    if (!requestAnimationFrameId) {
-      requestAnimationFrameId = window.requestAnimationFrame(animate)
+  useEffect(() => {
+    const animations = {
+      hidden: { opacity: 0.25, scale: 1, y: -20, height: '0%' },
+      visible: { opacity: 1, scale: 1, y: 0, height: '100%' },
+      exit: { opacity: 0, height: '0%', y: 20 }
     }
-  }
-
-  const animate = () => {
-    const xPercentDelta = xPercent - currentXPercent
-    currentXPercent = currentXPercent + xPercentDelta * speed
-    const firstImagePercent = 66.66 - currentXPercent * 0.33
-    const secondImagePercent = 33.33 + currentXPercent * 0.33
-
-    if (finish) {
-      firstImage.current.style.width = `${firstImagePercent}%`
-    }
-    if (finish) {
-      secondImage.current.style.width = `${secondImagePercent}%`
-    }
-
-    if (Math.round(xPercent) == Math.round(currentXPercent)) {
-      window.cancelAnimationFrame(requestAnimationFrameId ?? 0)
-      requestAnimationFrameId = null
+    const isCurrent = inViewFeature === slug
+    if (isCurrent) {
+      controls.start(animations.visible)
     } else {
-      window.requestAnimationFrame(animate)
+      controls.start(animations.hidden)
     }
-  }
+  }, [inViewFeature, slug, controls])
 
   return (
-    <div
-      onMouseMove={(e: any) => {
-        manageMouseMove(e)
-      }}
-      className="flex gap-8 pb-24"
+    <motion.div
+      animate={controls}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.75, ease: 'easeOut' }}
+      onClick={() => handleSetFullscreenFeature(slug)}
+      className={`absolute top-0 left-0 inset-0 h-full w-full rounded-2xl transition-opacity overflow-hidden cursor-pointer ${
+        inViewFeature === slug ? 'active-card opacity-100' : 'pointer-events-none opacity-0 hidden '
+      }`}
     >
-      <div ref={firstImage} className="imageContainer">
-        <Link href={`/works/${projects[start].slug}`} className="relative ">
-          <a>
-            <Image
-              src={`${projects[start].coverImage}`}
-              width={1920}
-              height={1080}
-              alt={projects[start].slug}
-              className="rounded-md hover:rounded-xl duration-500 overflow-hidden"
-            />
-          </a>
-        </Link>
-        <div className=" text-neutral-200">
-          <h3 className="text-xl font-medium text-neutral-300">{projects[start].title}</h3>
-          <p className="text-lg text-neutral-400">{projects[start].description}</p>
-          <p className="text-base text-neutral-500">{projects[start].publishedAt}</p>
-        </div>
-      </div>
-
-      {finish && (
-        <div ref={secondImage} className="imageContainer">
-          <Link href={`/works/${projects[1].slug}`} className="relative ">
-            <a>
-              <Image
-                src={`${projects[finish].coverImage}`}
-                width={1920}
-                height={1080}
-                alt={projects[finish].slug}
-                className="rounded-md hover:rounded-xl duration-500 overflow-hidden"
-              />
-            </a>
-          </Link>
-          <div className=" ">
-            <h3 className="text-xl font-medium text-neutral-300">{projects[finish].title}</h3>
-            <p className="text-lg text-neutral-400">{projects[finish].description}</p>
-            <p className="text-base text-neutral-500">{projects[finish].publishedAt}</p>
-          </div>
-        </div>
-      )}
-    </div>
+      {coverImage && <Image src={coverImage} alt={slug} width={1920} height={1080} objectFit="contain" className="hover:scale-105 duration-300" />}
+    </motion.div>
   )
 }
 

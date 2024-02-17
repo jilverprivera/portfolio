@@ -5,12 +5,10 @@ export const hidePageOverflow = () => {
   document.documentElement.style.setProperty('padding-right', scrollbarWidth)
   document.documentElement.classList.add('overflow-clip')
 }
-
 export const showPageOverflow = () => {
   document.documentElement.style.removeProperty('padding-right')
   document.documentElement.classList.remove('overflow-clip')
 }
-
 export const useHidePageOverflow = (hide: boolean) => {
   useEffect(() => {
     if (hide) {
