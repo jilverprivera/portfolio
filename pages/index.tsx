@@ -1,9 +1,8 @@
 import type { GetStaticProps, NextPage } from 'next'
 import { Layout } from 'components/layout'
-import { HeroSection, PortfolioSection } from 'components/sections/home'
+import { Hero, Projects } from 'components/sections'
 import { PROJECTS } from 'utils/resources/projects'
 import { IFrontMatterV2, IHomeProps } from 'interfaces'
-import { DescriptionSection } from 'components/sections/about'
 
 export const getStaticProps: GetStaticProps = async () => {
   const projects = PROJECTS.filter((el: IFrontMatterV2) => el.published).sort(
@@ -18,11 +17,11 @@ const Home: NextPage<IHomeProps> = ({ projects }) => {
     <Layout
       metadata={{
         title: 'Jilver Pacheco',
-        description: 'Full-stack developer + Electronic engineer'
+        description: 'Software developer + electronic engineer'
       }}
     >
-      <DescriptionSection />
-      <PortfolioSection projects={projects} />
+      <Hero />
+      <Projects projects={projects} />
     </Layout>
   )
 }

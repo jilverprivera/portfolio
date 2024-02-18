@@ -5,12 +5,9 @@ import { PortfolioTitle, ProjectCard, ProjectResume } from 'components/ui'
 import { useEscapePress, useHidePageOverflow } from 'utils/hooks'
 import { IFrontMatterV2 } from 'interfaces'
 
-export const PortfolioSection = ({
-  projects
-}: {
-  projects: IFrontMatterV2[]
-}) => {
+export const Projects = ({ projects }: { projects: IFrontMatterV2[] }) => {
   const [scope, animate] = useAnimate()
+
   const {
     fullScreenFeature,
     lastFullScreenFeature,
@@ -27,7 +24,6 @@ export const PortfolioSection = ({
   }
   useEscapePress(onEscapePress)
   useHidePageOverflow(!!fullScreenFeature)
-
   useEffect(() => {
     if (fullScreenFeature) {
       animate([

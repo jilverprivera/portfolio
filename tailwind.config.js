@@ -1,4 +1,4 @@
-const { fontFamily, screens } = require('tailwindcss/defaultTheme')
+const { fontFamily } = require('tailwindcss/defaultTheme')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -13,7 +13,7 @@ module.exports = {
         secondary: 'var(--color-secondary)'
       },
       fontFamily: {
-        sans: ['Inter', ...fontFamily.sans]
+        sans: ['Archivo', ...fontFamily.sans]
       }
     }
   },

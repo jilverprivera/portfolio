@@ -18,8 +18,10 @@
 
 @layer base {
   :root {
-    --color-primary: #dcff50;
-    --color-secondary: #7b61ff;
+    --color-primary: #c9f24d;
+    /* --color-primary: #dcff50; */
+    --color-secondary: #6656fb;
+    /* --color-secondary: #7b61ff; */
   }
 
   .custom-body {
