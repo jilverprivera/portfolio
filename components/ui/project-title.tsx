@@ -4,7 +4,7 @@ import { AppContext } from 'context'
 import { IFrontMatterV2 } from 'interfaces'
 
 export const PortfolioTitle = ({ project }: { project: IFrontMatterV2 }) => {
-  const { title, slug } = project
+  const { title, slug, category } = project
   const ref = useRef<HTMLParagraphElement>(null)
   const isInView = useInView(ref, { margin: '-40% 0px -40% 0px' })
   const { setInViewFeature, inViewFeature, handleSetFullscreenFeature } =
@@ -24,12 +24,14 @@ export const PortfolioTitle = ({ project }: { project: IFrontMatterV2 }) => {
   return (
     <h3
       ref={ref}
-      className={`feature-title text-5xl font-bold my-48 leading-normal ${
+      className={`feature-title text-5xl font-bold my-48 leading-normal  ${
         isInView ? 'text-neutral-900' : 'text-neutral-300'
       }`}
       onClick={() => handleSetScreenFeature()}
     >
+      <span className='block text-xs font-semibold'>{category}</span>
       {title}
+
     </h3>
   )
 }

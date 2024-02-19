@@ -5,7 +5,7 @@ import { useMousePosition } from 'utils/hooks'
 export const Hero = () => {
   const [isHovered, setIsHovered] = useState(false)
   const { x, y } = useMousePosition()
-  const size = isHovered ? 480 : 0
+  const size = isHovered ? 512 : 0
 
   const targetRef = useRef<HTMLDivElement | null>(null)
   const { scrollYProgress } = useScroll({
@@ -41,8 +41,9 @@ export const Hero = () => {
             setIsHovered(false)
           }}
         >
-          I create products that meet my needs, If they work for you, feel free
-          to use, modify them and give me your feedback on my networks.
+          I build immersive digital solutions, prioritising quality and
+          accessibility that resonate with users, ranging from agile
+          methodologies to architecture development.
         </p>
       </motion.div>
       <div className="mx-auto max-w-screen-2xl w-11/12 h-full flex flex-col items-start justify-center cursor-default space-y-4 text-neutral-600">

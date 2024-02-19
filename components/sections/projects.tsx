@@ -74,11 +74,11 @@ export const Projects = ({ projects }: { projects: IFrontMatterV2[] }) => {
         </div>
         <div className="sticky top-0 flex h-screen w-3/5 items-center">
           <div className="relative aspect-video w-full rounded-2xl [&:has(>_.active-card)]:bg-transparent">
-            <AnimatePresence mode="wait">
-              {projects.map((project) => (
-                <ProjectCard key={project.slug} {...project} />
-              ))}
-            </AnimatePresence>
+            {/* <AnimatePresence mode="sync"> */}
+            {projects.map((project) => (
+              <ProjectCard key={project.slug} {...project} />
+            ))}
+            {/* </AnimatePresence> */}
           </div>
         </div>
       </div>

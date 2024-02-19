@@ -6,11 +6,11 @@ export const links = [
   {
     title: 'About me',
     href: '/about'
+  },
+  {
+    title: 'Blog',
+    href: '/blog'
   }
-  // {
-  //   title: 'Blog',
-  //   href: '/blog'
-  // }
 ]
 
 export const footerLinks = [

@@ -5,7 +5,7 @@ import { PROJECTS } from 'utils/resources/projects'
 import { IFrontMatterV2, IHomeProps } from 'interfaces'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const projects = PROJECTS.filter((el: IFrontMatterV2) => el.published).sort(
+  const projects = PROJECTS.filter((el: IFrontMatterV2) => el.finished).sort(
     (a: IFrontMatterV2, b: IFrontMatterV2) =>
       new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   )
