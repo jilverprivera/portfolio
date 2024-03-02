@@ -1,11 +1,15 @@
 import { useContext, useEffect } from 'react'
-import { AnimatePresence, stagger, useAnimate } from 'framer-motion'
+import { stagger, useAnimate } from 'framer-motion'
 import { AppContext } from 'context'
-import { PortfolioTitle, ProjectCard, ProjectResume } from 'components/ui'
+import {
+  ProjectTitle,
+  ProjectCard,
+  ProjectResume
+} from 'components/ui/projects'
 import { useEscapePress, useHidePageOverflow } from 'utils/hooks'
-import { IFrontMatterV2 } from 'interfaces'
+import { IFrontMatter } from 'interfaces'
 
-export const Projects = ({ projects }: { projects: IFrontMatterV2[] }) => {
+export const Portfolio = ({ projects }: { projects: IFrontMatter[] }) => {
   const [scope, animate] = useAnimate()
 
   const {
@@ -69,16 +73,14 @@ export const Projects = ({ projects }: { projects: IFrontMatterV2[] }) => {
       <div className="flex w-full items-start justify-center gap-8">
         <div className="w-full py-[20vh] flex-1">
           {projects.map((project) => (
-            <PortfolioTitle key={project.slug} project={project} />
+            <ProjectTitle key={project.slug} project={project} />
           ))}
         </div>
         <div className="sticky top-0 flex h-screen w-3/5 items-center">
           <div className="relative aspect-video w-full rounded-2xl [&:has(>_.active-card)]:bg-transparent">
-            {/* <AnimatePresence mode="sync"> */}
             {projects.map((project) => (
               <ProjectCard key={project.slug} {...project} />
             ))}
-            {/* </AnimatePresence> */}
           </div>
         </div>
       </div>

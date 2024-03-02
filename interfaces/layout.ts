@@ -1,5 +1,6 @@
-import { IFrontMatter } from 'interfaces'
+// import { IFrontMatter } from 'interfaces'
 import { IReadTimeResults } from 'reading-time'
+import { IFrontMatter } from './mdx'
 
 export interface ILayout {
   children: React.ReactNode
@@ -15,11 +16,11 @@ export interface IMetaData {
   path?: string | null
 }
 
-// export interface ISlugProps {
-//   source: any
-//   frontmatter: IFrontMatter
-//   readingTime?: IReadTimeResults
-//   prev?: IFrontMatter | undefined
-//   next?: IFrontMatter | undefined
-// }
+export interface ISlugProps {
+  source: any
+  frontmatter: IFrontMatter
+  readingTime?: IReadTimeResults
+  prev?: IFrontMatter | undefined
+  next?: IFrontMatter | undefined
+}
 

@@ -1,6 +1,6 @@
 ---
 title: 'Skew scrolling effect with Framer Motion in NextJS'
-description: 'I recently started my final project of my electronic engineering degree, in this case I needed to control the pulse of a sine wave (AC) in order to control a high power light bulb...'
+description: 'I recently started my final project of my electronic engineering degree, in this case I needed to control the pulse of a sine wave (AC)...'
 isPublished: true
 publishedAt: 'Mar 28, 2022'
 alternate: '/post/dimmer-digital-cruce-por-cero'
@@ -54,14 +54,17 @@ const skewConfig = {
 // Getting the total height of the body.
 const setBodyHeight = () => {
   if (app.current != null) {
-    document.body.style.height = `${app.current.getBoundingClientRect().height}px`
+    document.body.style.height = `${
+      app.current.getBoundingClientRect().height
+    }px`
   }
 }
 
 const skewScrolling = () => {
   if (app.current != null) {
     skewConfig.current = scrollY.get()
-    skewConfig.previous += (skewConfig.current - skewConfig.previous) * skewConfig.ease
+    skewConfig.previous +=
+      (skewConfig.current - skewConfig.previous) * skewConfig.ease
     skewConfig.rounded = Math.round(skewConfig.previous * 100) / 100
     const difference = skewConfig.current - skewConfig.rounded
     const acceleration = difference / 1920

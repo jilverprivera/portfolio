@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Background = () => {
   return (
-    <section className="max-w-screen-2xl w-11/12 py-32 mx-auto grid grid-cols-12 gap-16">
+    <section className="max-w-screen-xl w-11/12 py-32 mx-auto grid grid-cols-12 gap-16">
       <div className="col-span-2">
         <h1 className="uppercase text-secondary font-bold">Background</h1>
       </div>

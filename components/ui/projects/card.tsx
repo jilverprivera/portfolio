@@ -1,12 +1,14 @@
 import { useContext, useEffect } from 'react'
 import Image from 'next/image'
-import { AppContext } from 'context'
-import { IFrontMatterV2 } from 'interfaces'
 import { motion, useAnimation } from 'framer-motion'
+import { AppContext } from 'context'
+import { IFrontMatter } from 'interfaces'
+import { useRouter } from 'next/router'
 
-export const ProjectCard = ({ slug, coverImage }: IFrontMatterV2) => {
+export const ProjectCard = ({ slug, coverImage }: IFrontMatter) => {
   const { inViewFeature, handleSetFullscreenFeature } = useContext(AppContext)
   const controls = useAnimation()
+  const router = useRouter()
 
   useEffect(() => {
     const animations = {
@@ -27,7 +29,7 @@ export const ProjectCard = ({ slug, coverImage }: IFrontMatterV2) => {
       animate={controls}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.75, ease: 'easeOut' }}
-      onClick={() => handleSetFullscreenFeature(slug)}
+      onClick={() => router.push(`/work/${slug}`)}
       className={`absolute top-0 left-0 inset-0 h-full w-full rounded-2xl transition-opacity overflow-hidden cursor-pointer ${
         inViewFeature === slug
           ? 'active-card opacity-100'
@@ -40,7 +42,7 @@ export const ProjectCard = ({ slug, coverImage }: IFrontMatterV2) => {
           alt={slug}
           width={1920}
           height={1080}
-          objectFit="contain"
+          objectFit="cover"
           className="hover:scale-105 duration-300"
         />
       )}
