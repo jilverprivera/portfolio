@@ -36,7 +36,7 @@ export const HeroSection = () => {
     <motion.section
       style={{ opacity }}
       ref={targetRef}
-      className="max-w-screen-2xl w-11/12 mx-auto flex items-start justify-center min-h-screen"
+      className="max-w-screen-xl w-11/12 mx-auto flex items-start justify-center min-h-screen"
     >
       <motion.div
         style={{ scale }}

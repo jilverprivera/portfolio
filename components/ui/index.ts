@@ -1,4 +1,3 @@
-export * from './project-card'
-export * from './project-resume'
-export * from './project-title'
+export * from './animated-letters-component'
+export * from './projects'
 
