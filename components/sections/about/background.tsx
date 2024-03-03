@@ -8,7 +8,7 @@ export const Background = () => {
         </div>
         <div className=" text-lg leading-relaxed space-y-4 col-span-5">
           <p>
-            Currently I&apos;m Insert position at{' '}
+            Currently I&apos;m insert position at{' '}
             <span className="font-bold">Insert company</span> building B2B products
             with some awesome people.
           </p>
@@ -22,7 +22,7 @@ export const Background = () => {
             in robotics competitions.
           </p>
           <p>
-            As a software engineer, I always like to try to link engineering,
+            As a software developer, I always like to try to link engineering,
             design and long-term scalability. My goal is to always create
             applications that are efficient and at the same time deliver
             engaging and seamless user experiences.

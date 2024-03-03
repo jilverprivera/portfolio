@@ -7,29 +7,35 @@ export const Experience = () => {
         <div>
           <h1 className="font-light text-lg text-neutral-700">Experience</h1>
         </div>
-        <div className=" text-lg leading-relaxed space-y-8 col-span-5">
+        <div className=" text-lg leading-relaxed space-y-12 col-span-5">
           {EXPERIENCE.map((el, i) => (
-            <div key={i} className='space-y-1'>
-              <div className='flex items-center justify-start gap-2 font-medium'>
-                <h3 className=''>{el.company}</h3>
-                <span className='text-neutral-700'>{el.position}</span>
+            <div key={i} className="space-y-2">
+              <div className="flex items-center justify-start gap-2 font-medium">
+                <h3 className="">{el.company}</h3>
+                <span className="text-neutral-700">{el.position}</span>
               </div>
-              <span className='text-sm'>{ el.date}</span>
+              <span className="text-sm">{el.date}</span>
               <p>
-                <a href={el.url} className='underline'>{el.company}</a> is {' '}
+                {el.url ? (
+                  <a href={el.url} className="underline">
+                    {el.company}
+                  </a>
+                ) : (
+                  el.company
+                )}{' '}
                 {el.description}
               </p>
 
-              {/* <ul className="flex flex-wrap gap-2">
-                {el.projects &&
-                  el?.projects
-                    // .sort((a, b) => a.localeCompare(b))
-                    .map((el, i) => (
-                      <li key={i} className="text-sm">
-                        {el.title}
-                      </li>
-                    ))}
-              </ul> */}
+              <ul className="flex flex-wrap items-center justify-start gap-x-4 gap-y-1">
+                <p>Keywords: </p>
+                {el.stack
+                  .sort((a, b) => a.localeCompare(b))
+                  .map((stack, i) => (
+                    <ul key={i} className="text-base">
+                      {stack}
+                    </ul>
+                  ))}
+              </ul>
             </div>
           ))}
         </div>

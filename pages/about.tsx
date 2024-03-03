@@ -18,7 +18,7 @@ const About = () => {
       />
       <Background />
       <Experience/>
-      <Pillars />
+      {/* <Pillars /> */}
     </Layout>
   )
 }
