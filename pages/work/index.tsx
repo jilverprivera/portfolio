@@ -3,6 +3,7 @@ import { getAllFilesMetadata } from 'lib/mdx'
 import { IFrontMatter, ProjectProps } from 'interfaces'
 import { Layout } from 'components/layout'
 import { Portfolio } from 'components/sections/home'
+import { PageTitle } from 'components/ui/page-title'
 
 export const getStaticProps: GetStaticProps = async (ctx: any) => {
   let projects = await getAllFilesMetadata('portfolio')
@@ -14,11 +15,6 @@ export const getStaticProps: GetStaticProps = async (ctx: any) => {
 }
 
 const PortfolioPage: NextPage<ProjectProps> = ({ projects }) => {
-  // const [searchedArticles, setSearchedArticles] = useState<string>('')
-
-  // const filteredPosts = projects.filter((post: IFrontMatter) =>
-  //   post.title.toLowerCase().includes(searchedArticles.toLowerCase())
-  // )
   return (
     <Layout
       metadata={{
@@ -26,6 +22,7 @@ const PortfolioPage: NextPage<ProjectProps> = ({ projects }) => {
         description: 'Software developer + electronic engineer.'
       }}
     >
+      <PageTitle title='Work' description='A selection of web & mobile development and engineering projects.'/>
       <Portfolio projects={projects} />
     </Layout>
   )

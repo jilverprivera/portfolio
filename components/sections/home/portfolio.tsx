@@ -63,20 +63,20 @@ export const Portfolio = ({ projects }: { projects: IFrontMatter[] }) => {
   return (
     <section
       ref={scope}
-      className="max-w-screen-2xl w-11/12 mx-auto relative "
+      className="max-w-screen-xl w-11/12 mx-auto relative "
       id="works"
     >
       {lastFullScreenFeature &&
         projects.map((project) => (
           <ProjectResume key={project.slug} project={project} />
         ))}
-      <div className="flex w-full items-start justify-center gap-8">
-        <div className="w-full py-[20vh] flex-1">
+      <div className="flex w-full items-start justify-center">
+        <div className="w-full py-[24vh] flex-1">
           {projects.map((project) => (
             <ProjectTitle key={project.slug} project={project} />
           ))}
         </div>
-        <div className="sticky top-0 flex h-screen w-3/5 items-center">
+        <div className="sticky top-0 flex h-screen w-4/6 items-center">
           <div className="relative aspect-video w-full rounded-2xl [&:has(>_.active-card)]:bg-transparent">
             {projects.map((project) => (
               <ProjectCard key={project.slug} {...project} />

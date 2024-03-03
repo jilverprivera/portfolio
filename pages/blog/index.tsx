@@ -4,6 +4,7 @@ import { getAllFilesMetadata } from 'lib/mdx'
 import { IBlogPageProps, IFrontMatter } from 'interfaces'
 import { Layout } from 'components/layout/layout'
 import { PostCard, PostSearch } from 'components/ui/blog'
+import { PageTitle } from 'components/ui/page-title'
 
 export const getStaticProps: GetStaticProps = async (ctx: any) => {
   let posts = await getAllFilesMetadata('posts')
@@ -27,7 +28,8 @@ const Blog: NextPage<IBlogPageProps> = ({ posts }) => {
         description: 'Software developer + electronic engineer.'
       }}
     >
-      <section className="max-w-screen-xl w-11/12 mx-auto min-h-screen pt-32 ">
+      <PageTitle title='Blog' description='Something I say things here...'/>
+      <section className="max-w-screen-xl w-11/12 mx-auto min-h-screen ">
         <PostSearch setSearchedArticles={setSearchedArticles} />
         <div className="w-full pb-12 grid grid-cols-3 gap-4">
           {filteredPosts.map((post) => (
