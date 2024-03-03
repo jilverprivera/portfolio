@@ -17,7 +17,7 @@ export const ProjectHero = ({
   downloadUrl
 }: IFrontMatter) => {
   return (
-    <section className="max-w-screen-2xl w-11/12 mx-auto pt-48 text-neutral-200 space-y-12 mb-24">
+    <section className="max-w-screen-2xl w-11/12 mx-auto pt-48 text-neutral-900 space-y-12 mb-24">
       <div className="space-y-12 max-w-screen-xl w-full mx-auto">
         <div className="space-y-2">
           <p className="text-sm">

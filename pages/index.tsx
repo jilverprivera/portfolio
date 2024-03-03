@@ -27,7 +27,7 @@ const Home: NextPage<ProjectProps> = ({ projects }) => {
     >
       <Hero />
       <Portfolio projects={projects} />
-      <section className="max-w-screen-xl w-11/12 mx-auto grid grid-cols-2 gap-8">
+      {/* <section className="max-w-screen-xl w-11/12 mx-auto grid grid-cols-2 gap-8">
         {projects.map((el) => (
           <Link key={el.slug} href={`/work/${el.slug}`}>
             <a>
@@ -59,7 +59,7 @@ const Home: NextPage<ProjectProps> = ({ projects }) => {
             </a>
           </Link>
         ))}
-      </section>
+      </section> */}
     </Layout>
   )
 }

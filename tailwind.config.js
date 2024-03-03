@@ -13,7 +13,7 @@ module.exports = {
         secondary: 'var(--color-secondary)'
       },
       fontFamily: {
-        sans: ['Archivo', ...fontFamily.sans]
+        sans: ['IBM Plex Sans', ...fontFamily.sans]
       }
     }
   },

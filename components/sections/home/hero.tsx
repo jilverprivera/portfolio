@@ -42,7 +42,7 @@ export const Hero = () => {
           </p>
         </div>
       </motion.div>
-      <div className="mx-auto max-w-screen-2xl w-11/12 h-full flex flex-col items-start justify-center cursor-default space-y-4 text-neutral-300">
+      <div className="mx-auto max-w-screen-2xl w-11/12 h-full flex flex-col items-start justify-center cursor-default space-y-4 text-neutral-950">
         <h3 className="text-2xl">Who I am?</h3>
         <p className="text-8xl font-medium">
           Hi!, I&apos;m <span className="text-primary">Jilver Pacheco</span> a
