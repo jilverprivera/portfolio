@@ -4,7 +4,7 @@ import readingTime from 'reading-time'
 import rehypeHighlight from 'rehype-highlight'
 import path from 'path'
 import fs from 'fs'
-import { IFrontMatter } from 'interfaces'
+import { FrontMatter } from 'interfaces'
 
 const root = process.cwd()
 
@@ -46,7 +46,7 @@ export const getAllFilesMetadata = async (type: string) => {
     ]
   }, [])
   return filesToReturn.sort(
-    (a: IFrontMatter, b: IFrontMatter) =>
+    (a: FrontMatter, b: FrontMatter) =>
       Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
   )
 }

@@ -1,9 +1,9 @@
 import { createContext, useState } from 'react'
-import { IContext, IContextProvider } from 'interfaces'
+import { Context, ContextProvider } from 'interfaces'
 
-export const AppContext = createContext({} as IContext)
+export const AppContext = createContext({} as Context)
 
-export const AppProvider = ({ children }: IContextProvider) => {
+export const AppProvider = ({ children }: ContextProvider) => {
   const [inViewFeature, setInViewFeature] = useState<string | null>(null)
   const [fullScreenFeature, setFullScreenFeature] = useState<string | null>(
     null

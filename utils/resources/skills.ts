@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 export const SKILLS = [
   {
     title: 'Languages',
@@ -87,3 +86,4 @@ export const SKILLS = [
     ]
   }
 ]
+

@@ -1,10 +1,10 @@
 import { useContext, useEffect, useRef } from 'react'
 import { useInView } from 'framer-motion'
 import { AppContext } from 'context'
-import { IFrontMatter } from 'interfaces'
+import { FrontMatter } from 'interfaces'
 import { useRouter } from 'next/router'
 
-export const ProjectTitle = ({ project }: { project: IFrontMatter }) => {
+export const ProjectTitle = ({ project }: { project: FrontMatter }) => {
   const { title, slug, category } = project
   const ref = useRef<HTMLParagraphElement>(null)
   const isInView = useInView(ref, { margin: '-40% 0px -40% 0px' })

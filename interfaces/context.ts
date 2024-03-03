@@ -1,4 +1,4 @@
-export interface IContext {
+export interface Context {
   inViewFeature: string | null
   lastFullScreenFeature: string | null
   fullScreenFeature: string | null
@@ -12,7 +12,7 @@ export interface IContext {
   setIsHovered: (arg: boolean) => void
 }
 
-export interface IContextProvider {
+export interface ContextProvider {
   children: React.ReactNode
 }
 

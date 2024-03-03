@@ -1,6 +1,6 @@
-import { IFrontMatter } from 'interfaces'
 import Image from 'next/image'
 import { FaDownload, FaGithub, FaGlobe } from 'react-icons/fa'
+import { FrontMatter } from 'interfaces'
 
 export const ProjectHero = ({
   coverImage,
@@ -15,7 +15,7 @@ export const ProjectHero = ({
   githubUrl,
   url,
   downloadUrl
-}: IFrontMatter) => {
+}: FrontMatter) => {
   return (
     <section className="max-w-screen-2xl w-11/12 mx-auto pt-48 text-neutral-900 space-y-12 mb-24">
       <div className="space-y-12 max-w-screen-xl w-full mx-auto">

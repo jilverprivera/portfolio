@@ -1,10 +1,10 @@
-import { IFrontMatter } from 'interfaces'
+import { FrontMatter } from 'interfaces'
 
 export interface ProjectProps {
-  projects: IFrontMatter[]
+  projects: FrontMatter[]
 }
 export interface IBlogPageProps {
-  posts: IFrontMatter[]
+  posts: FrontMatter[]
 }
 
 export interface IStaticProps {

@@ -2,9 +2,9 @@ import { Fragment, useEffect, useRef } from 'react'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 import { Header } from './header'
 import { SEO } from 'utils/seo'
-import { ILayout } from 'interfaces'
+import { Layout } from 'interfaces'
 
-export const Layout = ({ children, metadata }: ILayout) => {
+export const Layout = ({ children, metadata }: Layout) => {
   const { title, description, slug, date } = metadata
   const targetRef = useRef<HTMLDivElement | null>(null)
 

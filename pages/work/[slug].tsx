@@ -3,7 +3,7 @@ import { MDXRemote } from 'next-mdx-remote'
 import { Layout } from 'components/layout'
 import { Navigation, MDXComponents } from 'components/mdx'
 import { getAllFilesMetadata, getFileBySlug, getFiles } from 'lib/mdx'
-import { ISlugProps, IFrontMatter, IStaticProps, PAGE_TYPE } from 'interfaces'
+import { SlugProps, FrontMatter, IStaticProps, PAGE_TYPE } from 'interfaces'
 import { ProjectHero } from 'components/ui'
 
 export async function getStaticPaths() {
@@ -24,7 +24,7 @@ export async function getStaticProps({ params }: IStaticProps) {
   const { slug } = params
   const portfolio = await getAllFilesMetadata('portfolio')
   const portfolioIndex = portfolio.findIndex(
-    (project: IFrontMatter) => project.slug === slug
+    (project: FrontMatter) => project.slug === slug
   )
   const prev = portfolio[portfolioIndex + 1] || null
   const next = portfolio[portfolioIndex - 1] || null
@@ -46,7 +46,7 @@ export async function getStaticProps({ params }: IStaticProps) {
   }
 }
 
-const Project: NextPage<ISlugProps> = ({
+const Project: NextPage<SlugProps> = ({
   source,
   frontmatter,
   readingTime,

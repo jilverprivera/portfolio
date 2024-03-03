@@ -7,9 +7,9 @@ import {
   ProjectResume
 } from 'components/ui/projects'
 import { useEscapePress, useHidePageOverflow } from 'utils/hooks'
-import { IFrontMatter } from 'interfaces'
+import { FrontMatter } from 'interfaces'
 
-export const Portfolio = ({ projects }: { projects: IFrontMatter[] }) => {
+export const Portfolio = ({ projects }: { projects: FrontMatter[] }) => {
   const [scope, animate] = useAnimate()
 
   const {

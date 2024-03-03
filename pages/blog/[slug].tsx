@@ -3,7 +3,7 @@ import { MDXRemote } from 'next-mdx-remote'
 import { Layout } from 'components/layout'
 import { Navigation, MDXComponents } from 'components/mdx'
 import { getAllFilesMetadata, getFileBySlug, getFiles } from 'lib/mdx'
-import { ISlugProps, IFrontMatter, IStaticProps, PAGE_TYPE } from 'interfaces'
+import { SlugProps, FrontMatter, IStaticProps, PAGE_TYPE } from 'interfaces'
 
 export async function getStaticPaths() {
   const files = await getFiles('posts')
@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }: IStaticProps) {
   const { slug } = params
   const posts = await getAllFilesMetadata('posts')
-  const postIndex = posts.findIndex((post: IFrontMatter) => post.slug === slug)
+  const postIndex = posts.findIndex((post: FrontMatter) => post.slug === slug)
   const prev = posts[postIndex + 1] || null
   const next = posts[postIndex - 1] || null
 
@@ -43,7 +43,7 @@ export async function getStaticProps({ params }: IStaticProps) {
   }
 }
 
-const Post: NextPage<ISlugProps> = ({
+const Post: NextPage<SlugProps> = ({
   source,
   frontmatter,
   readingTime,

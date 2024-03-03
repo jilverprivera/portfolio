@@ -1,6 +1,6 @@
 import { IReadTimeResults } from 'reading-time'
 
-export interface IFrontMatter {
+export interface FrontMatter {
   slug: string
   title: string
   subTitle?: string
@@ -19,12 +19,6 @@ export interface IFrontMatter {
   downloadUrl?: string
   collaborators?: string[]
   position?: string[]
-}
-
-export enum PROJECT_CATEGORY {
-  WORK_PROJECT = 'Work Product',
-  SIDE_PROJECT = 'Side Project',
-  FINAL_PROJECT = 'Final Project'
 }
 
 export enum PAGE_TYPE {

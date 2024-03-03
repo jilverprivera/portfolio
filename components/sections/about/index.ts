@@ -1,3 +1,4 @@
+export * from './awards'
 export * from './background'
-export * from './pillars'
+export * from './experience'
 

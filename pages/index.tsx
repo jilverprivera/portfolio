@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next'
 import { Layout } from 'components/layout'
 import { Hero, Portfolio } from 'components/sections/home'
-import { IFrontMatter, ProjectProps } from 'interfaces'
+import { FrontMatter, ProjectProps } from 'interfaces'
 import { getAllFilesMetadata } from 'lib/mdx'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,9 +9,9 @@ import Link from 'next/link'
 export const getStaticProps: GetStaticProps = async () => {
   let projects = await getAllFilesMetadata('portfolio')
   projects = projects
-    .filter((el: IFrontMatter) => el.finished)
+    .filter((el: FrontMatter) => el.finished)
     .sort(
-      (a: IFrontMatter, b: IFrontMatter) =>
+      (a: FrontMatter, b: FrontMatter) =>
         new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
     )
   return { props: { projects } }

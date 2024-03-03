@@ -2,10 +2,10 @@ import { useContext, useEffect } from 'react'
 import Image from 'next/image'
 import { motion, useAnimation } from 'framer-motion'
 import { AppContext } from 'context'
-import { IFrontMatter } from 'interfaces'
+import { FrontMatter } from 'interfaces'
 import { useRouter } from 'next/router'
 
-export const ProjectCard = ({ slug, coverImage }: IFrontMatter) => {
+export const ProjectCard = ({ slug, coverImage }: FrontMatter) => {
   const { inViewFeature, handleSetFullscreenFeature } = useContext(AppContext)
   const controls = useAnimation()
   const router = useRouter()

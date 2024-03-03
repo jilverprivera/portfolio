@@ -1,9 +1,9 @@
 import { useContext, useEffect } from 'react'
 import { ProjectHero } from 'components/ui/projects'
 import { AppContext } from 'context'
-import { IFrontMatter } from 'interfaces'
+import { FrontMatter } from 'interfaces'
 
-export const ProjectResume = ({ project }: { project: IFrontMatter }) => {
+export const ProjectResume = ({ project }: { project: FrontMatter }) => {
   const { slug } = project
   const { fullScreenFeature } = useContext(AppContext)
 

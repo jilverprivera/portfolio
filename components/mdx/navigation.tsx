@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md'
-import { IFrontMatter, PAGE_TYPE } from 'interfaces'
+import { FrontMatter, PAGE_TYPE } from 'interfaces'
 
 type props = {
-  next: IFrontMatter | undefined
-  prev: IFrontMatter | undefined
+  next: FrontMatter | undefined
+  prev: FrontMatter | undefined
   typePage: PAGE_TYPE
 }
 

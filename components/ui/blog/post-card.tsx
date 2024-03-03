@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { BsArrowRight } from 'react-icons/bs'
 // import { formatDate } from 'utils'
-import { IFrontMatter } from 'interfaces'
+import { FrontMatter } from 'interfaces'
 import { Fragment } from 'react'
 
 export const PostCard = ({
@@ -10,7 +10,7 @@ export const PostCard = ({
   tags,
   description,
   readingTime
-}: IFrontMatter) => {
+}: FrontMatter) => {
   return (
     <article className="w-full group border border-neutral-200 rounded-xl p-2">
       <Link href={`blog/${slug}`}>

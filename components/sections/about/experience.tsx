@@ -17,7 +17,12 @@ export const Experience = () => {
               <span className="text-sm">{el.date}</span>
               <p>
                 {el.url ? (
-                  <a href={el.url} className="underline">
+                  <a
+                    href={el.url}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="underline"
+                  >
                     {el.company}
                   </a>
                 ) : (
