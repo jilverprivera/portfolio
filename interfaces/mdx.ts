@@ -19,6 +19,7 @@ export interface FrontMatter {
   downloadUrl?: string
   collaborators?: string[]
   position?: string[]
+  color?: string
 }
 
 export enum PAGE_TYPE {
