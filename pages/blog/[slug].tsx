@@ -86,10 +86,10 @@ const Post: NextPage<SlugProps> = ({
         </div>
         <hr className="w-full border-t mx-auto" />
       </section>
-      <section className="my-8 mx-auto text-neutral-100 prose  prose-neutral prose-lg max-w-screen-lg">
+      {/* <section className="my-8 mx-auto text-neutral-100 prose  prose-neutral prose-lg max-w-screen-lg">
         <MDXRemote {...source} components={MDXComponents} />
-      </section>
-      <Navigation next={next} prev={prev} typePage={PAGE_TYPE.POST} />
+      </section> */}
+      {/* <Navigation next={next} prev={prev} typePage={PAGE_TYPE.POST} /> */}
     </Layout>
   )
 }

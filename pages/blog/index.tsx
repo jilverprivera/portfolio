@@ -8,10 +8,12 @@ import { PageTitle } from 'components/ui/page-title'
 
 export const getStaticProps: GetStaticProps = async (ctx: any) => {
   let posts = await getAllFilesMetadata('posts')
-  posts = posts.sort(
-    (a: FrontMatter, b: FrontMatter) =>
-      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-  )
+  posts = posts
+    .filter((el: FrontMatter) => el.finished)
+    .sort(
+      (a: FrontMatter, b: FrontMatter) =>
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    )
   return { props: { posts } }
 }
 

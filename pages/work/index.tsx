@@ -2,7 +2,7 @@ import { GetStaticProps, NextPage } from 'next'
 import { getAllFilesMetadata } from 'lib/mdx'
 import { FrontMatter, ProjectProps } from 'interfaces'
 import { Layout } from 'components/layout'
-import { Portfolio } from 'components/sections/home'
+import { Portfolio } from 'components/non-used/portfolio'
 import { PageTitle } from 'components/ui/page-title'
 
 export const getStaticProps: GetStaticProps = async (ctx: any) => {

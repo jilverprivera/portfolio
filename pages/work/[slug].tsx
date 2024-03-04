@@ -4,7 +4,7 @@ import { Layout } from 'components/layout'
 import { Navigation, MDXComponents } from 'components/mdx'
 import { getAllFilesMetadata, getFileBySlug, getFiles } from 'lib/mdx'
 import { SlugProps, FrontMatter, IStaticProps, PAGE_TYPE } from 'interfaces'
-import { ProjectHero } from 'components/ui'
+import { ProjectHero } from 'components/non-used/projects'
 
 export async function getStaticPaths() {
   const files = await getFiles('portfolio')
