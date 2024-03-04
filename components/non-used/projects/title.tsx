@@ -28,7 +28,7 @@ export const ProjectTitle = ({ project }: { project: FrontMatter }) => {
     <h3
       ref={ref}
       className={`feature-title text-5xl font-bold my-48 leading-normal  ${
-        isInView ? 'text-neutral-300' : 'text-neutral-600'
+        isInView ? 'text-neutral-950' : 'text-neutral-400'
       } cursor-pointer`}
       onClick={() => handleSetScreenFeature()}
     >

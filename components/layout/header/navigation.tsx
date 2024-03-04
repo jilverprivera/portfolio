@@ -12,7 +12,7 @@ export const Navigation = ({
 }) => {
   const { setIsHovered } = useContext(AppContext)
   return (
-    <div className="flex flex-col justify-between py-12 px-12 box-border h-full">
+    <div className="flex flex-col justify-between py-12 px-12 box-border h-full z-50">
       <div className="flex flex-col gap-4">
         {links.map((link, i) => (
           <div key={`b_${i}`} className="linkContainer">

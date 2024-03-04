@@ -10,8 +10,9 @@ export const Awards = () => {
         <div className=" text-lg leading-relaxed space-y-12 col-span-5">
           {AWARDS.map((el, i) => (
             <div key={i} className="space-y-2">
-              <div className="flex items-center justify-start gap-2 font-medium">
-                <h3 className="">{el.title}</h3>
+              <div className="flex items-center justify-start gap-2 ">
+                <h3 className="font-medium">{el.title}</h3>
+                <span className="font-light">{el.givenBy}</span>
               </div>
               <span className="text-sm">{el.date}</span>
             </div>

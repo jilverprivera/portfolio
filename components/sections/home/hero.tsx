@@ -42,7 +42,7 @@ export const Hero = () => {
           </p>
         </div>
       </motion.div>
-      
+
       <div className="mx-auto max-w-screen-xl w-11/12 h-full flex flex-col items-start justify-center cursor-default space-y-4 text-zinc-800">
         <h3 className="text-2xl">Who I am?</h3>
         <p className="text-7xl font-medium">

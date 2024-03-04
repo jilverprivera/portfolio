@@ -5,7 +5,7 @@ import {
   ProjectTitle,
   ProjectCard,
   ProjectResume
-} from 'components/ui/projects'
+} from 'components/non-used/projects'
 import { useEscapePress, useHidePageOverflow } from 'utils/hooks'
 import { FrontMatter } from 'interfaces'
 

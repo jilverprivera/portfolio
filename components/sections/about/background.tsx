@@ -1,4 +1,3 @@
-
 export const Background = () => {
   return (
     <section className="max-w-screen-xl w-11/12 mx-auto">
@@ -9,8 +8,8 @@ export const Background = () => {
         <div className=" text-lg leading-relaxed space-y-4 col-span-5">
           <p>
             Currently I&apos;m insert position at{' '}
-            <span className="font-bold">Insert company</span> building B2B products
-            with some awesome people.
+            <span className="font-bold">Insert company</span> building B2B
+            products with some awesome people.
           </p>
           <p>
             I graduated from the{' '}

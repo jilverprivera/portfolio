@@ -66,7 +66,7 @@ export const Header = () => {
   // }, [bgColor])
 
   return (
-    <motion.div className="fixed right-8 top-8 z-50 rounded-3xl bg-white">
+    <motion.div className="fixed right-8 top-8 z-50 rounded-3xl backdrop-blur-sm border text-neutral-950">
       <motion.div
         className="max-w-md w-full h-full relative"
         variants={menu}

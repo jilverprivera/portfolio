@@ -33,7 +33,7 @@ export const ProjectHero = ({
         <div className="grid grid-cols-4 gap-4">
           {position && (
             <div className="space-y-2">
-              <h3 className="text-sm text-neutral-300">Role</h3>
+              <h3 className="text-sm text-neutral-600">Role</h3>
               <ul>
                 {position?.map((role, i) => (
                   <li key={i} className="font-medium">
@@ -45,15 +45,15 @@ export const ProjectHero = ({
           )}
 
           {collaborators && (
-            <div className="space-y-2 px-4  border-l border-neutral-900">
-              <h3 className="text-sm text-neutral-300">Collaborators</h3>
+            <div className="space-y-2 px-4  border-l border-neutral-200">
+              <h3 className="text-sm text-neutral-600">Collaborators</h3>
               <div className="gap-2 flex flex-wrap">
                 {collaborators
                   .sort((a, b) => a.localeCompare(b))
                   .map((collaborator, i) => (
                     <span
                       key={i}
-                      className="text-sm font-medium bg-neutral-900 p-1.5 rounded-xl"
+                      className="text-sm font-medium bg-neutral-100 p-1.5 rounded-xl"
                     >
                       {collaborator}
                     </span>
@@ -63,15 +63,15 @@ export const ProjectHero = ({
           )}
 
           {technologies && (
-            <div className="space-y-2 px-4  border-l border-neutral-900">
-              <h3 className="text-sm text-neutral-300">Technologies</h3>
+            <div className="space-y-2 px-4  border-l border-neutral-200">
+              <h3 className="text-sm text-neutral-600">Technologies</h3>
               <div className="gap-2 flex flex-wrap">
                 {technologies
                   .sort((a, b) => a.localeCompare(b))
                   .map((technology, i) => (
                     <span
                       key={i}
-                      className="text-sm font-medium bg-neutral-900 p-1.5 rounded-xl"
+                      className="text-sm font-medium bg-neutral-100 p-1.5 rounded-xl"
                     >
                       {technology}
                     </span>
@@ -80,15 +80,15 @@ export const ProjectHero = ({
             </div>
           )}
 
-          <div className="space-y-2 px-4  border-l border-neutral-900">
-            <h3 className="text-sm text-neutral-300">Tags</h3>
+          <div className="space-y-2 px-4  border-l border-neutral-200">
+            <h3 className="text-sm text-neutral-600">Tags</h3>
             <div className="gap-2 flex flex-wrap">
               {tags
                 .sort((a, b) => a.localeCompare(b))
                 .map((tag, i) => (
                   <span
                     key={i}
-                    className="text-sm font-medium bg-neutral-900 p-1.5 rounded-xl"
+                    className="text-sm font-medium bg-neutral-100 p-1.5 rounded-xl"
                   >
                     {tag}
                   </span>
@@ -103,7 +103,7 @@ export const ProjectHero = ({
               href={githubUrl}
               target="_blank"
               rel="noreferrer noopener"
-              className="text-sm font-medium bg-neutral-900 backdrop-blur-md p-1.5 rounded-xl flex items-center justify-start space-x-2"
+              className="text-sm font-medium bg-neutral-100 backdrop-blur-md p-1.5 rounded-xl flex items-center justify-start space-x-2"
             >
               <span className="text-lg">
                 <FaGithub />
@@ -117,7 +117,7 @@ export const ProjectHero = ({
               href={url}
               target="_blank"
               rel="noreferrer noopener"
-              className="text-sm font-medium bg-neutral-900 backdrop-blur-md px-3 py-1.5 rounded-xl flex items-center justify-start space-x-2"
+              className="text-sm font-medium bg-neutral-100 backdrop-blur-md px-3 py-1.5 rounded-xl flex items-center justify-start space-x-2"
             >
               <span className="text-lg">
                 <FaGlobe />
@@ -131,7 +131,7 @@ export const ProjectHero = ({
               href={downloadUrl}
               target="_blank"
               rel="noreferrer noopener"
-              className="text-sm font-medium bg-neutral-900 backdrop-blur-md px-3 py-1.5 rounded-xl flex items-center justify-start space-x-2"
+              className="text-sm font-medium bg-neutral-100 backdrop-blur-md px-3 py-1.5 rounded-xl flex items-center justify-start space-x-2"
             >
               <span className="text-lg">
                 <FaDownload />
