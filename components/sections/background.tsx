@@ -12,13 +12,13 @@ export const Background = () => {
             products with some awesome people.
           </p>
           <p>
-            I graduated from the{' '}
+            I finished my studies at the{' '}
             <span className="font-bold">
               Universidad de Investigación y Desarrollo
             </span>{' '}
-            after completing 5 years studying Electronic Engineering which
-            allowed me to participate and represent my university and my country
-            in robotics competitions.
+            after completing 5 years in Electronic Engineering which allowed me
+            to participate and represent my university and my country in
+            robotics competitions.
           </p>
           <p>
             As a software developer, I always like to try to link engineering,

@@ -1,6 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next'
 import { Layout } from 'components/layout'
-import { Hero, Portfolio } from 'components/sections/home'
+import { Hero } from 'components/sections/hero'
+import { Portfolio } from 'components/sections/portfolio'
 import { FrontMatter, ProjectProps } from 'interfaces'
 import { getAllFilesMetadata } from 'lib/mdx'
 

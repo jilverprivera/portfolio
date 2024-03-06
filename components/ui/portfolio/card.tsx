@@ -14,10 +14,10 @@ type props = {
   totalProjects: number
 }
 
-export const ProjectCard = ({
+export const Card = ({
   index,
   project,
-  color = '#d4d4d4',
+  color = '#e5e5e5',
   progress,
   range,
   targetScale,
@@ -64,7 +64,7 @@ export const ProjectCard = ({
                   </h2>
                 </div>
 
-                <ul className="flex flex-col flex-wrap gap-2 text-xs text-neutral-950">
+                <ul className="flex flex-col flex-wrap gap-2 text-sm text-neutral-950">
                   {project.tags
                     ?.sort((a, b) => a.localeCompare(b))
                     .map((tag, i) => (
@@ -82,7 +82,7 @@ export const ProjectCard = ({
 
               <div className="col-span-4 rounded-lg overflow-hidden aspect-video w-/5">
                 <motion.div
-                  className="flex items-center justify-center rounded-lg overflow-hidden"
+                  className="flex items-center justify-center rounded-xl overflow-hidden"
                   style={{ scale: imageScale }}
                 >
                   {project.coverImage && (

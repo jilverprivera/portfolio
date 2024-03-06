@@ -1,8 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { useScroll } from 'framer-motion'
 import Lenis from '@studio-freight/lenis'
-
-import { ProjectCard } from 'components/ui'
+import { Card } from 'components/ui/portfolio/card'
 import { FrontMatter } from 'interfaces'
 
 export const Portfolio = ({ projects }: { projects: FrontMatter[] }) => {
@@ -26,7 +25,7 @@ export const Portfolio = ({ projects }: { projects: FrontMatter[] }) => {
       {projects.map((project, i) => {
         const targetScale = 1 - (projects.length - i) * 0.05
         return (
-          <ProjectCard
+          <Card
             key={project.slug}
             index={i}
             project={project}

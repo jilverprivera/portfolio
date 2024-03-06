@@ -1,6 +1,6 @@
 export * from './animated-letters-component'
 export * from './blog'
-export * from './project-card'
-export * from './page-title'
-export * from './project-card-v2'
+export * from './portfolio/card'
+export * from './shared/page-title'
+export * from '../non-used/project-card-v2'
 

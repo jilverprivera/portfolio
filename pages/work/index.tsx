@@ -2,8 +2,8 @@ import { GetStaticProps, NextPage } from 'next'
 import { getAllFilesMetadata } from 'lib/mdx'
 import { FrontMatter, ProjectProps } from 'interfaces'
 import { Layout } from 'components/layout'
-import { Portfolio } from 'components/non-used/portfolio'
-import { PageTitle } from 'components/ui/page-title'
+// import { Portfolio } from 'components/non-used/portfolio'
+import { PageTitle } from 'components/ui/shared/page-title'
 
 export const getStaticProps: GetStaticProps = async (ctx: any) => {
   let projects = await getAllFilesMetadata('portfolio')
@@ -26,7 +26,7 @@ const PortfolioPage: NextPage<ProjectProps> = ({ projects }) => {
         title="Work"
         description="A selection of web & mobile development and engineering projects."
       />
-      <Portfolio projects={projects} />
+      {/* <Portfolio projects={projects} /> */}
     </Layout>
   )
 }
