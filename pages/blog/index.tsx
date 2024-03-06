@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { GetStaticProps, NextPage } from 'next'
-import { Layout } from 'components/layout/layout'
-import { PageTitle } from 'components/ui/shared/page-title'
+import { Layout } from 'components/layout'
+import { PageTitle } from 'components/ui/shared'
 import { PostCard, PostSearch } from 'components/ui/blog'
 import { getAllFilesMetadata } from 'lib/mdx'
 import { IBlogPageProps, FrontMatter } from 'interfaces'
@@ -30,7 +30,10 @@ const Blog: NextPage<IBlogPageProps> = ({ posts }) => {
         description: 'Software developer + electronic engineer.'
       }}
     >
-      <PageTitle title="Blog" description="Sometimes I post things I've learned that may be of interest to you." />
+      <PageTitle
+        title="Blog"
+        description="Sometimes I post things I've learned that may be of interest to you."
+      />
       <section className="max-w-screen-xl w-11/12 mx-auto min-h-screen ">
         <PostSearch setSearchedArticles={setSearchedArticles} />
         <div className="w-full pb-12 grid grid-cols-3 gap-4">

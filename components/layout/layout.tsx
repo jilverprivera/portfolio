@@ -1,13 +1,12 @@
 import { Fragment, useEffect, useRef } from 'react'
-import { motion, useMotionValue, useTransform } from 'framer-motion'
+import { motion, useMotionValue } from 'framer-motion'
 import { Header } from './header'
 import { SEO } from 'utils/seo'
-import { Layout } from 'interfaces'
+import type { ILayout } from 'interfaces'
 
-export const Layout = ({ children, metadata }: Layout) => {
+export const Layout = ({ children, metadata }: ILayout) => {
   const { title, description, slug, date } = metadata
   const targetRef = useRef<HTMLDivElement | null>(null)
-
   const bgColor = useMotionValue(0)
   // const background = useTransform(bgColor, [0, typeof window !== 'undefined' ? window.innerHeight : 0], ['#FFF', '#FFFFFF'])
 

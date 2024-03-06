@@ -4,6 +4,8 @@ import { FrontMatter, ProjectProps } from 'interfaces'
 import { Layout } from 'components/layout'
 // import { Portfolio } from 'components/non-used/portfolio'
 import { PageTitle } from 'components/ui/shared/page-title'
+import { Portfolio } from 'components/sections/portfolio'
+import { Projects } from 'components/sections'
 
 export const getStaticProps: GetStaticProps = async (ctx: any) => {
   let projects = await getAllFilesMetadata('portfolio')
@@ -26,7 +28,8 @@ const PortfolioPage: NextPage<ProjectProps> = ({ projects }) => {
         title="Work"
         description="A selection of web & mobile development and engineering projects."
       />
-      {/* <Portfolio projects={projects} /> */}
+
+      <Projects projects={projects} />
     </Layout>
   )
 }

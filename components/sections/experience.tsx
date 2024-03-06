@@ -7,11 +7,11 @@ export const Experience = () => {
         <div>
           <h1 className="font-light text-lg text-neutral-700">Experience</h1>
         </div>
-        <div className=" text-lg leading-relaxed space-y-12 col-span-5">
+        <div className=" text-lg leading-relaxed space-y-12 col-span-5 text-neutral-950">
           {EXPERIENCE.map((el, i) => (
             <div key={i} className="space-y-2">
               <div className="flex items-center justify-start gap-2 font-medium">
-                <h3 className="">{el.company}</h3>
+                <h3>{el.company}</h3>
                 <span className="text-neutral-700">{el.position}</span>
               </div>
               <span className="text-sm">{el.date}</span>

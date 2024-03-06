@@ -43,12 +43,12 @@ export const Hero = () => {
         </div>
       </motion.div>
 
-      <div className="mx-auto max-w-screen-xl w-11/12 h-full flex flex-col items-start justify-center cursor-default space-y-4 text-zinc-800">
+      <div className="mx-auto max-w-screen-xl w-11/12 h-full flex flex-col items-start justify-center cursor-default space-y-4 text-neutral-500">
         <h3 className="text-2xl">Who I am?</h3>
         <p className="text-7xl font-medium">
-          I&apos;m <span className="text-primary">Jilver Pacheco</span> a
-          software developer + electronic engineer with +2 years of experience
-          in the IT world based in CO.
+          Hello, I&apos;m <span className="text-primary">Jilver Pacheco</span>,
+          a software developer & electronic engineer passionate about crafting
+          complete digital solutions.
         </p>
       </div>
     </motion.section>

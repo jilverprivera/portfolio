@@ -20,6 +20,7 @@ export interface FrontMatter {
   collaborators?: string[]
   position?: string[]
   color?: string
+  featured?: boolean
 }
 
 export enum PAGE_TYPE {

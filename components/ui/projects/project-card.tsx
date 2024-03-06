@@ -14,7 +14,7 @@ type props = {
   totalProjects: number
 }
 
-export const Card = ({
+export const ProjectCard = ({
   index,
   project,
   color = '#e5e5e5',
@@ -42,7 +42,7 @@ export const Card = ({
         <a>
           <motion.div
             style={{
-              top: `calc(-7.5vh + ${index * 32}px)`,
+              top: `calc(-7.5vh + ${index * 16}px)`,
               backgroundColor: color,
               scale
             }}

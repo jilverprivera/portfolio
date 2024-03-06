@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { MetaData } from 'interfaces'
+import { IMetaData } from 'interfaces'
 
-export const SEO = ({ title, date, description, path }: MetaData) => {
+export const SEO = ({ title, date, description, path }: IMetaData) => {
   const { locale } = useRouter()
   const isES = locale === 'es'
 

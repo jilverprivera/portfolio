@@ -1,8 +1,6 @@
 import { Layout } from 'components/layout'
-import { PageTitle } from 'components/ui/shared/page-title'
-import { Background } from 'components/sections/background'
-import { Experience } from 'components/sections/experience'
-import { Awards } from 'components/sections/awards'
+import { PageTitle } from 'components/ui/shared'
+import { Background, Awards, Experience } from 'components/sections'
 
 const About = () => {
   return (

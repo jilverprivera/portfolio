@@ -1,13 +1,12 @@
-// import { IFrontMatter } from 'interfaces'
 import { IReadTimeResults } from 'reading-time'
 import { FrontMatter } from './mdx'
 
-export interface Layout {
+export type ILayout = {
   children: React.ReactNode
-  metadata: MetaData
+  metadata: IMetaData
 }
 
-export interface MetaData {
+export interface IMetaData {
   title: string
   description: string
   slug?: string | null
@@ -16,7 +15,7 @@ export interface MetaData {
   path?: string | null
 }
 
-export interface SlugProps {
+export interface ISlugProps {
   source: any
   frontmatter: FrontMatter
   readingTime?: IReadTimeResults

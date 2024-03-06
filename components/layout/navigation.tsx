@@ -28,7 +28,7 @@ export const Navigation = ({
                 <a
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
-                  className="text-5xl hover:font-bold duration-150"
+                  className="text-5xl hover:font-bold hover:text-neutral-200 duration-150"
                 >
                   {link.title}
                 </a>

@@ -1,8 +1,5 @@
 import Link from 'next/link'
-import { BsArrowRight } from 'react-icons/bs'
-// import { formatDate } from 'utils'
 import { FrontMatter } from 'interfaces'
-import { Fragment } from 'react'
 
 export const PostCard = ({
   slug,

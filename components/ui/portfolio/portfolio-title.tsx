@@ -4,7 +4,7 @@ import { AppContext } from 'context'
 import { FrontMatter } from 'interfaces'
 import { useRouter } from 'next/router'
 
-export const ProjectTitle = ({ project }: { project: FrontMatter }) => {
+export const PortfolioTitle = ({ project }: { project: FrontMatter }) => {
   const { title, slug, category } = project
   const ref = useRef<HTMLParagraphElement>(null)
   const isInView = useInView(ref, { margin: '-40% 0px -40% 0px' })

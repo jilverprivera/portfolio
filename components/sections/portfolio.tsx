@@ -1,43 +1,86 @@
-import { useEffect, useRef } from 'react'
-import { useScroll } from 'framer-motion'
-import Lenis from '@studio-freight/lenis'
-import { Card } from 'components/ui/portfolio/card'
+import { useContext, useEffect } from 'react'
+import { stagger, useAnimate } from 'framer-motion'
+import { AppContext } from 'context'
+import { PortfolioTitle, PortfolioImage } from 'components/ui/portfolio'
+import { useEscapePress, useHidePageOverflow } from 'utils/hooks'
 import { FrontMatter } from 'interfaces'
 
 export const Portfolio = ({ projects }: { projects: FrontMatter[] }) => {
-  const container = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ['start start', 'end end']
-  })
+  const [scope, animate] = useAnimate()
 
-  useEffect(() => {
-    const lenis = new Lenis()
-    function raf(time: any) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
+  const {
+    fullScreenFeature,
+    lastFullScreenFeature,
+    setFullScreenFeature,
+    setLastFullScreenFeature
+  } = useContext(AppContext)
+  const onEscapePress = () => {
+    if (fullScreenFeature) {
+      setFullScreenFeature(null)
+      setTimeout(() => {
+        setLastFullScreenFeature(null)
+      }, 250)
     }
-    requestAnimationFrame(raf)
-  })
+  }
+  useEscapePress(onEscapePress)
+  useHidePageOverflow(!!fullScreenFeature)
+  useEffect(() => {
+    if (fullScreenFeature) {
+      animate([
+        [
+          '.feature-title',
+          { opacity: 0, x: '-200px' },
+          { duration: 0.3, delay: stagger(0.05) }
+        ],
+        [
+          `.visual-${lastFullScreenFeature}`,
+          { opacity: 1, scale: 1, pointerEvents: 'auto' },
+          { at: '<' }
+        ],
+        ['.active-card ', { opacity: 0, scale: 0, x: '200px' }, { at: '<' }]
+      ])
+    } else {
+      animate([
+        [
+          '.feature-title',
+          { opacity: 1, x: '0px' },
+          { duration: 0.3, delay: stagger(0.05) }
+        ],
+        [
+          `.visual-${lastFullScreenFeature}`,
+          { opacity: 0, scale: 0.75, pointerEvents: 'auto' },
+          { at: '<' }
+        ],
+        ['.active-card ', { opacity: 1, scale: 1, x: '0px' }, { at: '<' }]
+      ])
+    }
+  }, [fullScreenFeature, lastFullScreenFeature, animate])
 
   return (
-    <main ref={container}>
-      {projects.map((project, i) => {
-        const targetScale = 1 - (projects.length - i) * 0.05
-        return (
-          <Card
-            key={project.slug}
-            index={i}
-            project={project}
-            progress={scrollYProgress}
-            range={[i * 0.25, 1]}
-            targetScale={targetScale}
-            color={project.color}
-            totalProjects={projects.length}
-          />
-        )
-      })}
-    </main>
+    <section
+      ref={scope}
+      className="max-w-screen-xl w-11/12 mx-auto relative "
+      id="works"
+    >
+      {/* {lastFullScreenFeature &&
+        projects.map((project) => (
+          <ProjectResume key={project.slug} project={project} />
+        ))} */}
+      <div className="flex w-full items-start justify-center">
+        <div className="w-full py-[24vh] flex-1">
+          {projects.map((project) => (
+            <PortfolioTitle key={project.slug} project={project} />
+          ))}
+        </div>
+        <div className="sticky top-0 flex h-screen w-4/6 items-center">
+          <div className="relative aspect-video w-full rounded-2xl [&:has(>_.active-card)]:bg-transparent">
+            {projects.map((project) => (
+              <PortfolioImage key={project.slug} {...project} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }
 

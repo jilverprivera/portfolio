@@ -5,7 +5,7 @@ import { AppContext } from 'context'
 import { FrontMatter } from 'interfaces'
 import { useRouter } from 'next/router'
 
-export const ProjectCard = ({ slug, coverImage }: FrontMatter) => {
+export const PortfolioImage = ({ slug, coverImage }: FrontMatter) => {
   const { inViewFeature, handleSetFullscreenFeature } = useContext(AppContext)
   const controls = useAnimation()
   const router = useRouter()

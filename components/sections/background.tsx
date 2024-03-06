@@ -5,7 +5,7 @@ export const Background = () => {
         <div>
           <h1 className="font-light text-lg text-neutral-700">Background</h1>
         </div>
-        <div className=" text-lg leading-relaxed space-y-4 col-span-5">
+        <div className=" text-lg leading-relaxed space-y-4 col-span-5 text-neutral-950">
           <p>
             Currently I&apos;m insert position at{' '}
             <span className="font-bold">Insert company</span> building B2B
