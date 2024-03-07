@@ -1,4 +1,4 @@
-const { fontFamily } = require('tailwindcss/defaultTheme')
+const { fontFamily, screens } = require('tailwindcss/defaultTheme')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -14,7 +14,8 @@ module.exports = {
       },
       fontFamily: {
         sans: ['IBM Plex Sans', ...fontFamily.sans]
-      }
+      },
+      screens: { '3xl': '1920px', ...screens }
     }
   },
   plugins: [
