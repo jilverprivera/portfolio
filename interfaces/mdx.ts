@@ -3,6 +3,7 @@ import { IReadTimeResults } from 'reading-time'
 export interface FrontMatter {
   slug: string
   title: string
+  altTitle?: string
   subTitle?: string
   description: string
   coverImage?: string
