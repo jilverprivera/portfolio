@@ -16,7 +16,6 @@ const anim = {
 export const WorkCard = ({
   title,
   altTitle,
-  subTitle,
   coverImage,
   slug,
   category,
@@ -29,29 +28,28 @@ export const WorkCard = ({
       <a
         onMouseEnter={() => setIsActive(true)}
         onMouseLeave={() => setIsActive(false)}
-        className="project text-neutral-300 relative border-t border-neutral-700 last:border-b"
+        className="w-full relative py-4 flex items-center justify-center text-neutral-300 border-t last:border-b border-neutral-700"
       >
         <span className="absolute top-2 left-2 text-xs">
           {category}
           {company && ` at ${company}`}
         </span>
-        <p>{title}</p>
+        <p className="text-7xl mr-4">{title}</p>
         <motion.div
           variants={anim}
           animate={isActive ? 'open' : 'closed'}
-          className="imgContainer h-48"
+          className="overflow-hidden flex justify-center w-0 h-48 rounded-md"
         >
           <Image
             src={coverImage as string}
             width={320}
             height={180}
             quality={100}
-            objectFit="contain"
+            objectFit="cover"
             alt={slug}
-            className="img"
-          ></Image>
+          />
         </motion.div>
-        {altTitle && <p>{altTitle}</p>}
+        {altTitle && <p className="text-7xl ml-4">{altTitle}</p>}
       </a>
     </Link>
   )
