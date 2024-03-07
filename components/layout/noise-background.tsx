@@ -2,7 +2,6 @@ import { useRouter } from 'next/router'
 
 export const NoiseBackground = () => {
   const { pathname } = useRouter()
-  console.log(pathname)
   return (
     <div
       className="noise"
