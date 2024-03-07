@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app'
 import { AnimatePresence } from 'framer-motion'
 import { AppProvider } from 'context'
+import { NoiseBackground } from 'components/layout'
 import 'globals.css'
 
 const MyApp = ({
@@ -10,7 +11,8 @@ const MyApp = ({
 }: AppProps) => {
   return (
     <AppProvider>
-      <AnimatePresence mode="sync">
+      <NoiseBackground />
+      <AnimatePresence mode="wait">
         <Component {...pageProps} key={router.asPath} />
       </AnimatePresence>
     </AppProvider>

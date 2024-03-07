@@ -65,7 +65,7 @@ const Project: NextPage<ISlugProps> = ({
       }}
     >
       <ProjectHero {...frontmatter} />
-      <section className="my-8 mx-auto text-neutral-100 prose  prose-neutral prose-lg max-w-screen-lg">
+      <section className="my-8  text-neutral-100 prose  prose-neutral prose-lg max-w-screen-3xl w-11/12 mx-auto">
         <MDXRemote {...source} components={MDXComponents} />
       </section>
       <Navigation next={next} prev={prev} typePage={PAGE_TYPE.PROJECT} />

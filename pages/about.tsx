@@ -11,7 +11,7 @@ const About = () => {
       }}
     >
       <PageTitle
-        title="About"
+        title="Hey, I'm Jilver."
         description="I get energy from exploring and creating. Always hungry for the unknown. Design is like that - being comfortable in the vagueness, uncertain what the outcomes will be, constantly discovering and adjusting."
       />
       <Background />
