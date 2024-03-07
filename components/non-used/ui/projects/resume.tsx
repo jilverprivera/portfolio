@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react'
 // import { ProjectHero } from 'components/ui/projects'
 import { AppContext } from 'context'
 import { FrontMatter } from 'interfaces'
-import { ProjectHero } from '../../mdx/shared/hero'
+import { ProjectHero } from '../../../mdx/shared/hero'
 
 export const ProjectResume = ({ project }: { project: FrontMatter }) => {
   const { slug } = project

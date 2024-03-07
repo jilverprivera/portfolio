@@ -1,11 +1,11 @@
 export const Background = () => {
   return (
-    <section className="max-w-screen-xl w-11/12 mx-auto">
+    <section className="max-w-screen-3xl w-11/12 mx-auto">
       <div className="w-3/4 grid grid-cols-6 py-12">
         <div>
-          <h1 className="font-light text-lg text-neutral-700">Background</h1>
+          <h1 className="font-light text-lg text-neutral-400">Background</h1>
         </div>
-        <div className=" text-lg leading-relaxed space-y-4 col-span-5 text-neutral-950">
+        <div className=" text-lg leading-relaxed space-y-4 col-span-5 text-neutral-300">
           <p>
             Currently I&apos;m insert position at{' '}
             <span className="font-bold">Insert company</span> building B2B

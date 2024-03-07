@@ -3,6 +3,7 @@ import { motion, useMotionValue } from 'framer-motion'
 import { Header } from './header'
 import { SEO } from 'utils/seo'
 import type { ILayout } from 'interfaces'
+import { NoiseBackground } from './noise-background'
 
 export const Layout = ({ children, metadata }: ILayout) => {
   const { title, description, slug, date } = metadata

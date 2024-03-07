@@ -1,7 +1,10 @@
 import { useContext, useEffect } from 'react'
 import { stagger, useAnimate } from 'framer-motion'
 import { AppContext } from 'context'
-import { PortfolioTitle, PortfolioImage } from 'components/ui/portfolio'
+import {
+  PortfolioTitle,
+  PortfolioImage
+} from 'components/non-used/ui/portfolio'
 import { useEscapePress, useHidePageOverflow } from 'utils/hooks'
 import { FrontMatter } from 'interfaces'
 

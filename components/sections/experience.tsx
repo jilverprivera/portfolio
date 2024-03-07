@@ -2,17 +2,17 @@ import { EXPERIENCE } from 'utils/resources/experience'
 
 export const Experience = () => {
   return (
-    <section className="max-w-screen-xl w-11/12 mx-auto">
+    <section className="max-w-screen-3xl w-11/12 mx-auto">
       <div className="w-3/4 grid grid-cols-6 py-12">
         <div>
-          <h1 className="font-light text-lg text-neutral-700">Experience</h1>
+          <h1 className="font-light text-lg text-neutral-400">Experience</h1>
         </div>
-        <div className=" text-lg leading-relaxed space-y-12 col-span-5 text-neutral-950">
+        <div className=" text-lg leading-relaxed space-y-12 col-span-5 text-neutral-300">
           {EXPERIENCE.map((el, i) => (
             <div key={i} className="space-y-2">
               <div className="flex items-center justify-start gap-2 font-medium">
                 <h3>{el.company}</h3>
-                <span className="text-neutral-700">{el.position}</span>
+                <span className="text-neutral-400">{el.position}</span>
               </div>
               <span className="text-sm">{el.date}</span>
               <p>

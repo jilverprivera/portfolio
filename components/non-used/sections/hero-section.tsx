@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { AnimatedLetters } from 'components/ui/animated-letters-component'
+import { AnimatedLetters } from 'components/non-used/ui/animated-letters-component'
 import { BANNER_PROPS } from 'utils'
 
 export const HeroSection = () => {
