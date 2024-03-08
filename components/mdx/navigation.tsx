@@ -10,42 +10,52 @@ type props = {
 
 export const Navigation = ({ next, prev, typePage }: props) => {
   return (
-    <div className="max-w-screen-xl xs:w-11/12 sm:w-11/12 md:w-11/12 lg:w-11/12 xl:w-full mx-auto py-12 grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 xs:gap-12 sm:gap-12 md:gap-12 lg:gap-24 xl:gap-24">
-      <div className="flex items-center justify-end">
+    <div className="max-w-screen-3xl mx-auto w-11/12 grid grid-cols-2 gap 12 pb-12">
+      <div className="w-full flex items-center justify-start">
         {next != null && (
-          <div className="flex items-center justify-center flex-col">
-            <Link
-              href={`/${typePage === PAGE_TYPE.POST ? 'blog' : 'work'}/${
-                next.slug
-              }`}
-            >
-              <a className="flex items-center justify-end text-neutral-400 hover:text-neutral-300 duration-200">
-                <span className="text-2xl mr-2">
-                  <MdArrowBackIos />
-                </span>
-                <span className="text-base">{next.title}</span>
-              </a>
-            </Link>
-          </div>
+          <Link
+            href={
+              typePage === PAGE_TYPE.POST
+                ? `/blog/${next.slug}`
+                : `/work/${next.slug}`
+            }
+          >
+            <a className="flex items-start justify-center text-left flex-col  text-neutral-500 hover:text-neutral-300 duration-200">
+              <div className="space-y-2  flex flex-col items-end">
+                <p className="text-sm text-left ">Previous project</p>
+                <p className="flex items-center justify-center text-left">
+                  <span className="text-7xl ml-2">
+                    <MdArrowBackIos />
+                  </span>
+                  <span className="text-5xl">{next.title}</span>
+                </p>
+              </div>
+            </a>
+          </Link>
         )}
       </div>
 
-      <div className="flex items-center justify-start">
+      <div className="w-full flex items-center justify-end">
         {prev != null && (
-          <div className="flex items-center justify-center flex-col">
-            <Link
-              href={`/${typePage === PAGE_TYPE.POST ? 'blog' : 'work'}/${
-                prev.slug
-              }`}
-            >
-              <a className="flex items-center justify-start text-neutral-400 hover:text-neutral-300 duration-200">
-                <span className="text-base">{prev.title}</span>
-                <span className="text-2xl ml-2">
-                  <MdArrowForwardIos />
-                </span>
-              </a>
-            </Link>
-          </div>
+          <Link
+            href={
+              typePage === PAGE_TYPE.POST
+                ? `/blog/${prev.slug}`
+                : `/work/${prev.slug}`
+            }
+          >
+            <a className=" flex items-end justify-center text-left flex-col text-neutral-500 hover:text-neutral-300 duration-200">
+              <div className="space-y-2">
+                <p className="text-sm text-left ">Next project</p>
+                <p className="flex items-center justify-center text-left">
+                  <span className="text-5xl">{prev.title}</span>
+                  <span className="text-7xl ml-2">
+                    <MdArrowForwardIos />
+                  </span>
+                </p>
+              </div>
+            </a>
+          </Link>
         )}
       </div>
     </div>

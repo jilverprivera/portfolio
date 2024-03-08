@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { InternalLink } from './shared'
 
 export const MDXComponents = {
   img: (props: any) => (
@@ -10,6 +11,7 @@ export const MDXComponents = {
       alt="image"
       {...props}
     />
-  )
+  ),
+  InternalLink
 }
 
