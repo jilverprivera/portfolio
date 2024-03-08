@@ -36,9 +36,9 @@ export const Hero = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            I build immersive digital solutions, prioritizing quality and
-            accessibility that resonate with users, ranging from agile
-            methodologies .
+            I like to share my side projects, my experience, and build digital
+            solutions, prioritizing quality, accessibility, and usability for
+            users.
           </p>
         </div>
       </motion.div>
