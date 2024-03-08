@@ -22,7 +22,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: IStaticProps) {
   const { slug } = params
-  const portfolio = await getAllFilesMetadata('portfolio')
+  let portfolio = await getAllFilesMetadata('portfolio')
+  portfolio = portfolio.filter((el: FrontMatter) => el.finished)
   const portfolioIndex = portfolio.findIndex(
     (project: FrontMatter) => project.slug === slug
   )
