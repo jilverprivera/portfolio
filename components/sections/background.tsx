@@ -6,11 +6,11 @@ export const Background = () => {
           <h1 className="font-light text-lg text-neutral-400">Background</h1>
         </div>
         <div className=" text-lg leading-relaxed space-y-4 col-span-5 text-neutral-300">
-          <p>
+          {/* <p>
             Currently I&apos;m insert position at{' '}
             <span className="font-bold">Insert company</span> building B2B
             products with some awesome people.
-          </p>
+          </p> */}
           <p>
             I finished my studies at the{' '}
             <span className="font-bold">

@@ -28,7 +28,7 @@ export const WorkCard = ({
       <a
         onMouseEnter={() => setIsActive(true)}
         onMouseLeave={() => setIsActive(false)}
-        className="w-full relative py-4 flex items-center justify-center text-neutral-300 border-t last:border-b border-neutral-700"
+        className="w-full relative py-4 flex items-center justify-center text-neutral-300 border-t border-neutral-700"
       >
         <span className="absolute top-2 left-2 text-xs">
           {category}

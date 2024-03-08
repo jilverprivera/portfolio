@@ -12,7 +12,7 @@ const About = () => {
     >
       <PageTitle
         title="Hey, I'm Jilver."
-        description="I get energy from exploring and creating. Always hungry for the unknown. Design is like that - being comfortable in the vagueness, uncertain what the outcomes will be, constantly discovering and adjusting."
+        description="I am energized by exploring, creating and always hungry for the unknown. I love being able to provide solutions to personally challenging problems that push me out of my comfort zone."
       />
       <Background />
       <Experience />
