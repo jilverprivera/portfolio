@@ -4,6 +4,7 @@ import { Header } from './header'
 import { SEO } from 'utils/seo'
 import type { ILayout } from 'interfaces'
 import { NoiseBackground } from './noise-background'
+import { Footer } from './footer'
 
 export const Layout = ({ children, metadata }: ILayout) => {
   const { title, description, slug, date } = metadata
@@ -41,6 +42,7 @@ export const Layout = ({ children, metadata }: ILayout) => {
       >
         {children}
       </motion.main>
+      <Footer />
     </Fragment>
   )
 }
